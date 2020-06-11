@@ -1,35 +1,16 @@
 "use strict";
 
+import Vue from "vue";
+import VueRouter from "vue-router";
+Vue.use(VueRouter);
+
 import ShellComponent from "components/shell.component.vue";
-export default [
-    {
-        path: "/",
-        name: "shell",
-        component: ShellComponent
-    }
-    // {
-    //     path: "/loadLibraryBox",
-    //     name: "loadLibraryBox",
-    //     component: LibraryBoxLoadDataComponent
-    // },
-    // {
-    //     path: "/configureLibraryBox",
-    //     name: "configureLibraryBox",
-    //     component: LibraryBoxConfigureComponent
-    // },
-    // {
-    //     path: "/loadDisk",
-    //     name: "loadDisk",
-    //     component: LoadDiskComponent
-    // },
-    // {
-    //     path: "/logs/librarybox-logs",
-    //     name: "viewLibraryBoxLogs",
-    //     component: LoggerComponent
-    // },
-    // {
-    //     path: "/logs/loaddisk-logs",
-    //     name: "viewDiskLogs",
-    //     component: LoggerComponent
-    // }
-];
+export const router = new VueRouter({
+    routes: [
+        {
+            path: "/",
+            name: "shell",
+            component: ShellComponent,
+        },
+    ],
+});
