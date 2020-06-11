@@ -1,9 +1,7 @@
 <template>
-    <div>
+    <div class="m-2">
         <navbar-component />
-        <div class="container-fluid">
-            <router-view></router-view>
-        </div>
+        <router-view></router-view>
     </div>
 </template>
 
@@ -12,14 +10,13 @@ import NavbarComponent from "./navbar.component.vue";
 export default {
     el: "#app",
     components: {
-        NavbarComponent
+        NavbarComponent,
     },
     data() {
         return {};
     },
-    mounted() {}
+    mounted() {},
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

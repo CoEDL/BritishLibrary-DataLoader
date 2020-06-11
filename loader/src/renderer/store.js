@@ -9,20 +9,8 @@ import { isArray, round } from "lodash";
 const state = reset();
 
 export const mutations = {
-    setTargetDevice(state, device) {
-        state.targetDevice = device;
-    },
-    setUsbPath(state, path) {
-        state.usbMountPoint = path;
-    },
     setLocalDataPath(state, path) {
         state.localDataPath = path;
-    },
-    resetDataPathSelection(state) {
-        state.localDataPath = undefined;
-    },
-    resetUsbDiskSelection(state) {
-        state.usbMountPoint = undefined;
     },
     resetMessages(state) {
         state.messages = [];
@@ -78,11 +66,7 @@ export const store = new Vuex.Store(configuration);
 
 function reset() {
     return {
-        targetDevice: undefined,
         localDataPath: undefined,
-        usbMountPoint: undefined,
-        hostname: "catalog.net",
-        ssid: "PARADISEC",
         messages: [],
         stopDataLoad: false,
         loadProgress: 0,

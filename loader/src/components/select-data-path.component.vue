@@ -1,49 +1,56 @@
 <template>
-    <div>
-        <el-form ref="form" :model="form" label-width="200px">
-            <el-form-item label="Data Path">
-                <span v-if="!dataPath">
-                    <select-folder-component name="setLocalDataPath"></select-folder-component>
-                    <p
-                        class="text-muted"
-                    >Please specify the folder that contains the data you wish to load onto the device.</p>
-                </span>
-                <span v-if="dataPath">
-                    {{dataPath}}
-                    <span class="px-4">
-                        <el-button type="danger" v-on:click="reset" circle size="mini">
-                            <i class="fas fa-times fa-fw"></i>
-                        </el-button>
-                    </span>
-                </span>
-            </el-form-item>
-        </el-form>
+    <div class="flex flex-row">
+        <div class="w-32 font-light text-gray-800">Data Path</div>
+        <div class="flex flex-col" v-if="!dataPath">
+            <el-button type="primary" v-on:click="open">
+                <i class="fas fa-folder-open"></i>
+                Select folder
+            </el-button>
+            <p class="text-gray-600 font-light">
+                Please specify the folder that contains the data you wish to
+                load onto the device.
+            </p>
+        </div>
+        <span v-if="dataPath">
+            {{ dataPath }}
+            <span class="px-4">
+                <el-button type="danger" v-on:click="reset" circle size="mini">
+                    <i class="fas fa-times fa-fw"></i>
+                </el-button>
+            </span>
+        </span>
     </div>
 </template>
 
 <script>
-import SelectFolderComponent from "./select-folder.component.vue";
+const { dialog } = require("electron").remote;
+
 export default {
     data() {
-        return {
-            form: {}
-        };
+        return {};
     },
     computed: {
         dataPath() {
             return this.$store.state.localDataPath;
-        }
-    },
-    components: {
-        SelectFolderComponent
+        },
     },
     methods: {
+        async open() {
+            this.folder = await dialog.showOpenDialog({
+                properties: ["openDirectory"],
+            });
+            if (!this.folder.canceled && this.folder.filePaths) {
+                this.$store.commit(
+                    "setLocalDataPath",
+                    this.folder.filePaths[0]
+                );
+            }
+        },
         reset() {
-            this.$store.commit("resetDataPathSelection");
-        }
-    }
+            this.$store.commit("setLocalDataPath", undefined);
+        },
+    },
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
