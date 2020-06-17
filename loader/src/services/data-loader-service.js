@@ -7,7 +7,7 @@ export class DataLoader {
     constructor({ dataPath }) {
         this.dataPath = dataPath;
     }
-    async load() {
+    async import() {
         const workbookFile = path.join(this.dataPath, "metadata.xlsx");
 
         // check that we have a file named metadata.xslx

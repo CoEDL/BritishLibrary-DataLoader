@@ -16,7 +16,7 @@ test("it should fail to verify because metadata sheet not found", async () => {
     await ensureDir(path.join(__dirname, "test"));
 
     try {
-        await dataLoader.load();
+        await dataLoader.import();
     } catch (error) {
         expect(error.message).toBe(
             `That path does not have a file named 'metadata.xlsx'`
@@ -34,7 +34,7 @@ test("it should fail because there is no Collection metadata sheet", async () =>
     );
 
     try {
-        await dataLoader.load();
+        await dataLoader.import();
     } catch (error) {
         expect(error.message).toBe(
             `A sheet named 'Collection metadata' was not found.`
@@ -79,7 +79,7 @@ test("it should fail because a metadata folder is not found", async () => {
     );
 
     try {
-        await dataLoader.load();
+        await dataLoader.import();
     } catch (error) {
         expect(error.message).toMatch(`Unable to find the folder`);
     }
@@ -179,7 +179,7 @@ test("it should fail because a collection sheet can't be found", async () => {
         dataPath: path.join(__dirname, "test"),
     });
     try {
-        await dataLoader.load();
+        await dataLoader.import();
     } catch (error) {
         expect(error.message).toBe(
             `A sheet named 'C46 Recording metadata' was not found.`
@@ -281,7 +281,7 @@ test("it should verify a good path", async () => {
     const dataLoader = new DataLoader({
         dataPath: path.join(__dirname, "test"),
     });
-    data = await dataLoader.load();
+    data = await dataLoader.import();
     expect(data).toHaveProperty("collections");
     expect(data).toHaveProperty("items");
     expect(Object.keys(data.items).length).toBe(3);
