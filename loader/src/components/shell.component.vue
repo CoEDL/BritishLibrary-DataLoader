@@ -28,6 +28,7 @@
             </p>
         </div>
         <select-data-path-component />
+        <select-usb-mount-point-component />
         <!-- <select-usb-component/> -->
         <!-- <do-it-component/> -->
         <!-- <logger-component v-if="messages.length"/> -->
@@ -36,6 +37,7 @@
 
 <script>
 import SelectDataPathComponent from "./select-data-path.component.vue";
+import SelectUsbMountPointComponent from "./select-usb-component.vue"
 // import SelectUsbComponent from "./select-usb.component.vue";
 // import DoItComponent from "./doit.component.vue";
 // import LoggerComponent from "./logger/logger.component.vue";
@@ -43,6 +45,7 @@ import SelectDataPathComponent from "./select-data-path.component.vue";
 export default {
     components: {
         SelectDataPathComponent,
+        SelectUsbMountPointComponent
         // SelectUsbComponent,
         // DoItComponent,
         // LoggerComponent

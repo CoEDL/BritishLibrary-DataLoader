@@ -13,6 +13,9 @@ export const mutations = {
     setLocalDataPath(state, path) {
         state.localDataPath = path;
     },
+    setUsbMountPoint(state, path) {
+        state.usbMountPoint = path;
+    },
     saveData(state, payload) {
         state.data = { ...payload };
     },
@@ -88,6 +91,7 @@ export const store = new Vuex.Store(configuration);
 function reset() {
     return {
         localDataPath: undefined,
+        usbMountPoint: undefined,
         data: {},
         messages: [],
         stopDataLoad: false,
