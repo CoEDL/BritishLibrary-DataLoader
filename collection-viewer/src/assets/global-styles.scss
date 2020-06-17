@@ -1,0 +1,63 @@
+@import "./variables.scss";
+body {
+    height: 100vh;
+    margin: 0;
+    width: 100vw;
+    font-size: 14px;
+}
+
+a {
+    // font-style: italic;
+    /* font-weight: 600; */
+}
+
+a:link,
+a:visited {
+    color: #22313f;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+a:hover,
+a:active {
+    color: #22313f;
+    opacity: 0.8;
+}
+
+.style-tile {
+    min-width: calc(100vw - 30px);
+    max-width: calc(100vw - 30px);
+}
+@media only screen and (min-width: 600px) {
+    .style-tile {
+        max-width: calc((100vw / 2) - 45px);
+        min-width: calc((100vw / 2) - 45px);
+    }
+}
+@media only screen and (min-width: 900px) {
+    .style-tile {
+        max-width: calc((100vw / 3) - 40px);
+        min-width: calc((100vw / 3) - 40px);
+    }
+}
+
+.style-tile-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.el-dialog__headerbtn {
+    font-size: 40px;
+}
+
+.style-headline {
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: $background-color-dark;
+}
+
+.style-item-id {
+    font-size: 15px;
+    color: $background-color-dark;
+}
