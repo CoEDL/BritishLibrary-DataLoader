@@ -13,8 +13,10 @@
                 RaspberryPi.
             </p>
         </div>
-        <span v-if="usbMountPoint">
-            {{ usbMountPoint }}
+        <span v-if="usbMountPoint" class="flex flex-row">
+            <div class="pt-1">
+                {{ usbMountPoint }}
+            </div>
             <span class="px-4">
                 <el-button type="danger" v-on:click="reset" circle size="mini">
                     <i class="fas fa-times fa-fw"></i>

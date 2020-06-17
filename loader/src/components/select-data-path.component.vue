@@ -13,8 +13,10 @@
                 load onto the device.
             </p>
         </div>
-        <span v-if="dataPath">
-            {{ dataPath }}
+        <span v-if="dataPath" class="flex flex-row">
+            <div class="pt-1">
+                {{ dataPath }}
+            </div>
             <span class="px-4">
                 <el-button type="danger" v-on:click="reset" circle size="mini">
                     <i class="fas fa-times fa-fw"></i>
