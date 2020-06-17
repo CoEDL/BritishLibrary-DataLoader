@@ -8,9 +8,9 @@
                 onto a RaspberryPi USB Disk plugged in to this computer.
             </div>
             <div class="mt-2">
-                The folder you choose requires a particular structure and the
+                The folder you choose requires a particular structure. The
                 loader will check that it exists and report any issues it
-                discovers:
+                discovers.
             </div>
             <div class="mt-2 text-base">
                 <ul class="ml-8 list-decimal">
@@ -24,9 +24,9 @@
                         the metadata spreadsheet.
                     </li>
                     <li>
-                        Within each collection folder there must be a folder for
-                        each item such that the collection folder name and item
-                        folder name can be used to create the Shelfmark.
+                        Data files are expected to be found within their
+                        respective collection folders and must be named exactly
+                        as they are in the spreadsheet.
                     </li>
                 </ul>
             </div>
