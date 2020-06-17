@@ -44,6 +44,7 @@ export default {
                     "setLocalDataPath",
                     this.folder.filePaths[0]
                 );
+                this.$store.dispatch("loadData");
             }
         },
         reset() {
