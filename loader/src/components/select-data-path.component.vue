@@ -1,11 +1,13 @@
 <template>
     <div class="flex flex-row">
-        <div class="w-32 font-light text-gray-800">Data Path</div>
+        <div class="w-32 font-light text-gray-800 pt-1">Data Path</div>
         <div class="flex flex-col" v-if="!dataPath">
-            <el-button type="primary" v-on:click="open">
-                <i class="fas fa-folder-open"></i>
-                Select folder
-            </el-button>
+            <div>
+                <el-button type="primary" v-on:click="open" size="small">
+                    <i class="fas fa-folder-open"></i>
+                    Select data folder
+                </el-button>
+            </div>
             <p class="text-gray-600 font-light">
                 Please specify the folder that contains the data you wish to
                 load onto the device.

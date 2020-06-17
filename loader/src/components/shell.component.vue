@@ -3,33 +3,38 @@
         <div
             class="p-8 text-xl text-gray-800 font-light bg-yellow-200 rounded-lg"
         >
-            <p>
+            <div>
                 This application will prepare a folder of content for loading
                 onto a RaspberryPi USB Disk plugged in to this computer.
-            </p>
-            <p class="mt-2">
+            </div>
+            <div class="mt-2">
                 The folder you choose requires a particular structure and the
                 loader will check that it exists and report any issues it
-                discovers: 
-            </p>
-            <p class="mt-2 text-base">
+                discovers:
+            </div>
+            <div class="mt-2 text-base">
                 <ul class="ml-8 list-decimal">
-                    <li>There must be a file named <span class="text-orange-700">metadata.xlsx</span>
-                    in the root of the folder.
+                    <li>
+                        There must be a file named
+                        <span class="text-orange-700">metadata.xlsx</span>
+                        in the root of the folder.
                     </li>
-                    <li>There must be a folder for each collection defined in the 
-                        metadata spreadsheet.
+                    <li>
+                        There must be a folder for each collection defined in
+                        the metadata spreadsheet.
                     </li>
-                    <li>Within each collection folder there must be a folder for each 
-                        item such that the collection folder name and item folder name 
-                        can be used to create the Shelfmark.
+                    <li>
+                        Within each collection folder there must be a folder for
+                        each item such that the collection folder name and item
+                        folder name can be used to create the Shelfmark.
                     </li>
                 </ul>
-            </p>
+            </div>
         </div>
-        <select-data-path-component />
-        <select-usb-mount-point-component />
-        <!-- <select-usb-component/> -->
+        <div class="space-y-8">
+            <select-data-path-component />
+            <select-usb-mount-point-component />
+        </div>
         <!-- <do-it-component/> -->
         <!-- <logger-component v-if="messages.length"/> -->
     </div>
@@ -37,15 +42,14 @@
 
 <script>
 import SelectDataPathComponent from "./select-data-path.component.vue";
-import SelectUsbMountPointComponent from "./select-usb-component.vue"
-// import SelectUsbComponent from "./select-usb.component.vue";
+import SelectUsbMountPointComponent from "./select-usb-component.vue";
 // import DoItComponent from "./doit.component.vue";
 // import LoggerComponent from "./logger/logger.component.vue";
 
 export default {
     components: {
         SelectDataPathComponent,
-        SelectUsbMountPointComponent
+        SelectUsbMountPointComponent,
         // SelectUsbComponent,
         // DoItComponent,
         // LoggerComponent
