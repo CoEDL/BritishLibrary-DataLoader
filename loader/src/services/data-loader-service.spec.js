@@ -1,6 +1,6 @@
 import "regenerator-runtime";
 
-import { ensureDir, ensureFile, remove } from "fs-extra";
+import { ensureDir, ensureFile, remove, pathExists } from "fs-extra";
 import path from "path";
 import Exceljs from "exceljs";
 import { DataLoader } from "./data-loader-service";
@@ -189,6 +189,80 @@ test("it should fail because a collection sheet can't be found", async () => {
     await remove(path.join(__dirname, "test"));
 });
 
+test("it should fail because a file is not found", async () => {
+    await ensureDir(path.join(__dirname, "test"));
+    let workbook = new Exceljs.Workbook();
+    let sheet = workbook.addWorksheet("Collection metadata");
+
+    let data = [
+        ["087", "091", "093", "312", "490", "490", "531"],
+        [
+            "Shelfmark [mandatory]",
+            "Location of Original",
+            "Format code",
+            "Collection Title",
+            "Collection Description [mandatory but can be added at later stage]",
+            "Collection Description [mandatory but can be added at later stage]",
+            "CollectionInventory",
+        ],
+        [
+            "C46",
+            "BL",
+            "a",
+            "C46 title",
+            "C46 description a",
+            "C46 description b",
+            "1 cylinder",
+        ],
+    ];
+    data.forEach((d) => sheet.addRow(d));
+
+    for (let code of ["C46"]) {
+        await ensureDir(path.join(__dirname, "test", code));
+        data = [
+            ["087", "091", "093", "312", "490", "490", "531"],
+            [
+                "Original filename [mandatory]",
+                "MD-ARK",
+                "Format Code",
+                "Mimetype",
+                "File size",
+                "Collection Title",
+                "Shelfmark",
+                "Description",
+                "Description",
+            ],
+            [
+                "a.mp3",
+                "ark:a",
+                "a",
+                "audio/mpeg",
+                "100KB",
+                `${code} a title`,
+                `${code}/a`,
+                "description a",
+                "description a2",
+            ],
+        ];
+        sheet = workbook.addWorksheet(`${code} Recording metadata`);
+        data.forEach((d) => sheet.addRow(d));
+    }
+    await workbook.xlsx.writeFile(
+        path.join(__dirname, "test", "metadata.xlsx")
+    );
+
+    const dataLoader = new DataLoader({
+        dataPath: path.join(__dirname, "test"),
+    });
+    try {
+        data = await dataLoader.import();
+    } catch (error) {
+        expect(error.message).toBe(`File 'C46/a.mp3' not found.`);
+    }
+
+    await remove(path.join(__dirname, "test"));
+});
+
 test("it should verify a good path", async () => {
     await ensureDir(path.join(__dirname, "test"));
     let workbook = new Exceljs.Workbook();
@@ -287,7 +361,7 @@ test("it should verify a good path", async () => {
     expect(Object.keys(data.items).length).toBe(3);
     // console.log(JSON.stringify(data, null, 2));
     expect(data.items.C80[0]).toEqual({
-        "Original filename": ["a.mp3"],
+        "Original filename": ["C80/a.mp3"],
         "MD-ARK": ["ark:a"],
         "Format Code": ["a"],
         Mimetype: ["audio/mpeg"],
@@ -296,5 +370,89 @@ test("it should verify a good path", async () => {
         Shelfmark: ["C80/a"],
         Description: ["description a", "description a2"],
     });
+    await remove(path.join(__dirname, "test"));
+});
+
+test("it should be able to create a repository datafile", async () => {
+    await ensureDir(path.join(__dirname, "test"));
+    let workbook = new Exceljs.Workbook();
+    let sheet = workbook.addWorksheet("Collection metadata");
+
+    let data = [
+        ["087", "091", "093", "312", "490", "490", "531"],
+        [
+            "Shelfmark [mandatory]",
+            "Location of Original",
+            "Format code",
+            "Collection Title",
+            "Collection Description [mandatory but can be added at later stage]",
+            "Collection Description [mandatory but can be added at later stage]",
+            "CollectionInventory",
+        ],
+        [
+            "C46",
+            "BL",
+            "a",
+            "C46 title",
+            "C46 description a",
+            "C46 description b",
+            "1 cylinder",
+        ],
+    ];
+    data.forEach((d) => sheet.addRow(d));
+
+    for (let code of ["C46"]) {
+        await ensureDir(path.join(__dirname, "test", code));
+        await ensureFile(path.join(__dirname, "test", code, "a.mp3"));
+        data = [
+            ["087", "091", "093", "312", "490", "490", "531"],
+            [
+                "Original filename [mandatory]",
+                "MD-ARK",
+                "Format Code",
+                "Mimetype",
+                "File size",
+                "Collection Title",
+                "Shelfmark",
+                "Description",
+                "Description",
+            ],
+            [
+                "a.mp3",
+                "ark:a",
+                "a",
+                "audio/mpeg",
+                "100KB",
+                `${code} a title`,
+                `${code}/a`,
+                "description a",
+                "description a2",
+            ],
+        ];
+        sheet = workbook.addWorksheet(`${code} Recording metadata`);
+        data.forEach((d) => sheet.addRow(d));
+    }
+    await workbook.xlsx.writeFile(
+        path.join(__dirname, "test", "metadata.xlsx")
+    );
+
+    let dataLoader = new DataLoader({
+        dataPath: path.join(__dirname, "test"),
+    });
+    data = await dataLoader.import();
+    // console.log(data);
+
+    const target = path.join(__dirname, "test");
+    await dataLoader.load({ target, data, dataOnly: true });
+
+    expect(
+        await pathExists(path.join(__dirname, "test", "repository", "C46"))
+    ).toBe(true);
+    expect(
+        await pathExists(
+            path.join(__dirname, "test", "repository", "C46", "a.mp3")
+        )
+    ).toBe(true);
+
     await remove(path.join(__dirname, "test"));
 });

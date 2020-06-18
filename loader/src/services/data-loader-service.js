@@ -1,12 +1,14 @@
-import { pathExists } from "fs-extra";
+import { pathExists, copy } from "fs-extra";
 import path from "path";
 import { has, groupBy, compact, isEmpty } from "lodash";
 import Exceljs from "exceljs";
+import { ensureDir, writeJSON } from "fs-extra";
 
 export class DataLoader {
     constructor({ dataPath }) {
         this.dataPath = dataPath;
     }
+
     async import() {
         const workbookFile = path.join(this.dataPath, "metadata.xlsx");
 
@@ -34,7 +36,7 @@ export class DataLoader {
 
         const collections = sheetToJson({ sheet, headerRowNumber: 2 });
         let collectionIdentifiers = collections.map((collection) => {
-            return collection.Shelfmark.pop();
+            return collection.Shelfmark[0];
         });
         for (let code of collectionIdentifiers) {
             const collectionPath = path.join(this.dataPath, code);
@@ -54,9 +56,52 @@ export class DataLoader {
                     `A sheet named '${collection} Recording metadata' was not found.`
                 );
             }
-            items[collection] = sheetToJson({ sheet, headerRowNumber: 2 });
+            let itemMetadata = sheetToJson({ sheet, headerRowNumber: 2 });
+            for (let item of itemMetadata) {
+                // rewrite the files with the path
+                item["Original filename"] = item["Original filename"].map(
+                    (file) => `${collection}/${file}`
+                );
+
+                // check that each exists
+                for (let file of item["Original filename"]) {
+                    let fileExists = await pathExists(
+                        path.join(this.dataPath, file)
+                    );
+                    if (!fileExists) {
+                        throw new Error(`File '${file}' not found.`);
+                    }
+                }
+            }
+            // console.log(collection, itemMetadata);
+            items[collection] = itemMetadata;
         }
         return { collections, items };
+    }
+
+    async load({ target, data, dataOnly = false }) {
+        if (process.env.NODE_ENV !== "development") {
+            target = `${target}/repository`;
+        }
+        await ensureDir(target);
+
+        let index = `${target}/index.json`;
+        await writeJSON(index, data);
+
+        // copy over the data
+        for (let collection of data.collections) {
+            const source = path.join(this.dataPath, collection.Shelfmark[0]);
+            const output = path.join(target, collection.Shelfmark[0]);
+            try {
+                await copy(source, output);
+            } catch (error) {
+                console.log(error.message);
+            }
+        }
+
+        if (!dataOnly) {
+            // TODO: install the viewer
+        }
     }
 }
 
@@ -65,7 +110,6 @@ export function sheetToJson({ sheet, headerRowNumber = 1 }) {
     headerRow = headerRow._cells.map((cell) => {
         let header = cell.value
             .replace(/\[.*\]/, "")
-            .trim()
             .replace(/\(\+\)/, "")
             .trim();
         return {
@@ -105,6 +149,5 @@ export function sheetToJson({ sheet, headerRowNumber = 1 }) {
         return data;
     });
     rows = compact(rows);
-    // console.log(JSON.stringify(rows, null, 2));
     return rows;
 }
