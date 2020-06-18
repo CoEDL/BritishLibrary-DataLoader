@@ -60,31 +60,6 @@ export class DataLoader {
     }
 }
 
-function cleanupItem({ item }) {
-    let d = {};
-    for (let key of Object.keys(item)) {
-        const value = item[key];
-        key = key.replace(/ \[mandatory.*\]/, "").trim();
-
-        key = key.replace(/ \(\+\)/, "").trim();
-        if (key.match("_")) {
-            key = key
-                .split("_")
-                .slice(0, -1)
-                .join("_");
-            if (!has(d, key)) d[key] = [];
-            d[key].push(value);
-        } else {
-            d[key] = [value];
-        }
-    }
-
-    for (let key of Object.keys(d)) {
-        if (d[key].length === 1) d[key] = d[key].pop();
-    }
-    return d;
-}
-
 export function sheetToJson({ sheet, headerRowNumber = 1 }) {
     let headerRow = sheet.getRow(headerRowNumber);
     headerRow = headerRow._cells.map((cell) => {
