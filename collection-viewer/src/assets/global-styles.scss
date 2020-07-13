@@ -1,63 +1,55 @@
 @import "./variables.scss";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap");
+
 body {
     height: 100vh;
-    margin: 0;
     width: 100vw;
-    font-size: 14px;
+    margin: 0;
 }
 
-a {
-    // font-style: italic;
-    /* font-weight: 600; */
+heading-text {
+    font-family: "Noto Sans", sans-serif;
 }
 
-a:link,
-a:visited {
-    color: #22313f;
-    font-weight: 500;
-    text-decoration: none;
+body-text {
+    font-family: "Noto Serif", serif;
 }
 
-a:hover,
-a:active {
-    color: #22313f;
-    opacity: 0.8;
+heading-text-size {
+    font-size: 24px;
 }
 
-.style-tile {
-    min-width: calc(100vw - 30px);
-    max-width: calc(100vw - 30px);
-}
-@media only screen and (min-width: 600px) {
-    .style-tile {
-        max-width: calc((100vw / 2) - 45px);
-        min-width: calc((100vw / 2) - 45px);
-    }
-}
-@media only screen and (min-width: 900px) {
-    .style-tile {
-        max-width: calc((100vw / 3) - 40px);
-        min-width: calc((100vw / 3) - 40px);
-    }
+page-title-size {
+    font-size: 32px;
 }
 
-.style-tile-title {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+body-text-size {
+    font-size: 16px;
 }
 
-.el-dialog__headerbtn {
-    font-size: 40px;
+text-cloud-burst {
+    color: #203356;
+}
+text-link-water {
+    color: #d9edf7;
+}
+text-golden-sand {
+    color: #f5d473;
+}
+text-tundora {
+    color: #404040;
 }
 
-.style-headline {
-    font-size: 18px;
-    letter-spacing: 1px;
-    color: $background-color-dark;
+bg-cloud-burst {
+    background-color: #203356;
 }
-
-.style-item-id {
-    font-size: 15px;
-    color: $background-color-dark;
+bg-link-water {
+    background-color: #d9edf7;
+}
+bg-golden-sand {
+    background-color: #f5d473;
+}
+bg-tundora {
+    background-color: #404040;
 }

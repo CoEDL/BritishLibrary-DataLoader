@@ -69,11 +69,12 @@ export const actions = {
         let data = {};
         let errors = [];
         try {
-            data = await dataLoader.load();
+            data = await dataLoader.import();
         } catch (error) {
             console.log(error);
             errors.push(error.message);
         }
+        console.log(data, errors);
         commit("saveData", { data, errors });
     },
 };
@@ -92,7 +93,9 @@ function reset() {
     return {
         localDataPath: undefined,
         usbMountPoint: undefined,
-        data: {},
+        data: {
+            errors: [],
+        },
         messages: [],
         stopDataLoad: false,
         loadProgress: 0,

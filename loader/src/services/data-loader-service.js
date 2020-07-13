@@ -3,10 +3,12 @@ import path from "path";
 import { has, groupBy, compact, isEmpty } from "lodash";
 import Exceljs from "exceljs";
 import { ensureDir, writeJSON } from "fs-extra";
+import { store } from "../renderer/store";
 
 export class DataLoader {
     constructor({ dataPath }) {
         this.dataPath = dataPath;
+        this.store = store;
     }
 
     async import() {
@@ -74,16 +76,18 @@ export class DataLoader {
                 }
             }
             // console.log(collection, itemMetadata);
-            items[collection] = itemMetadata;
+            items[collection] = groupBy(
+                itemMetadata,
+                (item) => item.Shelfmark[0]
+            );
         }
         return { collections, items };
     }
 
     async load({ target, data, dataOnly = false }) {
-        if (process.env.NODE_ENV !== "development") {
-            target = `${target}/repository`;
-        }
+        target = `${target}/repository`;
         await ensureDir(target);
+        store.commit("resetMessages");
 
         let index = `${target}/index.json`;
         await writeJSON(index, data);
@@ -93,6 +97,10 @@ export class DataLoader {
             const source = path.join(this.dataPath, collection.Shelfmark[0]);
             const output = path.join(target, collection.Shelfmark[0]);
             try {
+                store.commit(
+                    "setInfoMessage",
+                    `Writing data for collection ${collection.Shelfmark[0]}`
+                );
                 await copy(source, output);
             } catch (error) {
                 console.log(error.message);
@@ -139,7 +147,7 @@ export function sheetToJson({ sheet, headerRowNumber = 1 }) {
 
         row.forEach((cell) => {
             let key = headers[cell.column];
-            let value = cell.value;
+            let value = cell.value ? String(cell.value).trim() : null;
             data.push({ key, value });
         });
         data = groupBy(data, "key");
@@ -149,5 +157,6 @@ export function sheetToJson({ sheet, headerRowNumber = 1 }) {
         return data;
     });
     rows = compact(rows);
+
     return rows;
 }

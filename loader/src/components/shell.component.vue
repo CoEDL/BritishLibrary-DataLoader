@@ -33,9 +33,15 @@
         </div>
         <div class="space-y-8">
             <select-data-path-component />
-            <select-usb-mount-point-component />
+            <select-usb-mount-point-component v-if="!errors.length" />
+            <do-it-component v-if="!errors.length" />
+            <div
+                class="bg-red-200 p-6 text-gray-700 rounded text-center"
+                v-if="errors.length"
+            >
+                {{ errors[0] }}
+            </div>
         </div>
-        <!-- <do-it-component/> -->
         <!-- <logger-component v-if="messages.length"/> -->
     </div>
 </template>
@@ -43,21 +49,23 @@
 <script>
 import SelectDataPathComponent from "./select-data-path.component.vue";
 import SelectUsbMountPointComponent from "./select-usb-component.vue";
-// import DoItComponent from "./doit.component.vue";
+import DoItComponent from "./doit.component.vue";
 // import LoggerComponent from "./logger/logger.component.vue";
 
 export default {
     components: {
         SelectDataPathComponent,
         SelectUsbMountPointComponent,
-        // SelectUsbComponent,
-        // DoItComponent,
+        DoItComponent,
         // LoggerComponent
     },
     data() {
         return {};
     },
     computed: {
+        errors: function() {
+            return this.$store.state.data.errors;
+        },
         messages: function() {
             return this.$store.state.messages;
         },
