@@ -14,7 +14,7 @@ module.exports = {
     devtool: "none",
     entry: ["./src/vendor.js", "./src/index.js"],
     output: {
-        path: path.resolve(__dirname, "dist"),
+        path: path.resolve(__dirname, "..", "loader", "src", "viewer"),
         filename: "[name].[contenthash].bundle.js",
     },
     optimization: {
