@@ -1,6 +1,6 @@
 import { pathExists, copy } from "fs-extra";
 import path from "path";
-import { has, groupBy, compact, isEmpty } from "lodash";
+import { has, groupBy, compact, isEmpty, isPlainObject } from "lodash";
 import Exceljs from "exceljs";
 import { ensureDir, writeJSON } from "fs-extra";
 import { store } from "../renderer/store";
@@ -146,13 +146,25 @@ export function sheetToJson({ sheet, headerRowNumber = 1 }) {
         if (isEmpty(compact(row.map((cell) => cell.value)))) return null;
 
         row.forEach((cell) => {
-            let key = headers[cell.column];
-            let value = cell.value ? String(cell.value).trim() : null;
-            data.push({ key, value });
+            let key = headers[cell.column].replace("\n", "");
+            if (isPlainObject(cell.value) && cell.value.richText) {
+                let value = cell.value.richText.map((fragment) => {
+                    if (!fragment.font) return fragment.text;
+                    if (fragment.font && fragment.font.italic)
+                        return `<em>${fragment.text}</em>`;
+                    if (fragment.font && fragment.font.bold)
+                        return `<strong>${fragment.text}</strong>`;
+                    return fragment.text;
+                });
+                data.push({ key, value: value.join(" ") });
+            } else {
+                data.push({ key, value: cell.value });
+            }
         });
         data = groupBy(data, "key");
         for (let key of Object.keys(data)) {
             data[key] = data[key].map((k) => k.value);
+            data[key] = compact(data[key]);
         }
         return data;
     });

@@ -1,31 +1,24 @@
 <template>
-    <div class="flex flex-col my-2">
-        <div class="text-center">{{audio.name}}</div>
-        <div class="style-audio-icon">
-            <i class="fal fa-volume-up"></i>
-        </div>
-        <div class="my-2">
-            <audio controls ref="audioElement" class="style-audio-element inline-block">
-                <source :src="item" v-for="(item, idx) of audio.item" :key="idx" />Your browser does not support the
-                <code>audio</code> element.
-            </audio>
-        </div>
-    </div>
+    <audio controls ref="audioElement" class="w-full">
+        <source :src="audioSrc" />
+        Your browser does not support the <code>audio</code> element.
+    </audio>
 </template>
 
 <script>
-import ItemInformation from "./ItemInformation.component.vue";
-
 export default {
     props: {
-        audio: Object
-    },
-    components: {
-        ItemInformation
+        src: String,
+        required: true,
     },
     data() {
         return {};
-    }
+    },
+    computed: {
+        audioSrc: function() {
+            return `/repository/${this.src}`;
+        },
+    },
 };
 </script>
 
@@ -39,6 +32,3 @@ export default {
     width: 90%;
 }
 </style>
-
-
-

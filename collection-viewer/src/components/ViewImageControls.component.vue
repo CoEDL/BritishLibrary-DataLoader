@@ -3,17 +3,24 @@
         <div class="controls-overlay">
             <div class="flex flex-col">
                 <div>
-                    <span @click="closeControls" class="p-2 float-right style-close">
+                    <span
+                        @click="closeControls"
+                        class="p-2 float-right style-close"
+                    >
                         <i class="fal fa-times"></i>
                     </span>
                 </div>
                 <div class="text-center">
-                    <span class="style-title">{{image.title}}</span>
-                    <span class="style-image-name">{{image.name}}</span>
+                    <span class="style-title">{{ image.title }}</span>
+                    <span class="style-image-name">{{ image.name }}</span>
                 </div>
 
                 <div class="flex flex-row flex-grow justify-center my-5">
-                    <el-button @click="start" :disabled="disablePrevious" circle>
+                    <el-button
+                        @click="start"
+                        :disabled="disablePrevious"
+                        circle
+                    >
                         <i class="fas fa-chevron-double-left fa-fw"></i>
                     </el-button>
                     <el-button @click="back" :disabled="disablePrevious" circle>
@@ -42,18 +49,18 @@ import { findIndex } from "lodash";
 
 export default {
     props: {
-        image: Object
+        image: Object,
     },
     data() {
         return {
             disablePrevious: true,
-            disableNext: true
+            disableNext: true,
         };
     },
     watch: {
         "image.name": function() {
             this.toggleControls();
-        }
+        },
     },
     mounted() {
         this.toggleControls();
@@ -62,7 +69,7 @@ export default {
         toggleControls() {
             let item = this.$store.getters.item({
                 collectionId: this.image.collectionId,
-                itemId: this.image.itemId
+                itemId: this.image.itemId,
             });
             let imageIndex = findIndex(item.images, { name: this.image.name });
             this.disablePrevious = imageIndex === 0 ? true : false;
@@ -89,29 +96,7 @@ export default {
         },
         end() {
             this.$emit("jump-to-end");
-        }
-    }
+        },
+    },
 };
 </script>
-
-<style lang="scss" scoped>
-@import "assets/global-styles.scss";
-
-.controls-overlay {
-    top: 0;
-    left: 0;
-    position: fixed;
-    padding: 0 15px;
-    width: 100vw;
-    z-index: 10000;
-    background-color: #ececec;
-    color: $background-color-dark;
-}
-
-.style-control {
-    cursor: pointer;
-}
-</style>
-
-
-

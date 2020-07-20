@@ -13,7 +13,7 @@ module.exports = {
     entry: ["./src/vendor.js", "./src/index.js"],
     output: {
         path: path.resolve(__dirname, "dist"),
-        filename: "[name].[hash].bundle.js"
+        filename: "[name].[hash].bundle.js",
     },
 
     optimization: {
@@ -21,15 +21,15 @@ module.exports = {
             cacheGroups: {
                 vendor: {
                     test: /node_modules/,
-                    chunks: "all"
-                }
-            }
-        }
+                    chunks: "all",
+                },
+            },
+        },
     },
     watch: true,
     watchOptions: {
         poll: 1000,
-        ignored: ["git", "node_modules"]
+        ignored: ["git", "node_modules"],
     },
     devServer: {
         contentBase: path.join(__dirname, "dist"),
@@ -40,41 +40,41 @@ module.exports = {
         watchOptions: {
             watch: true,
             poll: 1000,
-            ignored: ["node_modules", "dist"]
-        }
+            ignored: ["node_modules", "dist"],
+        },
     },
     plugins: [
         new webpack.DefinePlugin({
-            "process.env.NODE_ENV": JSON.stringify("development")
+            "process.env.NODE_ENV": JSON.stringify("development"),
         }),
         new CleanWebpackPlugin({
-            cleanOnceBeforeBuildPatterns: ["*.js", "*.css"]
+            cleanOnceBeforeBuildPatterns: ["*.js", "*.css"],
         }),
         new HtmlWebpackPlugin({
             title: "PARADISEC Collection Viewer",
-            template: "./src/index.html"
+            template: "./src/index.html",
         }),
-        new VueLoaderPlugin()
+        new VueLoaderPlugin(),
     ],
     module: {
         rules: [
             {
                 test: /\.vue$/,
-                loader: "vue-loader"
+                loader: "vue-loader",
             },
             {
                 test: /\.js$/,
                 loader: "babel-loader",
                 exclude: /node_modules/,
-                query: { compact: false }
+                query: { compact: false },
             },
             {
                 test: /\.css$/,
                 use: [
                     "vue-style-loader",
                     { loader: "css-loader", options: { importLoaders: 1 } },
-                    "postcss-loader"
-                ]
+                    "postcss-loader",
+                ],
             },
             {
                 test: /\.scss$/,
@@ -82,14 +82,14 @@ module.exports = {
                     "vue-style-loader",
                     { loader: "css-loader", options: { importLoaders: 1 } },
                     "postcss-loader",
-                    "sass-loader"
-                ]
+                    "sass-loader",
+                ],
             },
             {
-                test: /\.(woff|woff2|ttf|eot|svg|png|jp(e*)g|gif)?$/,
-                loader: "file-loader?name=res/[name].[ext]?[hash]"
-            }
-        ]
+                test: /\.(woff|woff2|ttf|eot|svg|png|jp(e*)g|gif|webp)?$/,
+                loader: "file-loader?name=res/[name].[ext]?[hash]",
+            },
+        ],
     },
     resolve: {
         alias: {
@@ -100,7 +100,7 @@ module.exports = {
             directives: path.resolve(__dirname, "src/directives"),
             routes: path.resolve(__dirname, "src/routes/"),
             services: path.resolve(__dirname, "src/services"),
-            store: path.resolve(__dirname, "src/store")
-        }
-    }
+            store: path.resolve(__dirname, "src/store"),
+        },
+    },
 };

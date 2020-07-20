@@ -1,4 +1,3 @@
-@import "./variables.scss";
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap");
 
@@ -8,48 +7,67 @@ body {
     margin: 0;
 }
 
-heading-text {
+.heading-text {
     font-family: "Noto Sans", sans-serif;
 }
 
-body-text {
+.body-text {
     font-family: "Noto Serif", serif;
 }
 
-heading-text-size {
+.heading-text-size {
     font-size: 24px;
 }
 
-page-title-size {
+.page-title-size {
     font-size: 32px;
 }
 
-body-text-size {
+.body-text-size {
     font-size: 16px;
 }
 
-text-cloud-burst {
+.text-cloud-burst {
     color: #203356;
 }
-text-link-water {
+.text-link-water {
     color: #d9edf7;
 }
-text-golden-sand {
+.text-golden-sand {
     color: #f5d473;
 }
-text-tundora {
+.text-tundora {
     color: #404040;
 }
 
-bg-cloud-burst {
+.bg-cloud-burst {
     background-color: #203356;
 }
-bg-link-water {
+.bg-link-water {
     background-color: #d9edf7;
 }
-bg-golden-sand {
+.bg-golden-sand {
     background-color: #f5d473;
 }
-bg-tundora {
+.bg-tundora {
     background-color: #404040;
+}
+
+a:link {
+    @extend .text-cloud-burst;
+}
+
+/* visited link */
+a:visited {
+    @extend .text-cloud-burst;
+}
+
+/* mouse over link */
+a:hover {
+    @extend .text-golden-sand;
+}
+
+/* selected link */
+a:active {
+    @extend .text-golden-sand;
 }

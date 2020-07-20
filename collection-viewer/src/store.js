@@ -15,8 +15,8 @@ const configuration = {
         selectedFilter: undefined,
         backup: {
             items: [],
-            collections: []
-        }
+            collections: [],
+        },
     },
     mutations: {
         reset(state) {
@@ -27,8 +27,8 @@ const configuration = {
                 selectedFilter: [],
                 backup: {
                     items: [],
-                    collections: []
-                }
+                    collections: [],
+                },
             };
         },
         saveData(state, payload) {
@@ -41,7 +41,7 @@ const configuration = {
             state.items = orderBy(payload.items, ["collectionId", "itemId"]);
             state.backup.items = orderBy(payload.items, [
                 "collectionId",
-                "itemId"
+                "itemId",
             ]);
         },
         setFilters(state, filters) {
@@ -52,15 +52,15 @@ const configuration = {
             if (selectedFilter) {
                 switch (selectedFilter.type) {
                     case "people":
-                        state.items = state.backup.items.filter(item => {
-                            return item.people.filter(person => {
+                        state.items = state.backup.items.filter((item) => {
+                            return item.people.filter((person) => {
                                 return person.name === selectedFilter.value;
                             }).length;
                         });
                         state.collections = state.backup.collections.filter(
-                            collection => {
+                            (collection) => {
                                 return collection[selectedFilter.type].filter(
-                                    type => {
+                                    (type) => {
                                         return (
                                             type.name === selectedFilter.value
                                         );
@@ -71,16 +71,16 @@ const configuration = {
                         break;
                     case "title":
                         state.items = state.backup.items.filter(
-                            item => item.title === selectedFilter.value
+                            (item) => item.title === selectedFilter.value
                         );
                         state.collections = state.backup.collections.filter(
-                            collection =>
+                            (collection) =>
                                 collection.title === selectedFilter.value
                         );
                         break;
                     case "genre":
-                        state.items = state.backup.items.filter(item => {
-                            return item.classifications.filter(c => {
+                        state.items = state.backup.items.filter((item) => {
+                            return item.classifications.filter((c) => {
                                 return (
                                     c.name === "genre" &&
                                     c.value === selectedFilter.value
@@ -88,24 +88,26 @@ const configuration = {
                             }).length;
                         });
                         state.collections = state.backup.collections.filter(
-                            collection => {
-                                return collection.classifications.filter(c => {
-                                    return (
-                                        c.name === "genre" &&
-                                        c.value === selectedFilter.value
-                                    );
-                                }).length;
+                            (collection) => {
+                                return collection.classifications.filter(
+                                    (c) => {
+                                        return (
+                                            c.name === "genre" &&
+                                            c.value === selectedFilter.value
+                                        );
+                                    }
+                                ).length;
                             }
                         );
                         break;
                     case "language":
-                        state.items = state.backup.items.filter(item => {
+                        state.items = state.backup.items.filter((item) => {
                             return item.languages.includes(
                                 selectedFilter.value
                             );
                         });
                         state.collections = state.backup.collections.filter(
-                            collection => {
+                            (collection) => {
                                 return collection.languages.includes(
                                     selectedFilter.value
                                 );
@@ -113,13 +115,13 @@ const configuration = {
                         );
                         break;
                     case "category":
-                        state.items = state.backup.items.filter(item => {
+                        state.items = state.backup.items.filter((item) => {
                             return item.categories.includes(
                                 selectedFilter.value
                             );
                         });
                         state.collections = state.backup.collections.filter(
-                            collection => {
+                            (collection) => {
                                 return collection.categories.includes(
                                     selectedFilter.value
                                 );
@@ -129,16 +131,16 @@ const configuration = {
                 }
                 if (state.collections.length) {
                     let collectionIds = state.collections.map(
-                        c => c.collectionId
+                        (c) => c.collectionId
                     );
-                    state.items = state.backup.items.filter(item =>
+                    state.items = state.backup.items.filter((item) =>
                         collectionIds.includes(item.collectionId)
                     );
                 } else if (state.items.length) {
                     let collectionIds = state.items.map(
-                        item => item.collectionId
+                        (item) => item.collectionId
                     );
-                    state.collections = state.backup.collections.filter(c =>
+                    state.collections = state.backup.collections.filter((c) =>
                         collectionIds.includes(c.collectionId)
                     );
                 }
@@ -146,37 +148,36 @@ const configuration = {
                 state.items = [...state.backup.items];
                 state.collections = [...state.backup.collections];
             }
-        }
+        },
     },
     getters: {
-        itemsFlattened: state => {
+        itemsFlattened: (state) => {
             return flattenDeep(
-                state.items.map(item => {
+                state.items.map((item) => {
                     let components = [];
                     if (item.images.length) {
                         components.push({
                             ...item.images[0],
-                            images: item.images
+                            images: item.images,
                         });
                     }
                     return [...components, ...item.audio, ...item.video];
                 })
             );
         },
-        item: state => ({ collectionId, itemId }) => {
-            return state.items.filter(item => {
+        item: (state) => ({ collectionId, itemId }) => {
+            return state.items.filter((item) => {
                 return (
                     item.collectionId === collectionId && item.itemId === itemId
                 );
             })[0];
-        }
+        },
     },
     actions: {
         async loadData({ commit }) {
-            let { items, collections, filters } = await loadData();
+            let { items, collections } = await loadData();
             commit("saveData", { items, collections });
-            commit("setFilters", filters);
-        }
-    }
+        },
+    },
 };
 export const store = new Vuex.Store(configuration);

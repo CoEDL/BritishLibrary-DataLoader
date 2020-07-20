@@ -15,7 +15,7 @@ module.exports = {
     entry: ["./src/vendor.js", "./src/index.js"],
     output: {
         path: path.resolve(__dirname, "dist"),
-        filename: "[name].[contenthash].bundle.js"
+        filename: "[name].[contenthash].bundle.js",
     },
     optimization: {
         moduleIds: "hashed",
@@ -25,47 +25,47 @@ module.exports = {
                 vendor: {
                     test: /[\\/]node_modules[\\/]/,
                     name: "vendors",
-                    chunks: "all"
-                }
-            }
+                    chunks: "all",
+                },
+            },
         },
-        minimizer: [new TerserPlugin(), new OptimizeCSSAssetsPlugin({})]
+        minimizer: [new TerserPlugin(), new OptimizeCSSAssetsPlugin({})],
     },
     plugins: [
         new webpack.DefinePlugin({
-            "process.env.NODE_ENV": JSON.stringify("production")
+            "process.env.NODE_ENV": JSON.stringify("production"),
         }),
         new MiniCssExtractPlugin({
-            filename: "[name].[contenthash].css"
+            filename: "[name].[contenthash].css",
         }),
         new CleanWebpackPlugin({
-            cleanOnceBeforeBuildPatterns: ["*.js", "*.css", "*.LICENSE"]
+            cleanOnceBeforeBuildPatterns: ["*.js", "*.css", "*.LICENSE"],
         }),
         new HtmlWebpackPlugin({
             title: "Mobile Collection Viewer",
-            template: "./src/index.html"
+            template: "./src/index.html",
         }),
-        new VueLoaderPlugin()
+        new VueLoaderPlugin(),
     ],
     module: {
         rules: [
             {
                 test: /\.vue$/,
-                loader: "vue-loader"
+                loader: "vue-loader",
             },
             {
                 test: /\.js$/,
                 loader: "babel-loader",
                 exclude: /node_modules/,
-                query: { compact: false }
+                query: { compact: false },
             },
             {
                 test: /\.css$/,
                 use: [
                     MiniCssExtractPlugin.loader,
                     "css-loader",
-                    "postcss-loader"
-                ]
+                    "postcss-loader",
+                ],
             },
             {
                 test: /\.scss$/,
@@ -73,14 +73,14 @@ module.exports = {
                     MiniCssExtractPlugin.loader,
                     "css-loader",
                     "postcss-loader",
-                    "sass-loader"
-                ]
+                    "sass-loader",
+                ],
             },
             {
-                test: /\.(woff|woff2|ttf|eot|svg|png|jp(e*)g|gif)?$/,
-                loader: "file-loader?name=res/[name].[ext]?[hash]"
-            }
-        ]
+                test: /\.(woff|woff2|ttf|eot|svg|png|jp(e*)g|gif|webp)?$/,
+                loader: "file-loader?name=res/[name].[ext]?[hash]",
+            },
+        ],
     },
     resolve: {
         alias: {
@@ -91,7 +91,7 @@ module.exports = {
             directives: path.resolve(__dirname, "src/directives"),
             routes: path.resolve(__dirname, "src/routes/"),
             services: path.resolve(__dirname, "src/services"),
-            store: path.resolve(__dirname, "src/store")
-        }
-    }
+            store: path.resolve(__dirname, "src/store"),
+        },
+    },
 };
