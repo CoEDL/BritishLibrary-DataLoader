@@ -85,6 +85,14 @@ export class DataLoader {
     }
 
     async load({ target, data, dataOnly = false }) {
+        if (!dataOnly) {
+            let viewerSource;
+            if (process.env.NODE_ENV === "development") {
+                viewerSource = path.join(__dirname, "..", "viewer");
+            }
+            await copy(viewerSource, target);
+        }
+
         target = `${target}/repository`;
         await ensureDir(target);
         store.commit("resetMessages");
@@ -105,10 +113,6 @@ export class DataLoader {
             } catch (error) {
                 console.log(error.message);
             }
-        }
-
-        if (!dataOnly) {
-            // TODO: install the viewer
         }
     }
 }
