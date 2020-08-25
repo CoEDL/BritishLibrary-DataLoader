@@ -1,8 +1,8 @@
 <template>
     <div class="bg-cloudburst flex flex-row justify-between p-4">
-        <router-link :to="{ name: 'menu' }">
+        <router-link :to="{ name: 'home' }">
             <div class="text-white text-2xl">
-                <i class="fas fa-bars"></i>
+                <i class="fas fa-home"></i>
             </div>
         </router-link>
         <router-link :to="{ name: 'home' }">
@@ -10,8 +10,13 @@
                 True Echoes
             </div>
         </router-link>
-        <router-link :to="{ name: 'search' }">
+        <!-- <router-link :to="{ name: 'search' }">
             <div class="text-white text-2xl"><i class="fas fa-search"></i></div>
+        </router-link> -->
+        <router-link :to="{ name: 'menu' }">
+            <div class="text-white text-2xl">
+                <i class="fas fa-bars"></i>
+            </div>
         </router-link>
     </div>
 </template>
