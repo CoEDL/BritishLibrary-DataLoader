@@ -1,6 +1,6 @@
 <template>
     <div
-        class="p-2 text-base border-b-2 border-cloudburst"
+        class="p-2 text-base cursor-pointer bg-gray-200 rounded-lg m-2"
         @click="displayItem"
     >
         <div class="flex flex-col space-y-4">
