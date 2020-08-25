@@ -20,14 +20,14 @@
         >
             <router-link :to="{ name: 'browse' }" class="md:flex-grow">
                 <div
-                    class="rounded-lg text-center text-xl md:text-3xl text-white bg-cloud-burst py-4"
+                    class="rounded-lg text-center text-xl md:text-3xl text-white bg-cloudburst py-4"
                 >
                     Browse the recordings
                 </div>
             </router-link>
             <router-link :to="{ name: 'about' }" class="md:flex-grow">
                 <div
-                    class="rounded-lg text-center text-xl md:text-3xl text-white bg-cloud-burst py-4"
+                    class="rounded-lg text-center text-xl md:text-3xl text-white bg-cloudburst py-4"
                 >
                     What is True Echoes?
                 </div>

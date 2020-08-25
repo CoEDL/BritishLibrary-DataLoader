@@ -20,7 +20,7 @@
                         :key="idx"
                     >
                         <div
-                            class="flex flex-col px-2 md:px-6"
+                            class="flex flex-col px-2 md:px-6 bg-link-water m-4"
                             v-for="(items, name, idx2) of collection"
                             :key="idx2"
                         >

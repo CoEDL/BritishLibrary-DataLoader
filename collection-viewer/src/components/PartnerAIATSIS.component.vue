@@ -1,7 +1,7 @@
 <template>
     <div class="flex flex-col">
         <div
-            class="heading-text page-title-size bg-golden-sand py-6 px-2 flex flex-col"
+            class="heading-text page-title-size bg-goldensand py-6 px-2 flex flex-col"
         >
             <div>
                 <img :src="image" class="w-40" />

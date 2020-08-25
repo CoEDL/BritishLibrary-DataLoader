@@ -1,7 +1,7 @@
 <template>
     <div
         class="flex flex-col heading-text heading-text-size cursor-pointer
-        hover:bg-golden-sand"
+        hover:bg-goldensand"
     >
         <router-link :to="{ name: 'home' }" class="flex flex-row p-4">
             <div class="flex-grow pt-2">Menu</div>

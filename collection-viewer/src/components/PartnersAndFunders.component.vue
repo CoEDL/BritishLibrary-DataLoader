@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-col">
-        <div class="heading-text page-title-size bg-golden-sand py-6 px-2">
+        <div class="heading-text page-title-size bg-goldensand py-6 px-2">
             Partners and funders
         </div>
         <div class="mt-6 m-2 lg:mx-6 lg:text-2xl">
@@ -10,49 +10,49 @@
         <div class="m-2 lg:mx-6 lg:text-2xl">
             <div class="font-bold">Partners include:</div>
             <ul class="pl-8 list-disc">
-                <li>
+                <li class="hover:text-celadonblue">
                     <router-link to="/partner/british-library">
                         The British Library
                     </router-link>
                 </li>
-                <li>
+                <li class="hover:text-celadonblue">
                     <router-link to="/partner/ipngs">
                         Institute of Papua New Guinea Studies
                     </router-link>
                 </li>
-                <li>
+                <li class="hover:text-celadonblue">
                     <router-link to="/partner/aiatsis">
                         AIATSIS [Australian Institute of Aboriginal and Torres
                         Strait Islander Studies]
                     </router-link>
                 </li>
-                <li>
+                <li class="hover:text-celadonblue">
                     <router-link to="/partner/vks">
                         Vanuatu Kaljoral Senta
                     </router-link>
                 </li>
-                <li>
+                <li class="hover:text-celadonblue">
                     <router-link to="/partner/sinm">
                         Solomon Islands Archives and Museum
                     </router-link>
                 </li>
-                <li>
+                <li class="hover:text-celadonblue">
                     <router-link to="/partner/tccnc">
                         Tjibaou Cultural Centre, New Caledonia
                     </router-link>
                 </li>
-                <li>
+                <li class="hover:text-celadonblue">
                     <router-link to="/partner/paradisec">
                         PARADISEC [Pacific and Regional Archive for Digital
                         Sources in Endangered Cultures, Australia]
                     </router-link>
                 </li>
-                <li>
+                <li class="hover:text-celadonblue">
                     <router-link to="/partner/maa">
                         Cambridge Museum of Archaeology and Anthropology
                     </router-link>
                 </li>
-                <li>
+                <li class="hover:text-celadonblue">
                     British Museum
                 </li>
             </ul>

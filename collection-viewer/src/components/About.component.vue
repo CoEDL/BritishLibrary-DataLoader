@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-col">
-        <div class="heading-text page-title-size bg-golden-sand py-6 px-2">
+        <div class="heading-text page-title-size bg-goldensand py-6 px-2">
             About True Echoes
         </div>
         <p class="mt-6 m-2 lg:mx-6 lg:text-2xl">
