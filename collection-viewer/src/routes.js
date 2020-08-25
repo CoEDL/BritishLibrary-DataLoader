@@ -6,6 +6,7 @@ Vue.use(VueRouter);
 
 import BadRequestComponent from "components/BadRequest.component.vue";
 import HomeComponent from "components/Home.component.vue";
+import BrowseCollectionItemsComponent from "components/BrowseCollectionItems.component.vue";
 import MenuComponent from "components/Menu.component.vue";
 import AboutComponent from "components/About.component.vue";
 import BrowseComponent from "components/Browse.component.vue";
@@ -38,6 +39,11 @@ export const router = new VueRouter({
             path: "/",
             name: "home",
             component: HomeComponent,
+        },
+        {
+            path: "/collection/:collectionId",
+            props: true,
+            component: BrowseCollectionItemsComponent,
         },
         {
             path: "/menu",

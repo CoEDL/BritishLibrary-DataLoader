@@ -2,7 +2,7 @@
 
 import Vue from "vue";
 import Vuex from "vuex";
-import { flattenDeep, orderBy } from "lodash";
+import { flattenDeep, orderBy, cloneDeep } from "lodash";
 Vue.use(Vuex);
 import { loadData } from "./data-loader.service";
 
@@ -38,11 +38,13 @@ const configuration = {
                 "collectionId"
             );
 
-            state.items = orderBy(payload.items, ["collectionId", "itemId"]);
-            state.backup.items = orderBy(payload.items, [
-                "collectionId",
-                "itemId",
-            ]);
+            // state.items = orderBy(payload.items, ["collectionId", "itemId"]);
+            // state.backup.items = orderBy(payload.items, [
+            //     "collectionId",
+            //     "itemId",
+            // ]);
+            state.items = { ...payload.items };
+            state.backup.items = { ...payload.items };
         },
         setFilters(state, filters) {
             state.filters = [...filters];
@@ -171,6 +173,9 @@ const configuration = {
                     item.collectionId === collectionId && item.itemId === itemId
                 );
             })[0];
+        },
+        collectionItems: (state) => ({ collectionId }) => {
+            return cloneDeep(state.items[collectionId]);
         },
     },
     actions: {

@@ -1,5 +1,8 @@
 <template>
-    <div class="border border-gray-200 rounded p-2 md:p-8 text-base">
+    <div
+        class="p-2 text-base border-b-2 border-cloudburst"
+        @click="displayItem"
+    >
         <div class="flex flex-col space-y-4">
             <div class="flex flex-col md:flex-row">
                 <div class="text-ld md:text-2xl pr-2">
@@ -54,6 +57,12 @@ export default {
     },
     data() {
         return {};
+    },
+    methods: {
+        displayItem() {
+            console.log(this.collection.Shelfmark[0]);
+            this.$router.push(`/collection/${this.collection.Shelfmark[0]}`);
+        },
     },
 };
 </script>
