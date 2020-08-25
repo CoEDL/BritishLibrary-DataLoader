@@ -5,20 +5,21 @@
         </div>
         <p class="mt-6 m-2 lg:mx-6 lg:text-2xl">
             True Echoes is a research project that aims to reconnect a rich
-            archive of early sound recordings of cultures from the Pacific
-            region with the communities from which they originate.
+            archive of early sound recordings of Oceanic cultures with the
+            communities from which they originate.
         </p>
         <p class="m-2 lg:mx-6 lg:text-2xl">
-            True Echoes uses digitised wax cylinder recordings that date from
-            the late 19th and early 20th centuries, and which represent some of
-            the earliest uses of sound in anthropological research.
+            True Echoes uses digitised wax cylinder recordings created using the
+            phonograph. These recordings date from the late 19th and early 20th
+            centuries and represent some of the earliest uses of sound in
+            anthropological research. They are currently held by the British
+            Library Sound Archive.
         </p>
         <p class="m-2 lg:mx-6 lg:text-2xl">
             Beginning with recordings made in 1898 by members of the Cambridge
             Anthropological Expedition to Torres Straits, the wax cylinder
-            collection held by the British Library Sound Archive also includes
-            recordings made in Papua New Guinea, the Solomon Islands, Vanuatu,
-            New Caledonia and Australia.
+            collection includes recordings made in Papua New Guinea, the Solomon
+            Islands, Vanuatu, New Caledonia and Australia.
         </p>
         <p class="m-2 lg:mx-6 lg:text-2xl">
             These rare recordings are hugely significant as the earliest
