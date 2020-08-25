@@ -19,6 +19,7 @@ import PartnerPARADISECComponent from "components/PartnerPARADISEC.component.vue
 import PartnerVanuatuComponent from "components/PartnerVanuatu.component.vue";
 import PartnerSolomonsComponent from "components/PartnerSolomons.component.vue";
 import PartnerNewCaledoniaComponent from "components/PartnerNewCaledonia.component.vue";
+import PartnerMaaComponent from "./components/PartnerMaa.component.vue";
 
 // import ViewImageComponent from "components/ViewImage.component.vue";
 // import RenderItemListComponent from "components/RenderItemList.component.vue";
@@ -101,6 +102,11 @@ export const router = new VueRouter({
                     path: "tccnc",
                     name: "tccnc",
                     component: PartnerNewCaledoniaComponent,
+                },
+                {
+                    path: "maa",
+                    name: "maa",
+                    component: PartnerMaaComponent,
                 },
             ],
         },
