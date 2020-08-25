@@ -20,6 +20,7 @@ import PartnerVanuatuComponent from "components/PartnerVanuatu.component.vue";
 import PartnerSolomonsComponent from "components/PartnerSolomons.component.vue";
 import PartnerNewCaledoniaComponent from "components/PartnerNewCaledonia.component.vue";
 import PartnerMaaComponent from "./components/PartnerMaa.component.vue";
+import HowToComponent from "./components/HowTo.component.vue";
 
 // import ViewImageComponent from "components/ViewImage.component.vue";
 // import RenderItemListComponent from "components/RenderItemList.component.vue";
@@ -47,6 +48,11 @@ export const router = new VueRouter({
             path: "/about",
             name: "about",
             component: AboutComponent,
+        },
+        {
+            path: "/howto",
+            name: "howto",
+            component: HowToComponent,
         },
         {
             path: "/browse",

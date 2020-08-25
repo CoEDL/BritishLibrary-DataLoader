@@ -32,6 +32,13 @@
                     What is True Echoes?
                 </div>
             </router-link>
+            <router-link :to="{ name: 'howto' }" class="md:flex-grow">
+                <div
+                    class="rounded-lg text-center text-xl md:text-3xl text-white bg-cloudburst py-4"
+                >
+                    How to use this catalogue
+                </div>
+            </router-link>
         </div>
     </div>
 </template>
