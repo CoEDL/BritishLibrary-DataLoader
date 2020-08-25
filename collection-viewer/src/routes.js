@@ -14,6 +14,7 @@ import SearchComponent from "components/Search.component.vue";
 import PartnersAndFundersComponent from "components/PartnersAndFunders.component.vue";
 import PartnerComponent from "components/Partner.component.vue";
 import PartnerBritishLibraryComponent from "components/PartnerBritishLibrary.component.vue";
+import PartnerBritishMuseumComponent from "components/PartnerBritishMuseum.component.vue";
 import PartnerPNGComponent from "components/PartnerPNG.component.vue";
 import PartnerAIATSISComponent from "components/PartnerAIATSIS.component.vue";
 import PartnerPARADISECComponent from "components/PartnerPARADISEC.component.vue";
@@ -84,6 +85,11 @@ export const router = new VueRouter({
                     path: "british-library",
                     name: "british-library",
                     component: PartnerBritishLibraryComponent,
+                },
+                {
+                    path: "british-museum",
+                    name: "british-museum",
+                    component: PartnerBritishMuseumComponent,
                 },
                 {
                     path: "ipngs",

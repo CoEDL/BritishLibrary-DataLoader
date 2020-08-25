@@ -53,7 +53,9 @@
                     </router-link>
                 </li>
                 <li class="hover:text-celadonblue">
-                    British Museum
+                    <router-link to="/partner/british-museum">
+                        British Museum
+                    </router-link>
                 </li>
             </ul>
         </div>
