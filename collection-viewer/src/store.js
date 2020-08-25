@@ -9,6 +9,7 @@ import { loadData } from "./data-loader.service";
 const configuration = {
     strict: process.env.NODE_ENV !== "production",
     state: {
+        disclaimer: true,
         items: [],
         collections: [],
         filters: [],
@@ -150,6 +151,9 @@ const configuration = {
                 state.items = [...state.backup.items];
                 state.collections = [...state.backup.collections];
             }
+        },
+        setDisclaimerState(state, payload) {
+            state.disclaimer = payload;
         },
     },
     getters: {

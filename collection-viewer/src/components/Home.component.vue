@@ -40,6 +40,25 @@
                 </div>
             </router-link>
         </div>
+
+        <el-dialog
+            title="Disclaimer"
+            :visible.sync="dialogVisible"
+            width="90%"
+            :before-close="handleClose"
+        >
+            <div class="text-base md:text-xl break-normal">
+                Aboriginal and Torres Strait Islander people should be aware
+                that this catalogue and website may contain images, voices or
+                names of deceased persons in photographs, film, audio recordings
+                or printed material.
+            </div>
+            <div class="text-base md:text-xl my-4 break-normal">
+                The collections may also contain recordings of ceremonial,
+                sacred or secret materials that may not yet be classified as
+                public.
+            </div>
+        </el-dialog>
     </div>
 </template>
 
@@ -50,6 +69,17 @@ export default {
         return {
             image,
         };
+    },
+    computed: {
+        dialogVisible: function() {
+            return this.$store.state.disclaimer;
+        },
+    },
+    methods: {
+        handleClose() {
+            console.log("here");
+            this.$store.commit("setDisclaimerState", false);
+        },
     },
 };
 </script>
