@@ -3,10 +3,7 @@
         <div
             class="heading-text page-title-size bg-goldensand py-6 px-2 flex flex-row"
         >
-            <div>
-                <img :src="image" class="h-16" />
-            </div>
-            <div class="ml-4">
+            <div class="">
                 PARADISEC
             </div>
         </div>
@@ -39,6 +36,9 @@
                 archiving. PARADISEC also work with cultural centres in the
                 Pacific to support the management and digitisation of their own
                 collections.
+            </div>
+            <div>
+                <img :src="image" class="h-16" />
             </div>
         </div>
     </div>

@@ -3,10 +3,7 @@
         <div
             class="heading-text page-title-size bg-goldensand py-6 px-2 flex flex-row"
         >
-            <div>
-                <img :src="image" class="w-32 md:w-20 pt-10 md:pt-0" />
-            </div>
-            <div class="ml-4">
+            <div class="">
                 Solomon Islands Archives and Museum
             </div>
         </div>
@@ -33,6 +30,9 @@
                 of both the SINM and Solomon Islands, and encourage a better
                 understanding of the people, culture and environment of Solomon
                 Islands.
+            </div>
+            <div>
+                <img :src="image" class="w-32 md:w-20 pt-10 md:pt-0" />
             </div>
         </div>
     </div>

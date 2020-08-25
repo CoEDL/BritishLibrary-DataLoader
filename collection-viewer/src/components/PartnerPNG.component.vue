@@ -3,10 +3,7 @@
         <div
             class="heading-text page-title-size bg-goldensand py-6 px-2 flex flex-row"
         >
-            <div class="w-1/5 md:w-auto pt-2 md:-mt-4">
-                <img :src="image" class="h-20" />
-            </div>
-            <div class="ml-4">
+            <div class="">
                 Institute of Papua New Guinea Studies
             </div>
         </div>
@@ -30,6 +27,9 @@
                 around 12,000 hours of recordings on reels, cassettes and discs,
                 as well as films, photos, and published and unpublished printed
                 works.
+            </div>
+            <div class="w-1/5 md:w-auto pt-2 md:-mt-4">
+                <img :src="image" class="h-20" />
             </div>
         </div>
     </div>

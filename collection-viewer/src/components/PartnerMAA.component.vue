@@ -3,10 +3,7 @@
         <div
             class="heading-text page-title-size bg-goldensand py-6 px-2 flex flex-row"
         >
-            <div>
-                <img :src="image" class="h-16" />
-            </div>
-            <div class="ml-4">
+            <div class="">
                 PARADISEC
             </div>
         </div>
@@ -34,6 +31,9 @@
                 innovative exhibitions which draw contemporary artists into
                 dialogue with the historic collections.
             </div>
+            <!-- <div>
+                <img :src="image" class="h-16" />
+            </div> -->
         </div>
     </div>
 </template>

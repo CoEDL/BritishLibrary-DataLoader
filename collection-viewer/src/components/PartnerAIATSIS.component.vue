@@ -3,9 +3,6 @@
         <div
             class="heading-text page-title-size bg-goldensand py-6 px-2 flex flex-col"
         >
-            <div>
-                <img :src="image" class="w-40" />
-            </div>
             <div class="">
                 Australian Institute of Aboriginal and Torres Strait Islander
                 Studies
@@ -35,6 +32,9 @@
                 AIATSIS, originally established by an Act of the Parliament of
                 Australia in 1964 as AIAS, was reconstituted in 1989 as AIATSIS.
                 It is based in Canberra, Australia.
+            </div>
+            <div>
+                <img :src="image" class="w-40" />
             </div>
         </div>
     </div>

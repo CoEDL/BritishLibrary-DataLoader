@@ -3,10 +3,7 @@
         <div
             class="heading-text page-title-size bg-goldensand py-6 px-2 flex flex-row"
         >
-            <div>
-                <img :src="image" class="w-20 pt-4 md:pt-0" />
-            </div>
-            <div class="ml-4">
+            <div class="">
                 Vanuatu Kaljoral Senta
             </div>
         </div>
@@ -27,6 +24,9 @@
                 established in the 1960s and is responsible for collecting,
                 preserving and promoting the cultural collections of film, photo
                 and audio recordings.
+            </div>
+            <div>
+                <img :src="image" class="w-20 pt-4 md:pt-0" />
             </div>
         </div>
     </div>

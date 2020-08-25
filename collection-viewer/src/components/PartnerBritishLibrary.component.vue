@@ -3,10 +3,7 @@
         <div
             class="heading-text page-title-size bg-goldensand py-6 px-2 flex flex-row"
         >
-            <div>
-                <img :src="image" class="h-20" />
-            </div>
-            <div class="ml-4">
+            <div class="">
                 British Library
             </div>
         </div>
@@ -25,6 +22,9 @@
                 books, journals, manuscripts, maps, stamps, music, patents,
                 photographs, newspapers and sound recordings in all written and
                 spoken languages.
+            </div>
+            <div>
+                <img :src="image" class="h-20" />
             </div>
         </div>
     </div>
