@@ -1,7 +1,9 @@
 <template>
     <div class="container-fluid body-text-size body-text">
         <navbar />
-        <router-view class="style-view overflow-scroll"></router-view>
+        <div class="overflow-scroll" :style="{ height: height }">
+            <router-view></router-view>
+        </div>
     </div>
 </template>
 
@@ -12,6 +14,11 @@ export default {
     el: "#app",
     components: {
         Navbar,
+    },
+    computed: {
+        height: function() {
+            return `${window.innerHeight - 80}px`;
+        },
     },
     mounted() {
         this.$store.dispatch("loadData");
