@@ -4,7 +4,7 @@
             class="heading-text page-title-size bg-goldensand py-6 px-2 flex flex-row"
         >
             <div class="">
-                PARADISEC
+                Museum of Archaeology and Anthropology
             </div>
         </div>
         <div class="flex flex-col space-y-4 p-4">
