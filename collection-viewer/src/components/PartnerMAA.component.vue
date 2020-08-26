@@ -31,18 +31,24 @@
                 innovative exhibitions which draw contemporary artists into
                 dialogue with the historic collections.
             </div>
-            <!-- <div>
-                <img :src="image" class="h-16" />
-            </div> -->
+            <!-- <picture>
+                <source :srcset="image.png" />
+                <source :srcset="image.webp" />
+                <img
+                    :src="image.png"
+                    class="h-32 object-cover opacity-50 style-image mx-auto"
+                />
+            </picture> -->
         </div>
     </div>
 </template>
 
 <script>
-import image from "src/assets/images/PARADISEC_Logo.webp";
+import webp from "src/assets/images/PARADISEC_Logo.webp";
+import png from "src/assets/images/PARADISEC_Logo.webp";
 export default {
     data() {
-        return { image };
+        return { image: { webp, png } };
     },
 };
 </script>

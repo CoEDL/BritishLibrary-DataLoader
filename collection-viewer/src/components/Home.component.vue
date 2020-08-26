@@ -1,10 +1,14 @@
 <template>
     <div class="flex flex-col">
         <div class="relative">
-            <img
-                :src="image"
-                class="object-cover opacity-50 style-image mx-auto"
-            />
+            <picture>
+                <source :srcset="image.png" />
+                <source :srcset="image.webp" />
+                <img
+                    :src="image.png"
+                    class="object-cover opacity-50 style-image mx-auto"
+                />
+            </picture>
             <div
                 class="absolute text-center w-full inset-y-0 py-6 md:py-16 lg:py-32 object-fill"
             >
@@ -63,11 +67,15 @@
 </template>
 
 <script>
-import image from "src/assets/images/C62_0095.webp";
+import webp from "src/assets/images/C62_0095.webp";
+import png from "src/assets/images/C62_0095.png";
 export default {
     data() {
         return {
-            image,
+            image: {
+                webp,
+                png,
+            },
         };
     },
     computed: {
@@ -89,12 +97,12 @@ export default {
     max-height: 700px;
 }
 
-.background {
-    position: absolute;
-}
+// .background {
+//     position: absolute;
+// }
 
-.foreground {
-    position: absolute;
-    z-index: 10;
-}
+// .foreground {
+//     position: absolute;
+//     z-index: 10;
+// }
 </style>

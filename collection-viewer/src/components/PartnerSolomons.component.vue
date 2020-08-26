@@ -31,18 +31,24 @@
                 understanding of the people, culture and environment of Solomon
                 Islands.
             </div>
-            <div>
-                <img :src="image" class="w-32 md:w-20 pt-10 md:pt-0" />
-            </div>
+            <picture>
+                <source :srcset="image.png" />
+                <source :srcset="image.webp" />
+                <img
+                    :src="image.png"
+                    class="h-32 object-cover opacity-50 style-image mx-auto"
+                />
+            </picture>
         </div>
     </div>
 </template>
 
 <script>
-import image from "src/assets/images/SINM-Logo.webp";
+import webp from "src/assets/images/SINM-Logo.webp";
+import png from "src/assets/images/SINM-Logo.png";
 export default {
     data() {
-        return { image };
+        return { image: { webp, png } };
     },
 };
 </script>

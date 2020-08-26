@@ -33,18 +33,24 @@
                 Australia in 1964 as AIAS, was reconstituted in 1989 as AIATSIS.
                 It is based in Canberra, Australia.
             </div>
-            <div>
-                <img :src="image" class="w-40" />
-            </div>
+            <picture>
+                <source :srcset="image.png" />
+                <source :srcset="image.webp" />
+                <img
+                    :src="image.png"
+                    class="h-32 object-cover opacity-50 style-image mx-auto"
+                />
+            </picture>
         </div>
     </div>
 </template>
 
 <script>
-import image from "src/assets/images/AIATSIS.webp";
+import webp from "src/assets/images/AIATSIS.webp";
+import png from "src/assets/images/AIATSIS.png";
 export default {
     data() {
-        return { image };
+        return { image: { webp, png } };
     },
 };
 </script>

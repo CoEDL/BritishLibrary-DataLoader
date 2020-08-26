@@ -25,18 +25,24 @@
                 preserving and promoting the cultural collections of film, photo
                 and audio recordings.
             </div>
-            <div>
-                <img :src="image" class="w-20 pt-4 md:pt-0" />
-            </div>
+            <picture>
+                <source :srcset="image.png" />
+                <source :srcset="image.webp" />
+                <img
+                    :src="image.png"
+                    class="h-32 object-cover opacity-50 style-image mx-auto"
+                />
+            </picture>
         </div>
     </div>
 </template>
 
 <script>
-import image from "src/assets/images/VKS-logo.webp";
+import webp from "src/assets/images/VKS-logo.webp";
+import png from "src/assets/images/VKS-logo.png";
 export default {
     data() {
-        return { image };
+        return { image: { webp, png } };
     },
 };
 </script>

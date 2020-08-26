@@ -28,18 +28,24 @@
                 as well as films, photos, and published and unpublished printed
                 works.
             </div>
-            <div class="w-1/5 md:w-auto pt-2 md:-mt-4">
-                <img :src="image" class="h-20" />
-            </div>
+            <picture>
+                <source :srcset="image.png" />
+                <source :srcset="image.webp" />
+                <img
+                    :src="image.png"
+                    class="h-32 object-cover opacity-50 style-image mx-auto"
+                />
+            </picture>
         </div>
     </div>
 </template>
 
 <script>
-import image from "src/assets/images/IPNGS-logo.webp";
+import webp from "src/assets/images/IPNGS-logo.webp";
+import png from "src/assets/images/IPNGS-logo.png";
 export default {
     data() {
-        return { image };
+        return { image: { webp, png } };
     },
 };
 </script>

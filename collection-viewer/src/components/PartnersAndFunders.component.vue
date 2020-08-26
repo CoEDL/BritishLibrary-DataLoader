@@ -69,10 +69,24 @@
 
             <div class="flex flex-col md:flex-row md:space-x-4 md:px-4">
                 <div class="w-full md:w-1/2">
-                    <img :src="leverhulmeTrust" class="object-fit" />
+                    <picture>
+                        <source :srcset="leverhulmeTrust.png" />
+                        <source :srcset="leverhulmeTrust.webp" />
+                        <img
+                            :src="leverhulmeTrust.png"
+                            class="h-32 object-cover opacity-50 style-image mx-auto"
+                        />
+                    </picture>
                 </div>
                 <div class="w-full md:w-1/2 md:pt-6">
-                    <img :src="fundedByUkGov" class="object-fit" />
+                    <picture>
+                        <source :srcset="fundedByUkGov.png" />
+                        <source :srcset="fundedByUkGov.webp" />
+                        <img
+                            :src="leverhulmeTrust.png"
+                            class="h-32 object-cover opacity-50 style-image mx-auto"
+                        />
+                    </picture>
                 </div>
             </div>
         </div>
@@ -80,14 +94,22 @@
 </template>
 
 <script>
-import leverhulmeTrust from "src/assets/images/Leverhulme_Trust_RGB_blue.webp";
-import fundedByUkGov from "src/assets/images/Funded-by-UK-Gov.webp";
+import leverhulmeTrustWebp from "src/assets/images/Leverhulme_Trust_RGB_blue.webp";
+import leverhulmeTrustPng from "src/assets/images/Leverhulme_Trust_RGB_blue.png";
+import fundedByUkGovWebp from "src/assets/images/Funded-by-UK-Gov.webp";
+import fundedByUkGovPng from "src/assets/images/Funded-by-UK-Gov.png";
 
 export default {
     data() {
         return {
-            leverhulmeTrust,
-            fundedByUkGov,
+            leverhulmeTrust: {
+                webp: leverhulmeTrustWebp,
+                png: leverhulmeTrustPng,
+            },
+            fundedByUkGov: {
+                webp: fundedByUkGovWebp,
+                png: fundedByUkGovPng,
+            },
         };
     },
 };

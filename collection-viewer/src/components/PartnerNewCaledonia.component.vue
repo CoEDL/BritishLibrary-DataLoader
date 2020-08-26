@@ -3,9 +3,6 @@
         <div
             class="heading-text page-title-size bg-goldensand py-6 px-2 flex flex-row"
         >
-            <!-- <div>
-                <img :src="image" class="h-20" />
-            </div> -->
             <div class="">
                 Tjibaou Cultural Centre, New Caledonia
             </div>
@@ -25,14 +22,23 @@
                 centre, exhibition spaces, and a specialised multimedia library.
             </div>
         </div>
+        <!-- <picture>
+                <source :srcset="image.png" />
+                <source :srcset="image.webp" />
+                <img
+                    :src="image.png"
+                    class="h-32 object-cover opacity-50 style-image mx-auto"
+                />
+            </picture> -->
     </div>
 </template>
 
 <script>
-// import image from "src/assets/images/BritishLibrary.webp";
+import webp from "src/assets/images/BritishLibrary.webp";
+import png from "src/assets/images/BritishLibrary.png";
 export default {
     data() {
-        return {};
+        return { image: { webp, png } };
     },
 };
 </script>

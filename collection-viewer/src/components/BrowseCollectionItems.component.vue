@@ -5,6 +5,7 @@
             :key="idx"
             class="flex flex-col lg:justify-evenly my-2 bg-gray-200 mx-2 rounded-lg"
         >
+            <pre>{{ item }}</pre>
             <div class="px-2">{{ name }}</div>
             <div class="flex flex-col md:flex-row md:flex-wrap">
                 <div
