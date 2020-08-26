@@ -1,6 +1,6 @@
 <template>
     <div class="">
-        <img :src="imageSrc" class="h-32" />
+        <img :src="imageSrc" class="object-contain" />
     </div>
 </template>
 

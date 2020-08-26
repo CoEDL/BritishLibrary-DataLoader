@@ -1,5 +1,5 @@
 <template>
-    <div class="border border-gray-200 rounded bg-white p-8 h-64 flex flex-col">
+    <div class="bg-white p-8 flex flex-col">
         <div class="text-2xl flex flex-col">
             <!-- <div class="text-lg">
                     {{ item["Shelfmark"].join(" ") }}
@@ -16,7 +16,6 @@
         </render-audio-component>
 
         <render-image-component
-            class="object-contain"
             v-if="item['Format code'][0] === 'i'"
             :src="item['Original filename'][0]"
         >

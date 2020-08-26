@@ -3,7 +3,7 @@
         <div
             v-for="(item, name, idx) in items"
             :key="idx"
-            class="flex flex-col lg:justify-evenly my-2"
+            class="flex flex-col lg:justify-evenly my-2 bg-gray-200 mx-2 rounded-lg"
         >
             <div class="px-2">{{ name }}</div>
             <div class="flex flex-col md:flex-row md:flex-wrap">
