@@ -14,31 +14,31 @@
             </div>
 
             <div class="flex flex-col md:flex-row">
-                <div class="md:w-48">Description:</div>
+                <div class="md:w-48 font-bold">Description:</div>
                 <div class="flex-grow">
                     {{ collection["Collection Description"].join(" ") }}
                 </div>
             </div>
             <div class="flex flex-col md:flex-row">
-                <div class="md:w-48">Inventory:</div>
+                <div class="md:w-48 font-bold">Inventory:</div>
                 <div class="flex-grow">
                     {{ collection["Collection Inventory"].join(" ") }}
                 </div>
             </div>
             <div class="flex flex-col md:flex-row">
-                <div class="md:w-48">Country:</div>
+                <div class="md:w-48 font-bold">Country:</div>
                 <div class="flex-grow">
                     {{ collection["Country"].join(" ") }}
                 </div>
             </div>
             <div class="flex flex-col md:flex-row">
-                <div class="md:w-48">Location of Original:</div>
+                <div class="md:w-48 font-bold">Location of Original:</div>
                 <div class="flex-grow">
                     {{ collection["Location of Original"].join(" ") }}
                 </div>
             </div>
             <div class="flex flex-col md:flex-row">
-                <div class="md:w-48">Contributor:</div>
+                <div class="md:w-48 font-bold">Contributor:</div>
                 <div class="flex-grow">
                     {{ collection["Contributor"].join(" ") }}
                 </div>
