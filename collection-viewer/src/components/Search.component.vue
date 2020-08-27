@@ -1,5 +1,6 @@
 <template>
     <div class="flex flex-col p-2">
+        <div>Search for a specific item:</div>
         <el-input
             placeholder="Please input"
             v-model="query"
