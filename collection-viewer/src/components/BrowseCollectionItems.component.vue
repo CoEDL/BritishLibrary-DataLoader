@@ -5,7 +5,9 @@
             :key="idx"
             class="flex flex-col lg:justify-evenly my-2 bg-gray-200 mx-2 rounded-lg"
         >
-            <div class="px-2">{{ name }}</div>
+            <div class="px-2" :id="itemId(item[0].Shelfmark[0])">
+                {{ name }}
+            </div>
             <div class="flex flex-col md:flex-row md:flex-wrap">
                 <div
                     v-for="(entry, idx2) in item"
@@ -41,6 +43,11 @@ export default {
     },
     data() {
         return {};
+    },
+    methods: {
+        itemId(shelfmark) {
+            return shelfmark.split("/")[1];
+        },
     },
 };
 </script>
