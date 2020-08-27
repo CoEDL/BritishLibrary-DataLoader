@@ -82,7 +82,10 @@ export default {
             this.fuse = new Fuse(items, this.options);
         },
         search() {
-            this.results = this.fuse.search(this.query).map((r) => r.item);
+            this.results = this.fuse
+                .search(this.query)
+                .map((r) => r.item)
+                .slice(0, 10);
         },
         routerLink(item) {
             const [collectionId, itemId] = item.Shelfmark[0].split("/");
