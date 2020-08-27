@@ -26,8 +26,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.style-view {
-    height: calc(100vh - 80px);
-}
-</style>
+<style lang="scss" scoped></style>
