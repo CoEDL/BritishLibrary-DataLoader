@@ -1,9 +1,6 @@
 <template>
     <div class="bg-white p-8 flex flex-col">
         <div class="text-2xl flex flex-col">
-            <!-- <div class="text-lg">
-                    {{ item["Shelfmark"].join(" ") }}
-                </div> -->
             <div>
                 {{ item["Item Title"].join(" ") }}
             </div>
@@ -20,18 +17,29 @@
             :src="item['Original filename'][0]"
         >
         </render-image-component>
-
-        <!-- <pre>{{ item }}</pre> -->
+        <div>
+            <el-button
+                type="text"
+                @click="showInformation = !showInformation"
+                class="text-cloudburst hover:text-celadonblue"
+                w
+            >
+                toggle item information
+            </el-button>
+        </div>
+        <item-information-component :item="item" v-if="showInformation" />
     </div>
 </template>
 
 <script>
 import RenderAudioComponent from "./RenderAudio.component.vue";
 import RenderImageComponent from "./RenderImage.component.vue";
+import ItemInformationComponent from "./ItemInformation.component.vue";
 export default {
     components: {
         RenderAudioComponent,
         RenderImageComponent,
+        ItemInformationComponent,
     },
     props: {
         item: {
@@ -40,7 +48,9 @@ export default {
         },
     },
     data() {
-        return {};
+        return {
+            showInformation: false,
+        };
     },
 };
 </script>
