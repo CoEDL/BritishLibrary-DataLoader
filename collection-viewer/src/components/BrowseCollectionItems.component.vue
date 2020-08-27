@@ -4,6 +4,9 @@
             v-for="(item, name, idx) in items"
             :key="idx"
             class="flex flex-col lg:justify-evenly my-2 bg-gray-200 mx-2 rounded-lg"
+            :class="{
+                'bg-goldensand': itemId(item[0].Shelfmark[0]) === selectedItem,
+            }"
         >
             <div
                 class="px-2"
@@ -44,6 +47,7 @@ export default {
             scrollToOptions: {
                 container: "#container",
             },
+            selectedItem: this.$route.hash.replace("#", ""),
         };
     },
     computed: {
@@ -55,7 +59,8 @@ export default {
     },
     mounted() {
         setTimeout(() => {
-            const element = this.$refs[this.$route.hash.replace("#", "")][0];
+            if (!this.selectedItem) return;
+            const element = this.$refs[this.selectedItem][0];
             this.$scrollTo(element, this.duration, this.scrollToOptions);
         }, 500);
     },
