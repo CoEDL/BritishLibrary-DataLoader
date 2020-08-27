@@ -85,7 +85,6 @@ export default {
     },
     methods: {
         handleClose() {
-            console.log("here");
             this.$store.commit("setDisclaimerState", false);
         },
     },
