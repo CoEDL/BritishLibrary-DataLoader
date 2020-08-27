@@ -60,6 +60,8 @@ export class DataLoader {
             }
             let itemMetadata = sheetToJson({ sheet, headerRowNumber: 2 });
             for (let item of itemMetadata) {
+                item.collectionId = collection;
+
                 // rewrite the files with the path
                 item["Original filename"] = item["Original filename"].map(
                     (file) => `${collection}/${file}`
