@@ -2,12 +2,12 @@
     <div>
         <div class="flex flex-col space-y-4">
             <div class="flex flex-col md:flex-row">
-                <div class="pr-2">
+                <!-- <div class="pr-2">
                     {{ item["Reference"].join(" ") }}
                 </div>
                 <div class="">
                     {{ item["Item Title"].join(" ") }}
-                </div>
+                </div> -->
             </div>
 
             <info-entry-component
