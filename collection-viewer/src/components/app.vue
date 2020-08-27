@@ -1,7 +1,7 @@
 <template>
     <div class="container-fluid body-text-size body-text">
         <navbar />
-        <div class="overflow-scroll" :style="{ height: height }">
+        <div class="overflow-scroll" :style="{ height: height }" id="container">
             <router-view></router-view>
         </div>
     </div>

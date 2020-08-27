@@ -86,7 +86,7 @@ export default {
         },
         routerLink(item) {
             const [collectionId, itemId] = item.Shelfmark[0].split("/");
-            return `/collection/${collectionId}#${itemId}`;
+            return `/collection/${collectionId}#id_${itemId}`;
         },
     },
 };

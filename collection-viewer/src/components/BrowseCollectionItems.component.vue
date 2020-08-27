@@ -5,7 +5,11 @@
             :key="idx"
             class="flex flex-col lg:justify-evenly my-2 bg-gray-200 mx-2 rounded-lg"
         >
-            <div class="px-2" :id="itemId(item[0].Shelfmark[0])">
+            <div
+                class="px-2"
+                :id="itemId(item[0].Shelfmark[0])"
+                :ref="itemId(item[0].Shelfmark[0])"
+            >
                 {{ name }}
             </div>
             <div class="flex flex-col md:flex-row md:flex-wrap">
@@ -34,6 +38,14 @@ export default {
             required: true,
         },
     },
+    data() {
+        return {
+            duration: 2000,
+            scrollToOptions: {
+                container: "#container",
+            },
+        };
+    },
     computed: {
         items: function() {
             return this.$store.getters.collectionItems({
@@ -41,12 +53,15 @@ export default {
             });
         },
     },
-    data() {
-        return {};
+    mounted() {
+        setTimeout(() => {
+            const element = this.$refs[this.$route.hash.replace("#", "")][0];
+            this.$scrollTo(element, this.duration, this.scrollToOptions);
+        }, 500);
     },
     methods: {
         itemId(shelfmark) {
-            return shelfmark.split("/")[1];
+            return `id_${shelfmark.split("/")[1]}`;
         },
     },
 };
