@@ -9,7 +9,7 @@
             }"
         >
             <div
-                class="px-2"
+                class="px-2 text-xl md:text-2xl"
                 :id="itemId(item[0].Shelfmark[0])"
                 :ref="itemId(item[0].Shelfmark[0])"
             >
