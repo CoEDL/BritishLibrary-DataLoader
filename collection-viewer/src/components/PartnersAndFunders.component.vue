@@ -60,7 +60,7 @@
             </ul>
         </div>
         <div class="mt-6 m-2 lg:mx-6 lg:text-2xl">
-            <div class="heading-text page-title-size">Funders</div>
+            <div class="heading-text page-title-size font-bold">Funders</div>
             <div>
                 True Echoes is funded by the Leverhulme Trust and the UK
                 Government's Department for Business, Energy and Industrial
