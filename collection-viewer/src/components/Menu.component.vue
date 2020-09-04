@@ -11,6 +11,13 @@
             <div><i class="fas fa-times fa-2x"></i></div>
         </router-link>
         <router-link
+            :to="{ name: 'howto' }"
+            class="flex flex-row p-4 hover:bg-goldensand"
+        >
+            <div class="flex-grow pt-2">How to use this catalogue</div>
+            <div><i class="fas fa-chevron-right fa-2x"></i></div>
+        </router-link>
+        <router-link
             :to="{ name: 'browse' }"
             class="flex flex-row p-4 hover:bg-goldensand"
         >
