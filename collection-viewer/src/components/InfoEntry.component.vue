@@ -1,7 +1,7 @@
 <template>
-    <div class="flex flex-col">
+    <div class="flex flex-col" v-if="value && value.length">
         <div class="font-bold">{{ name }}:</div>
-        <div class="flex-grow" v-if="value && value.length">
+        <div class="flex-grow">
             {{ value.join(" ") }}
         </div>
     </div>
