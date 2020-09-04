@@ -36,7 +36,9 @@ export default {
             query: "",
             activeTab: "items",
             options: {
-                includeScore: true,
+                includeScore: false,
+                ignoreLocation: true,
+                threshold: 0.0,
                 keys: [
                     "Item Title",
                     "Description (Item Note)",
