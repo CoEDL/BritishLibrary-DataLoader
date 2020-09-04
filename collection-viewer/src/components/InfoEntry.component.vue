@@ -2,7 +2,7 @@
     <div class="flex flex-col" v-if="value && value.length">
         <div class="font-bold">{{ name }}:</div>
         <div class="flex-grow">
-            {{ value.join(" ") }}
+            {{ value.join(", ") }}
         </div>
     </div>
 </template>
