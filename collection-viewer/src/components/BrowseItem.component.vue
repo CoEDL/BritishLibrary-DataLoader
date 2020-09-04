@@ -24,7 +24,7 @@
                 class="text-cloudburst hover:text-celadonblue"
                 w
             >
-                toggle item information
+                Learn more about this item
             </el-button>
         </div>
         <item-information-component :item="item" v-if="showInformation" />
