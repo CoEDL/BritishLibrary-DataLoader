@@ -34,10 +34,7 @@
             <picture>
                 <source :srcset="image.png" />
                 <source :srcset="image.webp" />
-                <img
-                    :src="image.png"
-                    class="h-32 object-cover opacity-50 style-image mx-auto"
-                />
+                <img :src="image.png" class="h-32 object-fit mx-auto" />
             </picture>
         </div>
     </div>

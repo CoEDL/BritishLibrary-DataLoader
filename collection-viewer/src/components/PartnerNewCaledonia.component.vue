@@ -27,7 +27,7 @@
                 <source :srcset="image.webp" />
                 <img
                     :src="image.png"
-                    class="h-32 object-cover opacity-50 style-image mx-auto"
+                    class="h-32 object-fit mx-auto"
                 />
             </picture> -->
     </div>

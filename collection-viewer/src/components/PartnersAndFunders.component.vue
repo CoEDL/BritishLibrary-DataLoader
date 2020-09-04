@@ -74,7 +74,7 @@
                         <source :srcset="leverhulmeTrust.webp" />
                         <img
                             :src="leverhulmeTrust.png"
-                            class="h-32 object-cover opacity-50 style-image mx-auto"
+                            class="h-32 object-fit mx-auto"
                         />
                     </picture>
                 </div>
@@ -84,7 +84,7 @@
                         <source :srcset="fundedByUkGov.webp" />
                         <img
                             :src="leverhulmeTrust.png"
-                            class="h-32 object-cover opacity-50 style-image mx-auto"
+                            class="h-32 object-fit mx-auto"
                         />
                     </picture>
                 </div>
