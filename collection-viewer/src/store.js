@@ -9,6 +9,9 @@ import { loadData } from "./data-loader.service";
 const configuration = {
     strict: process.env.NODE_ENV !== "production",
     state: {
+        language: {
+            selected: "English",
+        },
         disclaimer: true,
         items: [],
         collections: [],
@@ -154,6 +157,11 @@ const configuration = {
         },
         setDisclaimerState(state, payload) {
             state.disclaimer = payload;
+        },
+        setLanguage(state, payload) {
+            state.language = {
+                selected: payload,
+            };
         },
     },
     getters: {

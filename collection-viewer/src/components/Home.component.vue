@@ -45,31 +45,18 @@
             </router-link>
         </div>
 
-        <el-dialog
-            title="Disclaimer"
-            :visible.sync="dialogVisible"
-            width="90%"
-            :before-close="handleClose"
-        >
-            <div class="text-base md:text-xl break-normal">
-                Aboriginal and Torres Strait Islander people should be aware
-                that this catalogue and website may contain images, voices or
-                names of deceased persons in photographs, film, audio recordings
-                or printed material.
-            </div>
-            <div class="text-base md:text-xl my-4 break-normal">
-                The collections may also contain recordings of ceremonial,
-                sacred or secret materials that may not yet be classified as
-                public.
-            </div>
-        </el-dialog>
+        <disclaimer-component />
     </div>
 </template>
 
 <script>
+import DisclaimerComponent from "./Disclaimer.component.vue";
 import webp from "src/assets/images/C62_0095.webp";
 import png from "src/assets/images/C62_0095.png";
 export default {
+    components: {
+        DisclaimerComponent,
+    },
     data() {
         return {
             image: {
