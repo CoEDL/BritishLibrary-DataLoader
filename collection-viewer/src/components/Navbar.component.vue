@@ -15,6 +15,7 @@
         <!-- <router-link :to="{ name: 'search' }">
             <div class="text-white text-2xl"><i class="fas fa-search"></i></div>
         </router-link> -->
+        <navbar-language-selector-component />
 
         <router-link :to="{ name: 'menu' }">
             <div class="text-white text-2xl">
@@ -25,7 +26,11 @@
 </template>
 
 <script>
+import NavbarLanguageSelectorComponent from "./NavbarLanguageSelector.component.vue";
 export default {
+    components: {
+        NavbarLanguageSelectorComponent,
+    },
     data() {
         return {};
     },
