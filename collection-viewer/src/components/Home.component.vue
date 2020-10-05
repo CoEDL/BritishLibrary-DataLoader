@@ -14,9 +14,6 @@
             >
                 <div class="text-4xl md:text-6xl pt-6">
                     {{ content.title[language] }}
-                    <!-- <p>Welcome to the</p>
-                    <p>True Echoes</p>
-                    <p>Catalogue</p> -->
                 </div>
             </div>
         </div>
@@ -104,13 +101,4 @@ export default {
 .style-image {
     max-height: 700px;
 }
-
-// .background {
-//     position: absolute;
-// }
-
-// .foreground {
-//     position: absolute;
-//     z-index: 10;
-// }
 </style>
