@@ -60,7 +60,6 @@ export default {
     },
     methods: {
         displayItem() {
-            console.log(this.collection.Shelfmark[0]);
             this.$router.push(`/collection/${this.collection.Shelfmark[0]}`);
         },
     },
