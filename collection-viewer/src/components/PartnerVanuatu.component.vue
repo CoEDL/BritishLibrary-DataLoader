@@ -8,23 +8,9 @@
             </div>
         </div>
         <div class="flex flex-col space-y-4 p-4">
-            <div class="font-bold">
-                The Vanuatu Kaljoral Senta assists with the preservation,
-                protection and promotion of Vanuatu’s tangible and intangible
-                cultural heritage.
-            </div>
-            <div class="">
-                Since its inception, the Vanuatu Kaljoral Senta has played a
-                major role in the documentation of traditional knowledge and
-                artefacts, the surveying of cultural and historical sites, and
-                the discovery of significant archaeological sites.
-            </div>
-            <div>
-                The National Film, Sound and Photo archive at VKS was
-                established in the 1960s and is responsible for collecting,
-                preserving and promoting the cultural collections of film, photo
-                and audio recordings.
-            </div>
+            <div class="font-bold">{{ content[language][0] }}</div>
+            <div class="">{{ content[language][1] }}</div>
+            <div>{{ content[language][2] }}</div>
             <picture>
                 <source :srcset="image.png" />
                 <source :srcset="image.webp" />
@@ -39,7 +25,48 @@ import webp from "src/assets/images/VKS-logo.webp";
 import png from "src/assets/images/VKS-logo.png";
 export default {
     data() {
-        return { image: { webp, png } };
+        return {
+            image: { webp, png },
+            content: {
+                English: [
+                    `The Vanuatu Kaljoral Senta assists with the preservation,
+                protection and promotion of Vanuatu’s tangible and intangible
+                cultural heritage.`,
+
+                    `Since its inception, the Vanuatu Kaljoral Senta has played a
+                major role in the documentation of traditional knowledge and
+                artefacts, the surveying of cultural and historical sites, and
+                the discovery of significant archaeological sites.`,
+
+                    `The National Film, Sound and Photo archive at VKS was
+                established in the 1960s and is responsible for collecting,
+                preserving and promoting the cultural collections of film, photo
+                and audio recordings.`,
+                ],
+                TokPisin: [
+                    `Vanuatu Kaljoral Senta (VKS) i save helpim long lukautim, 
+                    protektim na strongim kalsa wantaim kastom pasin, tok ples 
+                    bilong manmeri long tumbuna graun bilong Vanuatu.`,
+
+                    `Long taim ol i kirapim Vanuatu Kaljoral Senta, bikpela wok 
+                    tru ol i mekim pinis long raitim pepa ol toksave long tumbuna 
+                    pasin na kastom, lukautim ol kaving, lukaut long ol ples 
+                    bilong kalsa wok na tumbuna wantaim painimaut ol ples long 
+                    tumbuna graun bilong bipotaim long kisim na bungim save.`,
+
+                    `National Film, Sound and Photo archive i stap long VKS I bin 
+                    kam kamap namel long ol yia long 1960 long mekim ol wok 
+                    long painim na kisim ol koleksen bilong kalsa na lukautim na 
+                    strongim dispela ol piksa long muvi na poto na saun rikoding 
+                    bilong harim na kisim gutpela save long ol samting long kalsa.`,
+                ],
+            },
+        };
+    },
+    computed: {
+        language: function() {
+            return this.$store.state.language.selected;
+        },
     },
 };
 </script>

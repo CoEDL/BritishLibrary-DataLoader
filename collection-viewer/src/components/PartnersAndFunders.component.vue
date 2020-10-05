@@ -1,14 +1,13 @@
 <template>
     <div class="flex flex-col">
         <div class="heading-text page-title-size bg-goldensand py-6 px-2">
-            Partners and funders
+            {{ content[language][0] }}
         </div>
         <div class="mt-6 m-2 lg:mx-6 lg:text-2xl">
-            The True Echoes project works with cultural and research
-            institutions in the Oceanic region and in the UK.
+            {{ content[language][1] }}
         </div>
         <div class="m-2 lg:mx-6 lg:text-2xl">
-            <div class="font-bold">Partners include:</div>
+            <div class="font-bold">{{ content[language][2] }}</div>
             <ul class="pl-8 list-disc">
                 <li class="hover:text-celadonblue">
                     <router-link to="/partner/british-library">
@@ -60,7 +59,9 @@
             </ul>
         </div>
         <div class="mt-6 m-2 lg:mx-6 lg:text-2xl">
-            <div class="heading-text page-title-size font-bold">Funders</div>
+            <div class="heading-text page-title-size font-bold">
+                {{ content[language][3] }}
+            </div>
             <div>
                 True Echoes is funded by the Leverhulme Trust and the UK
                 Government's Department for Business, Energy and Industrial
@@ -102,6 +103,22 @@ import fundedByUkGovPng from "src/assets/images/Funded-by-UK-Gov.png";
 export default {
     data() {
         return {
+            content: {
+                English: [
+                    `Partners and Funders`,
+                    `The True Echoes project works with cultural and 
+                    research institutions in the Oceanic region and in the UK.`,
+                    `Partners include:`,
+                    `Funders:`,
+                ],
+                TokPisin: [
+                    `Ol oganaisesen ol i patna na givim mani`,
+                    `Dispela True Echoes projek em wok wantaim ol kalsa 
+                    na wok painimaut oganaisesen long Pasifik rijen na long UK.`,
+                    `Ol Patna oganaisesen:`,
+                    `Ol oganaisesen i givim moni: `,
+                ],
+            },
             leverhulmeTrust: {
                 webp: leverhulmeTrustWebp,
                 png: leverhulmeTrustPng,
@@ -111,6 +128,11 @@ export default {
                 png: fundedByUkGovPng,
             },
         };
+    },
+    computed: {
+        language: function() {
+            return this.$store.state.language.selected;
+        },
     },
 };
 </script>

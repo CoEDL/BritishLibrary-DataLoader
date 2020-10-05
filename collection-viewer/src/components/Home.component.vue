@@ -12,10 +12,11 @@
             <div
                 class="absolute text-center w-full inset-y-0 py-6 md:py-16 lg:py-32 object-fill"
             >
-                <div class="text-4xl md:text-6xl">
-                    <p>Welcome to the</p>
+                <div class="text-4xl md:text-6xl pt-6">
+                    {{ content.title[language] }}
+                    <!-- <p>Welcome to the</p>
                     <p>True Echoes</p>
-                    <p>Catalogue</p>
+                    <p>Catalogue</p> -->
                 </div>
             </div>
         </div>
@@ -26,21 +27,21 @@
                 <div
                     class="rounded-lg text-center text-xl md:text-3xl text-white bg-cloudburst py-4"
                 >
-                    Browse the recordings
+                    {{ content.browse[language] }}
                 </div>
             </router-link>
             <router-link :to="{ name: 'about' }" class="md:flex-grow">
                 <div
                     class="rounded-lg text-center text-xl md:text-3xl text-white bg-cloudburst py-4"
                 >
-                    What is True Echoes?
+                    {{ content.what[language] }}
                 </div>
             </router-link>
             <router-link :to="{ name: 'howto' }" class="md:flex-grow">
                 <div
                     class="rounded-lg text-center text-xl md:text-3xl text-white bg-cloudburst py-4"
                 >
-                    How to use this catalogue
+                    {{ content.how[language] }}
                 </div>
             </router-link>
         </div>
@@ -63,9 +64,30 @@ export default {
                 webp,
                 png,
             },
+            content: {
+                title: {
+                    English: "Welcome to the True Echoes Catalogue",
+                    TokPisin: "Welkam long True Echoes kalsa laibri",
+                },
+                browse: {
+                    English: "Browse the catalogue",
+                    TokPisin: "Lukluk insait long kalsa laibri",
+                },
+                what: {
+                    English: "What is True Echoes?",
+                    TokPisin: "Wanem samting em True Echoes?",
+                },
+                how: {
+                    English: "How to use this catalogue",
+                    TokPisin: "Bai yumi yusim kalsa laibri olsem wanem?",
+                },
+            },
         };
     },
     computed: {
+        language: function() {
+            return this.$store.state.language.selected;
+        },
         dialogVisible: function() {
             return this.$store.state.disclaimer;
         },

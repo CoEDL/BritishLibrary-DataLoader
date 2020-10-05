@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-col p-2">
-        <div>Search for a specific item:</div>
+        <div>{{ content[language][0] }}</div>
         <el-input
             placeholder="Please input"
             v-model="query"
@@ -53,9 +53,27 @@ export default {
             },
             fuse: undefined,
             results: [],
+            content: {
+                English: [
+                    `To search the catalogue, type into the 
+                search box and the relevant results will appear 
+                below. Click on a title to be taken to the 
+                recording or image in the catalogue.`,
+                ],
+                TokPisin: [
+                    `Sapos yu laik painim samting insait 
+                long kalsa laibri, bai yu taipim insait long 
+                “painim bokis” wanem samting yu laik painim. Sapos yu 
+                tokaut long wanem taitel bilong rikoding o piksa, 
+                em bai kamap aninit.`,
+                ],
+            },
         };
     },
     computed: {
+        language: function() {
+            return this.$store.state.language.selected;
+        },
         items: function() {
             return this.$store.state.items;
         },
