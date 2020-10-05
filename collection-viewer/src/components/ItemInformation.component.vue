@@ -1,15 +1,7 @@
 <template>
     <div>
         <div class="flex flex-col space-y-4">
-            <div class="flex flex-col md:flex-row">
-                <!-- <div class="pr-2">
-                    {{ item["Reference"].join(" ") }}
-                </div>
-                <div class="">
-                    {{ item["Item Title"].join(" ") }}
-                </div> -->
-            </div>
-
+            <info-entry-component name="Reference" :value="item['Reference']" />
             <info-entry-component
                 name="Description"
                 :value="item['Description (Item Note)']"
@@ -28,7 +20,15 @@
             />
             <info-entry-component
                 name="Performer / Contributer"
-                :value="item['Performer / Contributor']"
+                :value="item['Performer/Contributor']"
+            />
+            <info-entry-component
+                name="Performer / Contributer Country"
+                :value="item['Performer/Contributor Country']"
+            />
+            <info-entry-component
+                name="Performer / Contributer Country"
+                :value="item['Accent/dialect heading']"
             />
             <info-entry-component name="Rights" :value="item['Rights']" />
             <info-entry-component name="Language" :value="item['Language']" />
@@ -37,6 +37,8 @@
                 :value="item['Recording Note']"
             />
             <info-entry-component name="Genre" :value="item['Genre']" />
+            <info-entry-component name="Subject" :value="item['Subject']" />
+            <info-entry-component name="Keyword" :value="item['Keyword']" />
         </div>
     </div>
 </template>
