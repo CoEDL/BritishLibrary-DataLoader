@@ -13,7 +13,7 @@
             :class="{ 'bg-goldensand': language === 'TokPisin' }"
             @click="setLanguage('TokPisin')"
         >
-            <img :src="VanuatuFlag" class="h-10" />
+            <img :src="PNGFlag" class="h-10" />
             <div>Tok Pisin</div>
         </div>
     </div>
@@ -21,11 +21,13 @@
 
 <script>
 import VanuatuFlag from "src/assets/images/Flag-Vanuatu.svg";
+import PNGFlag from "src/assets/images/Flag-PNG.png";
 import EnglishFlag from "src/assets/images/EnglishFlag.png";
 export default {
     data() {
         return {
             VanuatuFlag,
+            PNGFlag,
             EnglishFlag,
         };
     },

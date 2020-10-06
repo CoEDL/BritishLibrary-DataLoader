@@ -8,7 +8,7 @@
                 <img :src="EnglishFlag" class="h-5" />
             </div>
             <div v-if="language === 'TokPisin'">
-                <img :src="VanuatuFlag" class="h-5" />
+                <img :src="PNGFlag" class="h-5" />
             </div>
         </div>
         <el-dialog title="" :visible.sync="dialogVisible" width="90%"
@@ -20,6 +20,7 @@
 <script>
 import LanguageSelectorComponent from "./LanguageSelector.component.vue";
 import VanuatuFlag from "src/assets/images/Flag-Vanuatu.svg";
+import PNGFlag from "src/assets/images/Flag-PNG.png";
 import EnglishFlag from "src/assets/images/EnglishFlag.png";
 export default {
     components: {
@@ -29,6 +30,7 @@ export default {
         return {
             dialogVisible: false,
             VanuatuFlag,
+            PNGFlag,
             EnglishFlag,
         };
     },
