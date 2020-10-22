@@ -24,7 +24,7 @@
                 class="text-cloudburst hover:text-celadonblue"
                 w
             >
-                Learn more about this item
+                {{ learnMore[language] }}
             </el-button>
         </div>
         <item-information-component :item="item" v-if="showInformation" />
@@ -50,7 +50,16 @@ export default {
     data() {
         return {
             showInformation: false,
+            learnMore: {
+                English: "Learn more about this item",
+                TokPisin: "lanim moa long dispela samting",
+            },
         };
+    },
+    computed: {
+        language: function() {
+            return this.$store.state.language.selected;
+        },
     },
 };
 </script>
