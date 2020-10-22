@@ -26,7 +26,7 @@ export default {
         return {
             content: {
                 English: [
-                    `How to use this catalogue.`,
+                    `How to use this catalogue`,
                     `There are two ways to explore the catalogue:`,
                     `Browse - The audio recordings are organised 
                     into different collections based on who recorded 
