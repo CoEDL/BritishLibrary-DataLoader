@@ -39,33 +39,32 @@ export default {
                 infrastructure to increase its capacity for storing, conserving
                 and exhibiting Solomon Islands’ cultural and historical
                 artefacts.`,
-                    `The Museum collects artefacts and conducts documentary research
-                into culturally important sites around the country under the
-                National Site Survey programme and in collaboration with
-                visiting archaeologists. These programme enhance the development
-                of both the SINM and Solomon Islands, and encourage a better
-                understanding of the people, culture and environment of Solomon
-                Islands.`,
+                    `The Museum collects artefacts and conducts documentary research 
+                into culturally important sites around the country under the 
+                National Site Survey programme and in collaboration with visiting 
+                archaeologists. These programmes enhance the development of both 
+                the SINM and Solomon Islands, and encourage a better understanding 
+                of the people, culture and environment of Solomon Islands.`,
                 ],
                 TokPisin: [
-                    `Solomon Islands National Museum (SINM) i bin kam kamap long 
-                    1969 bilong lukautim, protektim na strongim kastom na pasin tumbuna long ol ples.`,
-                    `Dispela oganaisesen em i wok bungwantaim ol ples lain na komuniti 
-                    long painimaut moa na lukautim kalsa na pasin tumbuna wantaim 
-                    ol samting i kamap long graun. Em givim gutpela tok na tingting 
-                    long strongim na painim gutpela rot bilong wok mani bilong sapotim 
-                    kalsa wok long helpim lukautim na putim gut long haus tumbuna 
-                    bilong soim na kisim save moa long kalsa na ol kaving bilong 
-                    Solomon Islands.`,
-                    `SINM tu i save bungim ol kaving na samtung bilong ol 
-                    tumbuna ol manmeri wokim long soim kalsa na raitim pepa long 
-                    painimaut ol hap o ples long kantri we i kamap aninit long National 
-                    Survey Programme em i wok bungwantaim ol save manmeri long digim 
-                    graun long painim ol samting bilong tumbuna. Dispela plen 
-                    bilong wokim em helpim divelopmen long SINM na Solomon Islands 
-                    long gutpela luksave na toksave long ol pipol o manmeri, 
-                    kalsa na envairomen o samting long graun na ol ples nabaut 
-                    long Solomon Islands.`,
+                    `Solomon Islands National Museum (SINM) i bin kamap long 1969 
+                    bilong lukautim, protektim na strongim kastom na pasin tumbuna.`,
+                    `Dispela oganaisesen em i wok bung wantaim ol komuniti long 
+                    ples bilong painimaut moa na lukautim kalsa na pasin tumbuna 
+                    wantaim ol samting i kamap long graun, na bilong strongim 
+                    gutpela sindaun bilong ol manmeri. Em givim gutpela tok na 
+                    tingting long strongim na painim gutpela rot bilong wok mani 
+                    bilong sapotim kalsa wok long helpim lukautim na putim gut long 
+                    haus tumbuna bilong soim na kisim save moa long kalsa na 
+                    ol kaving bilong Solomon Islands.`,
+                    `SINM tu i save bungim ol kaving na samting bilong ol tumbuna 
+                    ol manmeri wokim long soim kalsa na raitim pepa long painimaut 
+                    ol hap o ples long kantri we i kamap aninit long National Survey 
+                    Programme em i wok bung wantaim ol save manmeri long digim 
+                    graun long painim ol samting bilong tumbuna. Dispela plen bilong 
+                    wokim em helpim divelopmen long SINM na Solomon Islands long mekim 
+                    gutpela luksave na toksave i kamap long ol manmeri, na long 
+                    sait bilong kalsa na envairomen bilong Solomon Islands.`,
                 ],
             },
         };

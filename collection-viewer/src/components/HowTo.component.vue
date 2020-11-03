@@ -42,21 +42,19 @@ export default {
                     selecting “Learn more about this item”.`,
                 ],
                 TokPisin: [
-                    ``,
                     `I gat tupela rot long lukluk insait long kalsa laibri.`,
-                    `Lukluk - I gat kain kain rikoding bilong harim na ol i stap 
-                    insait long laibri aninit long wan wan hap ol i kolim 
-                    koleksen bilong husat manmeri i bin kisim na bungim 
-                    rikoding na long wanem taim ol i mekim.
-                    "Lukluk nabaut long kalsa laibri" - yu ken lainim moa 
-                    long wan wan koleksen na harim ol rikoding insait 
-                    long dispela ol koleksen.`,
-                    `Painim - yu ken painim 
-                    olgeta samting insait long kalsa laibri aninit 
-                    long seksen bilong Tokaut na sapos yu lukim bai 
-                    yu opim long mak i stap antap raithan sait.`,
-                    `Planti moa toksave long wan wan rikoding na ol piksa bai 
-                    stap long seksen ol i kolim "lanim moa long dispela samting"`,
+                    `
+                    Lukluk - I gat kain kain rikoding bilong harim, na 
+                    ol i stap insait long koleksen. Ol koleksen bilong laibri 
+                    i stap aninit long nem bilong man o meri i bin kisim 
+                    dispela rikoding na tu long wanem taim ol i kisim. 
+                    Long "Lukluk insait long kalsa laibri  " yu ken kisim save moa 
+                    long wan wan koleksen na harim ol rikoding insait long dispela ol koleksen
+                    `,
+                    `
+                    Planti moa toksave long wan wan rikoding na ol piksa bai 
+                    stap long seksen ol i kolim "kisim save moa long dispela samting"
+                    `,
                 ],
             },
         };

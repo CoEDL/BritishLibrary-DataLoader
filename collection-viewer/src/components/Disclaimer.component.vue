@@ -34,7 +34,10 @@ export default {
                     `The collections may also contain recordings of ceremonial, 
                     sacred or secret materials that may not yet be classified as public.`,
                 ],
-                TokPisin: [`TODO`, `TODO`],
+                TokPisin: [
+                    `Ol manmeri Aborigines na Torres Straits Islander i mas luksave olsem kalsa laibri na kompyuta rekod i holim ol piksa, vois na nem bilong ol lain i dai pinis na stap insait long ol poto, muvi piksa, toktok rikoding na pepa.`,
+                    `Sampela rikoding insait long ol koleksen i ken holim pasin tumbuna i tambu na stap hait long kamapim long ples klia bilong lukluk o soim long ol manmeri.`,
+                ],
             },
         };
     },

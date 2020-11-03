@@ -42,19 +42,18 @@ export default {
                 centre, exhibition spaces, and a specialised multimedia library.`,
                 ],
                 TokPisin: [
-                    `Tjibaou Cultural Centre (TCC) em wanpela oganaisesen 
-                wantaim as wok long painimaut, bungim, gohet moa na strongim ol 
-                as ples manmeri na tumbuna pasin na kalsa bilong New Caledonia.`,
-                    `TCC tu i save bungim wantaim ol wok long tok ples, ol tumbuna 
-                graun na kastom na kalsa pasin ol wokim long lukluk, toktok na 
-                tingting bilong ol manmeri we nau i yusim piksa na kaving 
-                wantaim brodkas long salim na harim tok long redio or tv. Em tu 
-                save long helpim long ol kain kain samting bilong wokim kalsa na 
-                strongim wantain ol narapela ples na kalsa long Pasifik rijen o 
-                olgeta hap graun long wol bilong luksave na soim tumbuna pasin. 
-                Long 1998, ol i bin kirapim niupela laibri i yusim komputa long sapotim ol 
-                kalsa wok bilong toksave na soim piksa na ol samting bilong tumbuna 
-                insait long haus bilong oganaisesen.`,
+                    `As wok bilong Tjibaou Cultural Centre (TCC) em bilong 
+                    painimaut, bungim, gohet moa na strongim ol asples manmeri na 
+                    tumbuna pasin na kalsa bilong New Caledonia.`,
+                    `TCC i save wok long tok ples, ol tumbuna graun na kastom, 
+                    na tu long nupela pasin bilong kalsa, olsem redio o tv na 
+                    ol peinting o kaving. Em tu save long helpim long ol kain 
+                    kain samting bilong wokim kalsa na strongim wantain ol narapela 
+                    ples na kalsa long Pasifik rijen o olgeta hap graun long 
+                    wol bilong luksave na soim tumbuna pasin. Long 1998, ol 
+                    i bin kirapim niupela laibri i yusim komputa bilong sapotim ol 
+                    kalsa wok bilong toksave na soim piksa na ol samting bilong 
+                    tumbuna insait long laibri.`,
                 ],
             },
         };

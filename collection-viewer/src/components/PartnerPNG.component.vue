@@ -52,20 +52,26 @@ export default {
                 ],
                 TokPisin: [
                     `
-                Long 1974, wanpela yia bipo long indipendens, gavaman i bin kirapim Institute 
-                of Papua New Guinea Studies (IPNGS) olsem bai kamap 
-                opis bilong nesenol kalsa long wok painimaut, mekim ol pepa, 
-                lukautim rikod laibri na strongim Papua New Guinea kalsa 
-                na bungim tingting long music singsing, pasin bilong manmeri insait long kalsa 
-                na planti kain kain raitim pepa bilong kisim save.`,
-                    `Bikpela wok long IPNGS em long autim toktok na tingting long pasin 
-                tumbuna na kastom na nau ol i lukluk long narapela kain samting 
-                long autim olsem ol pasin na ol wok bilong sios, 
-                taun na soim stori na wokabaut bilong ol soldia na planti moa.`,
-                    `IPNGS Music Archive em i lukautim na autim planti music na singsing 
-                painimaut wok ol i mekim long Papua New Guinea na kain kain 
-                rikoding ems tap olsem long 12,000 aua insait long ol tep, kaset, 
-                piksa bilong muvi na poto wantaim kain kain pepa long autim toktok na tingting.`,
+                    Gavman i kirapim Institute of Papua New Guinea Studies o
+                    Institut bilong Papua Niugini Stadis (IPNGS) long 1974,
+                    wanpela yia bipo long independens. Em i wanpela nesenol kalsa opis
+                    i mekim wok painimaut long ol pasin tumbuna na ol
+                    pasin bilong nau insait long Papua New Guinea. Na em bungim
+                    ol dispela pepa na rikoding long libreri na traim apim
+                    nem bilong ol kalsa bilong kantri. IPNGS i lukluk moa long
+                    singsing, stori tumbuna, na olgeta kalsa pasin bilong manmeri.
+                    `,
+                    `
+                    Bikpela wok bilong IPNGS em long lukluk long pasin tumbuna
+                    na kastom, tasol ol i lukluk tu long narapela pasin i kamap
+                    bihain tu, olsem wok bilong sios, taun, na ol soldia na polis.
+                    `,
+                    `
+                    Music Archive o Musik Laibri bilong IPNGS em i lukautim
+                    planti wok painimaut long sait bilong musik na singsing
+                    insait long Papua New Guinea. I gat samting olsem 12,000
+                    aua bilong rikoding long ol, kaset, muvi na poto wantaim
+                    kain kain arapela pepa.`,
                 ],
             },
         };

@@ -112,11 +112,11 @@ export default {
                     `Funders:`,
                 ],
                 TokPisin: [
-                    `Ol oganaisesen ol i patna na givim mani`,
-                    `Dispela True Echoes projek em wok wantaim ol kalsa 
-                    na wok painimaut oganaisesen long Pasifik rijen na long UK.`,
-                    `Ol Patna oganaisesen:`,
-                    `Ol oganaisesen i givim moni: `,
+                    `Ol patna na ol oganaisesen i givim mani`,
+                    `Dispela True Echoes projek em wok wantaim ol organisesen bilong kalsa na 
+                    wok painimaut insait long Pasifik rijen na long UK.`,
+                    `Ol poro oganisesen em:`,
+                    `Ol oganaisesen i givim mani:`,
                 ],
             },
             leverhulmeTrust: {

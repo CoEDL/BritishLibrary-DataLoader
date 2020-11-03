@@ -36,10 +36,10 @@ export default {
             centuries and represent some of the earliest uses of sound in
             anthropological research. They are currently held by the British
             Library Sound Archive.`,
-                    `Beginning with recordings made in 1898 by members of the Cambridge
-            Anthropological Expedition to Torres Straits, the wax cylinder
-            collection includes recordings made in Papua New Guinea, the Solomon
-            Islands, Vanuatu, New Caledonia and Australia.`,
+                    `The wax cylinder collection includes recordings made in Papua 
+                New Guinea, Solomon Islands, Vanuatu, New Caledonia and Australia between 
+                1898 and 1918. The earliest recordings were made in 1898 by members 
+                of the Cambridge Anthropological Expedition to Torres Straits.`,
                     `These rare recordings are hugely significant as the earliest
             documents of oral traditions from Oceanic communities.`,
                     `True Echoes is working with cultural and research institutions in
@@ -50,35 +50,27 @@ export default {
                 TokPisin: [
                     `Toksave long True Echoes`,
                     `True Echoes em i wanpela wok painimaut projek wantaim as tingting 
-                    long yusim planti bikpela save i stap long taim 
-                    bipo laibri i gat saun rekoding ol i holim vois, tok stori na 
-                    singsing long kastom na kalsa insait long Pasifik na olgeta 
-                    mas go bek long ol komuniti na ples ol i bin kamapim.`,
-                    `True Echoes i yusim masin bilong pilai musik na rekodim 
-                    long samting olsem gris wantaim paip.`,
-                    `Ol dispela olpela rikoding ol i mekim gutpela pinis long 
-                    harim tudei bikos ol i bin stap olsem wan handet yia pinis 
-                    long mak olsem bihaintaim long pinisim 1900 na bipotaim 
-                    long statim 2000.`,
-                    `Ol dispela saun rikoding em i bin kalsa painimaut wok long 
-                    taim bipo na ol i holim stap long ples bilong British Library 
-                    Sound Archive.`,
-                    `
-                    Ol koleksen insait long ol gris wantaim paip em ol bin mekim 
-                    rikoding long Papua New Guinea, Solomon Islands, Vanuatu, New Caledonia 
-                    na Australia namel long ol yia statim long 1898 i 
-                    nap long 1918. 
-                    Em ol memba bilong Cambridge Anthropological Expedition ol i 
-                    bin go long Torres Straits na mekim dispela bipotaim tru 
-                    rikoding long 1898. Ol dispela rikoding em i hat long painim 
-                    olsem na em bikpela samting tumas. Ol dispela kastom pasin 
-                    bipotaim ol i save wokim long toktok na stori tasol insait 
-                    long ol Pasifik komuniti na nau mas stap long pepa na rikod.`,
-                    `
-                    True Echoes i wok wantaim ol kalsa na wok painimaut oganaisesen 
-                    long Pasifik rijen na long UK bai ol dispela koleksen i stap gut 
-                    long helpim ol komuniti husat ol makim ples tumbuna long lukaut 
-                    na kisim gutpela save long kalsa.`,
+                    long yusim planti bikpela save i stap long taim bipo laibri i 
+                    gat rikoding ol i holim vois, stori na singsing long kastom na kalsa 
+                    insait long Pasifik. Kopi bilong olgeta samting olsem i mas go bek 
+                    long ol komuniti na ples ol i bin kamapim.`,
+                    `Ol dispela olpela rikoding ol man bipo i bin katim long masin 
+                    bilong pilai music. Rikoding i kamap long silenda em i luk olsem 
+                    namel hap bilong toilet rol. Dispela silenda ol i bin wokim long 
+                    weks o gris, olsem i stap long kandel. Ol dispela silenda i winim moa 
+                    long 100 yia pinis. Ol savemanmeri i wokim kopi bilong ol dispela 
+                    silenda na yumi ken harim nau. Koleksen bilong ol dispela rikoding i 
+                    stap long British Library Sound Archive long London.`,
+                    `Dispela koleksen bilong ol silenda ol i bin mekim long Papua 
+                    New Guinea, Solomon Islands, Vanuatu, New Caledonia na Australia namel 
+                    long ol yia i stat long 1898 inap long 1918. Em ol memba bilong 
+                    Cambridge Anthropological Expedition ol i bin go long Torres Straits 
+                    na mekim dispela rikoding long 1898.`,
+                    `Ol dispela silenda rikoding i gat ol toktok na stori na singsing 
+                    i kam long ol Pasifik komuniti bilong bipo.`,
+                    `True Echoes i wok wantaim ol oganisesen bilong kalsa na wok 
+                    painimaut long Pasifik rijen na long UK. Ol dispela koleksen i stap 
+                    long helpim ol komuniti i gat interes long histori na pasin tumbuna.`,
                 ],
             },
         };

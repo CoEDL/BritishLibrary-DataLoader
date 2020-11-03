@@ -53,34 +53,10 @@ export default {
                 collections.`,
                 ],
                 TokPisin: [
-                    `PARADISEC [Pacific and Regional Archive for Digital Sources 
-                    in Endangered Cultures] em i wanpela oganaisesen olsem 
-                    laibri bilong lukautim ol rikoding na pepa long ol kain kain 
-                    kalsa na tok ples long olgeta hap graun na ples long wol.`,
-                    `PARADISEC em i save wok long sapotim ol samting bai stap 
-                    sef na lukautim gut long bihain taim nogut bai ol lus olgeta 
-                    o bagarap na nau ol koleksen i stap pinis olsem antap long 
-                    1,200 tok ples.`,
-                    `Long 2003, PARADISEC em i bin kam kamap aninit long 
-                    bungwantain long tripela yuni - University of Sydney, University 
-                    of Melbourne na Australian National University. PARADISEC em 
-                    mekim pinis ol rot na samting long bihainim na yusim laibri 
-                    long bungim na kisim, putim na lukautim, makim na painim 
-                    ol rikoding ol i dijitaisim pinis bilong harim ol vois, 
-                    toktok na singsing na lukluk long ol pepa na piksa samting. 
-                    As wok bilong PARADISEC em long lukautim na sapotim ol kalsa 
-                    na tok ples i stap pinis nogut bai ol lus nating.
-                    PARADISEC em i ken go long ol ples na komuniti bilong mekim niupela 
-                    rikoding or painim ol arapela rikoding I stap pinis long 
-                    dijitaisim na putim long laibri tu.`,
-                    `Bihain ol kopi long 
-                    dispela rikoding i ken go long ol manmeri i stap long rikoding 
-                    o long ol pikinini o tumbuna bilong ol. PARADISEC wok manmeri 
-                    bai sapotim na strongim laibri wantaim ol teknikal samting na ol 
-                    painimaut helpim na toksave i go long komuniti. 
-                    PARADISEC tu wok bungwantaim ol kalsa oganisaisesen long 
-                    Pasifik long sapotim menesmen na lukautim long ol koleksen 
-                    bilong wan wan kantri.`,
+                    `PARADISEC [Pacific and Regional Archive for Digital Sources in Endangered Cultures] em i wanpela laibri bilong lukautim ol rikoding na pepa long ol kain kain kalsa na tok ples long olgeta hap graun na ples long wol.`,
+                    `PARADISEC em i save wok long sapotim ol samting bai stap sef na lukautim gut long bihaintaim, nogut bai ol samting i lus olgeta o bagarap. Koleksen i makim antap long 1,200 tok ples.`,
+                    `PARADISEC em i bin kamap long 2003. Em kamap ananit long tripela yuni: University of Sydney, University of Melbourne, na Australian National University. PARADISEC i mekim pinis wanpela rot bilong kisim, na dijitaisim, putim, na lukautim long laibri, ol rikoding o pepa o arapela samting i makim ol toktok na singsing. As wok bilong PARADISEC em long lukautim na sapotim ol kalsa na tok ples i stap pinis, nogut bai ol i lus nating. Em olsem na PARADISEC i ken wokim kopi bilong ol dispela rikoding na pepa bilong givim long ol komuniti yet na tu long ol pikinini na tumbuna bilong ol.`,
+                    `Wok manmeri bilong PARADISEC i sapotim na strongim laibri wantaim ol teknikal samting na ol painimaut helpim na toksave i go long komuniti. PARADISEC tu i wok wantaim ol kalsa oganisaisesen bilong Pasifik bilong sapotim na helpim menesmen na lukautim ol koleksen bilong ol yet.`,
                 ],
             },
         };

@@ -59,7 +59,7 @@ export default {
                 },
                 how: {
                     English: "How to use this catalogue",
-                    TokPisin: "",
+                    TokPisin: "Bai yu yusim kalsa laibri olsem wanem?",
                 },
                 browse: {
                     English: "Browse the catalogue",
@@ -75,7 +75,7 @@ export default {
                 },
                 partners: {
                     English: "Partners and funders",
-                    TokPisin: "Ol oganaisesen ol i patna na givim mani",
+                    TokPisin: "Ol patna na ol oganaisesen i givim mani",
                 },
             },
         };

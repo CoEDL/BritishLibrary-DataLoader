@@ -41,19 +41,16 @@ export default {
                 spoken languages.`,
                 ],
                 TokPisin: [
-                    `British Library (BL) em i nesenol laibri bilong United Kingdom 
-                    na tu wanpela long ol bikpela painimaut laibri oganaisesen 
-                    long olgeta hap graun long wol. `,
-                    `Dispela oganaisesen i 
-                    givim planti kain kain gutpela service long toksave 
-                    long olgeta bikpela skul bilong ol save manmeri, long bisnis na 
-                    long wok painimaut na wok saiens wantaim luksave bilong kisim ol 
-                    bikpela save long olgeta koleksen ol i lukautim bilong olgeta hap 
-                    graun long wol. Koleksen insait long laibri stap olsem 250 yia and antapim 
-                    long 150 million kain kain samting long gutpela sindaun na 
-                    bikpela save makim taim long bipo i nap nau we i stap long 
-                    ol buk, ol kain kain raitim pepa na niuspepa, ol musik, ol 
-                    piksa, ol saun rikoding long olgeta kain kain tok ples.`,
+                    `British Library em i nesenol laibri bilong United Kingdom 
+                    na tu em i wanpela bilong ol bikpela painimaut laibri long wol.`,
+                    `Dispela laibri i givim planti kain kain gutpela sevis long 
+                    toksave long olgeta bikpela skul bilong ol save manmeri, 
+                    long bisnis na long wok painimaut na wok saiens. Koleksen insait 
+                    long laibri ya i stap moa long 250 yia and winim 150 milien 
+                    wan wan samting. Ol dispela samting i makim sindaun bilong ol 
+                    manmeri long kain kain hap. Em ol buk, pepa, niuspepa, na kain 
+                    kain samting ol manmeri i raitim, na ol mep, musik, piksa, na 
+                    rikoding long planti kain kain tok ples tu.`,
                 ],
             },
         };

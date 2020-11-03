@@ -61,11 +61,14 @@ export default {
                 recording or image in the catalogue.`,
                 ],
                 TokPisin: [
-                    `Sapos yu laik painim samting insait 
-                long kalsa laibri, bai yu taipim insait long 
-                “painim bokis” wanem samting yu laik painim. Sapos yu 
-                tokaut long wanem taitel bilong rikoding o piksa, 
-                em bai kamap aninit.`,
+                    `
+                Sapos yu laik painim samting insait 
+                long kalsa laibri, bai yu taipim insait 
+                long “painim bokis” wanem samting yu laik painim. 
+                Taitel bilong ol rikoding o piksa yu painim 
+                bai kamap ananit. Na sapos yu klik long dispela 
+                taitel, bai yu kamap long em stret long kalsa laibri.
+                `,
                 ],
             },
         };

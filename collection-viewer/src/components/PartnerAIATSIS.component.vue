@@ -41,8 +41,6 @@ export default {
                 These collections are both culturally significant and an
                 important resource of anybody looking to improve their knowledge
                 of Aboriginal and Torres Strait Islander history and culture.`,
-                    `
-                `,
                     `AIATSIS also conducts community-based research in a variety of
                 sectors, including languages, health, native title, and
                 education.`,
@@ -51,29 +49,22 @@ export default {
                 It is based in Canberra, Australia.`,
                 ],
                 TokPisin: [
-                    `AIATSIS em wanpela oganaisesen bilong painimaut, kisim na 
-                    lukautim ol koleksen na autim toktok na tingting long pepa 
-                    long strongim na luksave kalsa, kastom pasin, tok ples na 
-                    tumbuna stori bilong ol manmeri husat ol as ples na holim 
-                    tumbuna graun bilong Australia em ol Aborigines na ol kam long Torres Strait 
-                    ailan long bipotaim long tumbuna inap long dispela taim tude.`,
-                    `AIATSIS i lukautim bilpela koleksen na em go moa yet i stap 
-                    antap long wan milien kain kain samting olsem ol piksa long 
-                    muvi na poto, saun rikoding, piksa wantaim kaving na olgeta 
-                    kain kain pepa long autim toktok na tingting.
-                    Dispela ol koleksen i helpim luksave na strongim save bilong 
-                    ol Aboriginal na Torress Strait kalsa long bipotaim 
-                    tumbuna na soim bikpela sampting olsem holim strong kalsa na 
-                    toksave long husat i laik kisim moa save long ol koleksen.`,
-                    `
-                    AIATSIS tu i save mekim ol komuniti painimaut wok long planti 
-                    kain kain sekta olsem ol tok ples, wok helt, taitel bilong papa 
-                    o mama graun na edukesen long skulim manmeri.`,
-                    `AIATSIS i 
-                    bin kam kamap aninit long gavaman lo bilong palamen bilong 
-                    Australia long 1964 olsem AIAS. Bihaintaim long 1989 ol i 
-                    senisim nem i go long AIATSIS na nau oganaisesen i stap long 
-                    Canberra, Australia.`,
+                    `AIATSIS em wanpela oganaisesen bilong painimaut, 
+                    kisim na lukautim ol koleksen na autim toktok na tingting 
+                    bilong strongim na luksave long kalsa, kastom, tok ples na 
+                    stori tumbuna bilong ol asples bilong Australia, em ol Aborigines, 
+                    na ol lain i stap long ol ailan bilong Torres Strait bilong bipo inap long tude.`,
+                    `AIATSIS i lukautim bilpela koleksen i go antap long 
+                    wan milien kain kain samting olsem ol muvi, poto, rikoding, kaving 
+                    na olgeta kain kain pepa bilong autim toktok na tingting. Dispela 
+                    ol koleksen i helpim luksave na strongim save bilong ol manmeri 
+                    long kalsa na stori bilong ol lain Aborigine na Torres Strait Islander.`,
+                    `AIATSIS tu i save mekim wok painimaut long ol komuniti long planti 
+                    kain kain samting olsem ol tok ples, wok helt, taitel bilong papa 
+                    o mama graun, na skul bilong ol manmeri.`,
+                    `AIATSIS i bin kam kamap aninit long gavman lo bilong palamen bilong 
+                    Australia long 1964 olsem AIAS. Long 1989 ol i senisim nem i 
+                    go long AIATSIS. Em i stap long Canberra, Australia.`,
                 ],
             },
         };

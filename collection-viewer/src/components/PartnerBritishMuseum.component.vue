@@ -46,23 +46,9 @@ export default {
                 conserved, curated, researched and exhibited.`,
                 ],
                 TokPisin: [
-                    `British Museum (BM) i bin kam kamap long 1753 na ol opim 
-                long 1759 i go long pablik bilong olgeta hap o kantri long wol. 
-                Em tu olsem bin kam pas long olgeta nesenol haus tumbuna bilong 
-                lukautim ol kain kain bikpela save long manmeri long olgeta hap o 
-                graun long wol.`,
-                    `BM em i bringim na bungim wantaim ol kalsa long olgeta hap na 
-                graun long wol aninit long wanpela haus tasol. 
-                Em i gat olsem 8 milien kain kain samting long kalsa i kam 
-                long ol liklik komuniti inap long ol bikpela kantri na rijen. 
-                Dispela ples I bungim planti kain kain samting long kisim 
-                save o givim toksave long laip na pasin bilong ol 
-                manmeri long wol na bikpela luksave olsem ol kamap 
-                wankain tasol.`,
-                    `As tingting long wok bilong BM em long holim na lukautim 
-                gut wan wan koleksen long makim olgeta kalsa long wol bai 
-                stap sef long haus tumbuna bilong toksave na luksave ol samting 
-                long soim, lanim, skulim na painimaut wok long pasin tumbuna, kalsa na kastom.`,
+                    `British Museum i bin kamap long 1753 na i op long 1759. Em i nambawan nesenal museum o haus tumbuna bilong lukautim ol kain kain bikpela save long manmeri long olgeta hap o graun long wol.`,
+                    `British Museum i bungim ol kalsa bilong olgeta hap insait long wanpela haus tasol. Em i gat olsem 8 milien kain kain samting long kalsa i kam long ol liklik komuniti na ol bikpela kantri na rijen tu. Dispela museum i bungim planti kain kain samting olsem bilong kisim na givim save long laip na pasin bilong ol manmeri long wol. Bikpela luksave i soim olsem planti samting em i wankain tasol.`,
+                    `As tingting bilong wok bilong museum em long holim na lukautim gut wan wan koleksen bilong makim olgeta kalsa bilong wol, na tu long luksave olsem ol dispela samtingi i stap gut na sef long haus tumbuna, na long soim, lanim, skulim na mekim wok painimaut long pasin tumbuna, kalsa na kastom.`,
                 ],
             },
         };

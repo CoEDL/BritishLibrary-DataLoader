@@ -72,11 +72,11 @@ export default {
                 },
                 what: {
                     English: "What is True Echoes?",
-                    TokPisin: "Wanem samting em True Echoes?",
+                    TokPisin: "True Echoes em wanem samting?",
                 },
                 how: {
                     English: "How to use this catalogue",
-                    TokPisin: "Bai yumi yusim kalsa laibri olsem wanem?",
+                    TokPisin: "Bai yu yusim kalsa laibri olsem wanem?",
                 },
             },
         };

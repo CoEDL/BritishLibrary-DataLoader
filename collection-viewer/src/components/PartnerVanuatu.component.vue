@@ -32,33 +32,27 @@ export default {
                     `The Vanuatu Kaljoral Senta assists with the preservation,
                 protection and promotion of Vanuatu’s tangible and intangible
                 cultural heritage.`,
-
                     `Since its inception, the Vanuatu Kaljoral Senta has played a
                 major role in the documentation of traditional knowledge and
                 artefacts, the surveying of cultural and historical sites, and
                 the discovery of significant archaeological sites.`,
-
                     `The National Film, Sound and Photo archive at VKS was
                 established in the 1960s and is responsible for collecting,
                 preserving and promoting the cultural collections of film, photo
                 and audio recordings.`,
                 ],
                 TokPisin: [
-                    `Vanuatu Kaljoral Senta (VKS) i save helpim long lukautim, 
-                    protektim na strongim kalsa wantaim kastom pasin, tok ples 
-                    bilong manmeri long tumbuna graun bilong Vanuatu.`,
-
-                    `Long taim ol i kirapim Vanuatu Kaljoral Senta, bikpela wok 
-                    tru ol i mekim pinis long raitim pepa ol toksave long tumbuna 
-                    pasin na kastom, lukautim ol kaving, lukaut long ol ples 
-                    bilong kalsa wok na tumbuna wantaim painimaut ol ples long 
-                    tumbuna graun bilong bipotaim long kisim na bungim save.`,
-
-                    `National Film, Sound and Photo archive i stap long VKS I bin 
-                    kam kamap namel long ol yia long 1960 long mekim ol wok 
-                    long painim na kisim ol koleksen bilong kalsa na lukautim na 
-                    strongim dispela ol piksa long muvi na poto na saun rikoding 
-                    bilong harim na kisim gutpela save long ol samting long kalsa.`,
+                    `Vanuatu Kaljoral Senta (VKS) i save helpim long 
+                    lukautim, protektim na strongim kalsa bilong Vanuatu`,
+                    `Long taim ol i kirapim inap long nau, Vanuatu Kaljoral 
+                    Senta em i mekim bikpela wok tru bilong raitim stori bilong ol 
+                    tumbuna pasin na kastom, lukautim ol kaving, lukluk long 
+                    ol ples bilong wok kalsa na bilong tumbuna, na tu long 
+                    wok painimaut long ol ples bilong ol tumbuna bipo yet.`,
+                    `National Film, Sound and Photo archive i stap long VKS i 
+                    bin kamap namel long ol yia long 1960 long mekim ol wok long 
+                    painim na kisim ol koleksen bilong kalsa na lukautim na strongim 
+                    dispela ol piksa long muvi na poto na rikoding.`,
                 ],
             },
         };
