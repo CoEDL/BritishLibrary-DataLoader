@@ -28,6 +28,13 @@
         <div class="text-gray-600">
             This will wipe any other content currently on the Disk.
         </div>
+        <div class="my-4" v-if="showAlert">
+            <div
+                class="text-2xl bg-green-400 text-white text-center p-2 rounded"
+            >
+                Data Loaded
+            </div>
+        </div>
         <!-- <div>
             <el-progress
                 :percentage="loadProgress"
@@ -51,6 +58,7 @@ export default {
             doit: false,
             // dataOnly: process.env.NODE_ENV === "development",
             loading: false,
+            showAlert: false,
         };
     },
     computed: {
@@ -73,6 +81,10 @@ export default {
                     // dataOnly: this.dataOnly,
                 });
                 this.loading = false;
+                this.showAlert = true;
+                setTimeout(() => {
+                    this.showAlert = false;
+                }, 2000);
             }, 200);
         },
         stopDataLoad() {
