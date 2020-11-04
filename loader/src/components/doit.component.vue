@@ -15,37 +15,22 @@
                     Load the data
                 </el-button>
             </div>
-            <!-- <div>
-                <el-button type="danger" v-on:click="stopDataLoad">
-                    <i
-                        class="fas fa-ban"
-                        v-bind:class="{ 'fa-spin': loading }"
-                    ></i>
-                    Stop data load
-                </el-button>
-            </div> -->
         </div>
         <div class="text-gray-600">
             This will wipe any other content currently on the Disk.
         </div>
-        <div class="my-4" v-if="showAlert">
+        <div class="my-4" v-if="showSuccess">
             <div
                 class="text-2xl bg-green-400 text-white text-center p-2 rounded"
             >
                 Data Loaded
             </div>
         </div>
-        <!-- <div>
-            <el-progress
-                :percentage="loadProgress"
-                class="style-progress-bar"
-            />
-        </div> -->
-        <!-- <div>
-            <el-checkbox v-model="dataOnly">
-                Load only the data - not the website.
-            </el-checkbox>
-        </div> -->
+        <div class="my-4" v-if="showError">
+            <div class="text-2xl bg-red-400 text-white text-center p-2 rounded">
+                There was an problem loading the data.
+            </div>
+        </div>
     </div>
 </template>
 
@@ -56,9 +41,9 @@ export default {
     data() {
         return {
             doit: false,
-            // dataOnly: process.env.NODE_ENV === "development",
             loading: false,
-            showAlert: false,
+            showSuccess: false,
+            showError: false,
         };
     },
     computed: {
@@ -75,16 +60,24 @@ export default {
                 const dataloader = new DataLoader({
                     dataPath: this.$store.state.localDataPath,
                 });
-                await dataloader.load({
-                    target: this.$store.state.usbMountPoint,
-                    data: this.$store.state.data.data,
-                    // dataOnly: this.dataOnly,
-                });
+                try {
+                    await dataloader.load({
+                        target: this.$store.state.usbMountPoint,
+                        data: this.$store.state.data.data,
+                        // dataOnly: this.dataOnly,
+                    });
+                    this.showSuccess = true;
+                    setTimeout(() => {
+                        this.showSuccess = false;
+                    }, 2000);
+                } catch (error) {
+                    this.showError = true;
+                    setTimeout(() => {
+                        this.showError = false;
+                    }, 2000);
+                    console.log(error);
+                }
                 this.loading = false;
-                this.showAlert = true;
-                setTimeout(() => {
-                    this.showAlert = false;
-                }, 2000);
             }, 200);
         },
         stopDataLoad() {
