@@ -16,6 +16,7 @@ function createMainWindow() {
         height: 1000,
         webPreferences: {
             nodeIntegration: true,
+            enableRemoteModule: true,
         },
     });
     window.webContents.session.clearCache(() => {});
