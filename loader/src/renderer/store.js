@@ -74,7 +74,6 @@ export const actions = {
             console.log(error);
             errors.push(error.message);
         }
-        console.log(data, errors);
         commit("saveData", { data, errors });
     },
 };
