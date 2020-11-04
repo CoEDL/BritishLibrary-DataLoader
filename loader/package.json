@@ -18,7 +18,11 @@
     },
     "keywords": [],
     "author": "Marco La Rosa",
-    "license": "MIT",
+    "license": "GPLv3",
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:CoEDL/BritishLibrary-DataLoader.git"
+    },
     "build": {
         "afterSign": "bin/notarize.js",
         "appId": "uk.bl.data-loader.app",
@@ -85,6 +89,7 @@
         "electron": "^10.1.5",
         "electron-builder": "^22.9.1",
         "electron-mocha": "^9.3.1",
+        "electron-notarize": "^1.0.0",
         "electron-updater": "^4.3.5",
         "electron-webpack": "^2.8.2",
         "electron-webpack-vue": "^2.4.0",
