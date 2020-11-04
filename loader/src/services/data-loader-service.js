@@ -89,9 +89,7 @@ export class DataLoader {
     async load({ target, data, dataOnly = false }) {
         if (!dataOnly) {
             let viewerSource;
-            if (process.env.NODE_ENV === "development") {
-                viewerSource = path.join(__dirname, "..", "viewer");
-            }
+            viewerSource = path.join(__dirname, "..", "viewer");
             await copy(viewerSource, target);
         }
 
