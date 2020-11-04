@@ -34,11 +34,11 @@
                 class="style-progress-bar"
             />
         </div> -->
-        <div>
+        <!-- <div>
             <el-checkbox v-model="dataOnly">
                 Load only the data - not the website.
             </el-checkbox>
-        </div>
+        </div> -->
     </div>
 </template>
 
@@ -49,7 +49,7 @@ export default {
     data() {
         return {
             doit: false,
-            dataOnly: process.env.NODE_ENV === "development",
+            // dataOnly: process.env.NODE_ENV === "development",
             loading: false,
         };
     },
@@ -70,7 +70,7 @@ export default {
                 await dataloader.load({
                     target: this.$store.state.usbMountPoint,
                     data: this.$store.state.data.data,
-                    dataOnly: this.dataOnly,
+                    // dataOnly: this.dataOnly,
                 });
                 this.loading = false;
             }, 200);
