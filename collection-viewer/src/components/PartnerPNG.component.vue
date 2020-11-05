@@ -15,7 +15,7 @@
                 {{ content[language][1] }}
             </div>
             <div class="">
-                {{ content[language][1] }}
+                {{ content[language][2] }}
             </div>
             <picture>
                 <source :srcset="image.png" />
