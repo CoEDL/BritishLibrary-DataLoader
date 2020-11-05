@@ -87,13 +87,14 @@ export class DataLoader {
     }
 
     async load({ target, data, dataOnly = false }) {
+        target = path.join(target, "html");
         if (!dataOnly) {
             let viewerSource;
             viewerSource = path.join(__dirname, "..", "viewer");
             await copy(viewerSource, target);
         }
 
-        target = `${target}/repository`;
+        target = path.join(target, "repository");
         await ensureDir(target);
         store.commit("resetMessages");
 
