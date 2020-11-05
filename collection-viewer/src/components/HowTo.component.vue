@@ -51,6 +51,7 @@ export default {
                     Long "Lukluk insait long kalsa laibri  " yu ken kisim save moa 
                     long wan wan koleksen na harim ol rikoding insait long dispela ol koleksen
                     `,
+                    `Painim – Na tu yu ken painim olgeta samting insait long kalsa laibri. Sapos yu laik mekim olsem, go long seksen bilong Tokaut na klik long mak i stap antap long raithan sait.`,
                     `
                     Planti moa toksave long wan wan rikoding na ol piksa bai 
                     stap long seksen ol i kolim "kisim save moa long dispela samting"
