@@ -1,23 +1,3 @@
-// const HtmlWebpackPlugin = require("html-webpack-plugin");
-
-// module.exports = {
-//     resolve: {
-//         alias: {
-//             assets: `${__dirname}/src/assets`,
-//             components: `${__dirname}/src/components`,
-//             services: `${__dirname}/src/services`,
-//             store: `${__dirname}/src/store`
-//         }
-//     },
-//     plugins: [
-//         new HtmlWebpackPlugin({
-//             title: "paradisec-data-loader",
-//             template: "src/renderer/index.html",
-//             hash: true
-//         })
-//     ]
-// };
-
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const merge = require("webpack-merge");
 const { compact } = require("lodash");
@@ -90,6 +70,6 @@ module.exports = (config) => {
             }),
         ],
     });
-    // console.log(JSON.stringify(config, null, 2));
+    delete config.optimization.namedModules
     return config;
 };
