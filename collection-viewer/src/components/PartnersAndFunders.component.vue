@@ -21,8 +21,8 @@
                 </li>
                 <li class="hover:text-celadonblue">
                     <router-link to="/partner/aiatsis">
-                        AIATSIS [Australian Institute of Aboriginal and Torres
-                        Strait Islander Studies]
+                        AIATSIS [Australian Institute of Aboriginal and Torres Strait Islander
+                        Studies]
                     </router-link>
                 </li>
                 <li class="hover:text-celadonblue">
@@ -42,8 +42,8 @@
                 </li>
                 <li class="hover:text-celadonblue">
                     <router-link to="/partner/paradisec">
-                        PARADISEC [Pacific and Regional Archive for Digital
-                        Sources in Endangered Cultures, Australia]
+                        PARADISEC [Pacific and Regional Archive for Digital Sources in Endangered
+                        Cultures, Australia]
                     </router-link>
                 </li>
                 <li class="hover:text-celadonblue">
@@ -63,9 +63,8 @@
                 {{ content[language][3] }}
             </div>
             <div>
-                True Echoes is funded by the Leverhulme Trust and the UK
-                Government's Department for Business, Energy and Industrial
-                Strategy.
+                True Echoes is funded by the Leverhulme Trust and the UK Government's Department for
+                Business, Energy and Industrial Strategy.
             </div>
 
             <div class="flex flex-col md:flex-row md:space-x-4 md:px-4">
@@ -73,20 +72,14 @@
                     <picture>
                         <source :srcset="leverhulmeTrust.png" />
                         <source :srcset="leverhulmeTrust.webp" />
-                        <img
-                            :src="leverhulmeTrust.png"
-                            class="h-32 object-fit mx-auto"
-                        />
+                        <img :src="leverhulmeTrust.png" class="h-32 object-fit mx-auto" />
                     </picture>
                 </div>
                 <div class="w-full md:w-1/2 md:pt-6">
                     <picture>
                         <source :srcset="fundedByUkGov.png" />
                         <source :srcset="fundedByUkGov.webp" />
-                        <img
-                            :src="leverhulmeTrust.png"
-                            class="h-32 object-fit mx-auto"
-                        />
+                        <img :src="leverhulmeTrust.png" class="h-32 object-fit mx-auto" />
                     </picture>
                 </div>
             </div>
@@ -97,8 +90,8 @@
 <script>
 import leverhulmeTrustWebp from "src/assets/images/Leverhulme_Trust_RGB_blue.webp";
 import leverhulmeTrustPng from "src/assets/images/Leverhulme_Trust_RGB_blue.png";
-import fundedByUkGovWebp from "src/assets/images/Funded-by-UK-Gov.webp";
-import fundedByUkGovPng from "src/assets/images/Funded-by-UK-Gov.png";
+import fundedByUkGovWebp from "src/assets/images/BEIS-logo.webp";
+import fundedByUkGovPng from "src/assets/images/BEIS-logo.png";
 
 export default {
     data() {
