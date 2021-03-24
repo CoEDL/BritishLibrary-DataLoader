@@ -1,22 +1,8 @@
 "use strict";
 
-import {
-    compact,
-    groupBy,
-    reduce,
-    uniq,
-    uniqBy,
-    capitalize,
-    orderBy,
-} from "lodash";
+import { compact, groupBy, reduce, uniq, uniqBy, capitalize, orderBy } from "lodash";
 
-const speakerRolesToDisplay = [
-    "participant",
-    "performer",
-    "signer",
-    "singer",
-    "speaker",
-];
+const speakerRolesToDisplay = ["participant", "performer", "signer", "singer", "speaker"];
 export async function loadData() {
     try {
         let response = await fetch(mapRepositoryRoot("/repository/index.json"));
@@ -25,22 +11,6 @@ export async function loadData() {
         }
         let { collections, items } = await response.json();
         return { collections, items };
-        // items = postprocess(items);
-        // let filters = extractFilters({ collections, items });
-
-        // items = items.map(item => {
-        //     item.images = item.images.map(image => {
-        //         image.item.path = mapRepositoryRoot(image.item.path);
-        //         image.item.thumbnail = mapRepositoryRoot(image.item.thumbnail);
-        //         return image;
-        //     });
-        //     item.documents = item.documents.map(document => {
-        //         document.path = mapRepositoryRoot(document.path);
-        //         return document;
-        //     });
-        //     return item;
-        // });
-        // return { items, collections, filters };
     } catch (error) {
         console.log(error);
     }
@@ -66,9 +36,7 @@ export async function loadData() {
             let audio = groupBy(item.audio, (a) => a.name.split(".").shift());
             let keys = Object.keys(audio);
             item.audio = keys.map((key) => {
-                const files = compact(
-                    audio[key].map((a) => mapRepositoryRoot(a.path))
-                );
+                const files = compact(audio[key].map((a) => mapRepositoryRoot(a.path)));
                 return {
                     itemId: item.itemId,
                     collectionId: item.collectionId,
@@ -87,9 +55,7 @@ export async function loadData() {
             let video = groupBy(item.video, (v) => v.name.split(".").shift());
             keys = Object.keys(video);
             item.video = keys.map((key) => {
-                const files = compact(
-                    video[key].map((v) => mapRepositoryRoot(v.path))
-                );
+                const files = compact(video[key].map((v) => mapRepositoryRoot(v.path)));
                 return {
                     itemId: item.itemId,
                     collectionId: item.collectionId,
@@ -172,9 +138,7 @@ export async function loadData() {
 export function mapRepositoryRoot(path) {
     try {
         const root =
-            process.env.NODE_ENV === "testing"
-                ? "/mobile-viewer/repository"
-                : "/repository";
+            process.env.NODE_ENV === "testing" ? "/mobile-viewer/repository" : "/repository";
         return path.replace("/repository", root);
     } catch (error) {
         return path;
