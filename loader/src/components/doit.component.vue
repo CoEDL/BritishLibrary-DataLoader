@@ -2,16 +2,8 @@
     <div class="flex flex-col">
         <div class="flex flex-row space-x-2">
             <div>
-                <el-button
-                    type="primary"
-                    v-on:click="loadTheData"
-                    size="small"
-                    :disabled="loading"
-                >
-                    <i
-                        class="fas fa-cog"
-                        v-bind:class="{ 'fa-spin': loading }"
-                    ></i>
+                <el-button type="primary" v-on:click="loadTheData" size="small" :disabled="loading">
+                    <i class="fas fa-cog" v-bind:class="{ 'fa-spin': loading }"></i>
                     Load the data
                 </el-button>
             </div>
@@ -20,9 +12,7 @@
             This will wipe any other content currently on the Disk.
         </div>
         <div class="my-4" v-if="showSuccess">
-            <div
-                class="text-2xl bg-green-400 text-white text-center p-2 rounded"
-            >
+            <div class="text-2xl bg-green-400 text-white text-center p-2 rounded">
                 Data Loaded
             </div>
         </div>
@@ -59,6 +49,7 @@ export default {
             setTimeout(async () => {
                 const dataloader = new DataLoader({
                     dataPath: this.$store.state.localDataPath,
+                    commit: this.$store.commit,
                 });
                 try {
                     await dataloader.load({
