@@ -37,10 +37,7 @@ const configuration = {
         },
         saveData(state, payload) {
             state.collections = orderBy(payload.collections, "collectionId");
-            state.backup.collections = orderBy(
-                payload.collections,
-                "collectionId"
-            );
+            state.backup.collections = orderBy(payload.collections, "collectionId");
 
             // state.items = orderBy(payload.items, ["collectionId", "itemId"]);
             // state.backup.items = orderBy(payload.items, [
@@ -63,89 +60,56 @@ const configuration = {
                                 return person.name === selectedFilter.value;
                             }).length;
                         });
-                        state.collections = state.backup.collections.filter(
-                            (collection) => {
-                                return collection[selectedFilter.type].filter(
-                                    (type) => {
-                                        return (
-                                            type.name === selectedFilter.value
-                                        );
-                                    }
-                                ).length;
-                            }
-                        );
+                        state.collections = state.backup.collections.filter((collection) => {
+                            return collection[selectedFilter.type].filter((type) => {
+                                return type.name === selectedFilter.value;
+                            }).length;
+                        });
                         break;
                     case "title":
                         state.items = state.backup.items.filter(
                             (item) => item.title === selectedFilter.value
                         );
                         state.collections = state.backup.collections.filter(
-                            (collection) =>
-                                collection.title === selectedFilter.value
+                            (collection) => collection.title === selectedFilter.value
                         );
                         break;
                     case "genre":
                         state.items = state.backup.items.filter((item) => {
                             return item.classifications.filter((c) => {
-                                return (
-                                    c.name === "genre" &&
-                                    c.value === selectedFilter.value
-                                );
+                                return c.name === "genre" && c.value === selectedFilter.value;
                             }).length;
                         });
-                        state.collections = state.backup.collections.filter(
-                            (collection) => {
-                                return collection.classifications.filter(
-                                    (c) => {
-                                        return (
-                                            c.name === "genre" &&
-                                            c.value === selectedFilter.value
-                                        );
-                                    }
-                                ).length;
-                            }
-                        );
+                        state.collections = state.backup.collections.filter((collection) => {
+                            return collection.classifications.filter((c) => {
+                                return c.name === "genre" && c.value === selectedFilter.value;
+                            }).length;
+                        });
                         break;
                     case "language":
                         state.items = state.backup.items.filter((item) => {
-                            return item.languages.includes(
-                                selectedFilter.value
-                            );
+                            return item.languages.includes(selectedFilter.value);
                         });
-                        state.collections = state.backup.collections.filter(
-                            (collection) => {
-                                return collection.languages.includes(
-                                    selectedFilter.value
-                                );
-                            }
-                        );
+                        state.collections = state.backup.collections.filter((collection) => {
+                            return collection.languages.includes(selectedFilter.value);
+                        });
                         break;
                     case "category":
                         state.items = state.backup.items.filter((item) => {
-                            return item.categories.includes(
-                                selectedFilter.value
-                            );
+                            return item.categories.includes(selectedFilter.value);
                         });
-                        state.collections = state.backup.collections.filter(
-                            (collection) => {
-                                return collection.categories.includes(
-                                    selectedFilter.value
-                                );
-                            }
-                        );
+                        state.collections = state.backup.collections.filter((collection) => {
+                            return collection.categories.includes(selectedFilter.value);
+                        });
                         break;
                 }
                 if (state.collections.length) {
-                    let collectionIds = state.collections.map(
-                        (c) => c.collectionId
-                    );
+                    let collectionIds = state.collections.map((c) => c.collectionId);
                     state.items = state.backup.items.filter((item) =>
                         collectionIds.includes(item.collectionId)
                     );
                 } else if (state.items.length) {
-                    let collectionIds = state.items.map(
-                        (item) => item.collectionId
-                    );
+                    let collectionIds = state.items.map((item) => item.collectionId);
                     state.collections = state.backup.collections.filter((c) =>
                         collectionIds.includes(c.collectionId)
                     );
@@ -181,9 +145,7 @@ const configuration = {
         },
         item: (state) => ({ collectionId, itemId }) => {
             return state.items.filter((item) => {
-                return (
-                    item.collectionId === collectionId && item.itemId === itemId
-                );
+                return item.collectionId === collectionId && item.itemId === itemId;
             })[0];
         },
         collectionItems: (state) => ({ collectionId }) => {
