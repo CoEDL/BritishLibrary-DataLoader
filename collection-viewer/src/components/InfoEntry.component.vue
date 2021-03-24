@@ -1,8 +1,11 @@
 <template>
-    <div class="flex flex-col" v-if="value && value.length">
+    <div class="flex flex-col" v-if="item">
         <div class="font-bold">{{ name }}:</div>
         <div class="flex-grow">
-            {{ value.join(", ") }}
+            <div v-if="item[name].length">
+                {{ item[name].join(", ") }}
+            </div>
+            <div v-else>N/A</div>
         </div>
     </div>
 </template>
@@ -14,8 +17,8 @@ export default {
             type: String,
             required: true,
         },
-        value: {
-            type: Array | undefined,
+        item: {
+            type: Object | undefined,
             required: true,
         },
     },
