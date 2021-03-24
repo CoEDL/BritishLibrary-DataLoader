@@ -14,6 +14,7 @@
     - [Building Windows releases](#building-windows-releases)
     - [Code signing](#code-signing)
   - [Updating the version of the viewer that gets bundled with the application](#updating-the-version-of-the-viewer-that-gets-bundled-with-the-application)
+  - [Developer notes](#developer-notes)
 
 A GUI to deploy a PARADISEC collection to a Raspberry Pi configured as a repatriation device or to build
 a static site on a USB disk. A previous version of this application was able to configure a LibraryBox
@@ -128,3 +129,18 @@ This application requires the [mobile collection viewer](https://github.com/marc
 
 Once set up, you can build a version of that viewer for integration into this application by following
 the notes Then, follow the notes to `Deploying to the PARADISEC data loader`
+
+## Developer notes
+
+To process a sheet from the BL and see what it's in it as well as scaffold out
+any missing data files (I know right...) do the following:
+
+```
+In one terminal run:
+> ./node_modules/.bin/webpack --entry ./src/services/process-worksheet.js --mode development --watch --output ./process-worksheet  --target node
+
+This will webpack the process worksheet script into a node executable that can be run in
+another terminal:
+
+> node process-worksheet
+```

@@ -3,12 +3,12 @@ import path from "path";
 import { has, groupBy, compact, isEmpty, isPlainObject } from "lodash";
 import Exceljs from "exceljs";
 import { ensureDir, writeJSON } from "fs-extra";
-import { store } from "../renderer/store";
 
 export class DataLoader {
-    constructor({ dataPath }) {
+    constructor({ dataPath, mode = "production", commit = undefined }) {
         this.dataPath = dataPath;
-        this.store = store;
+        this.commit = commit;
+        this.mode = mode;
     }
 
     async import() {
@@ -18,9 +18,7 @@ export class DataLoader {
         const exists = await pathExists(workbookFile);
 
         if (!exists) {
-            throw new Error(
-                `That path does not have a file named 'metadata.xlsx'`
-            );
+            throw new Error(`That path does not have a file named 'metadata.xlsx'`);
         }
 
         let workbook = new Exceljs.Workbook();
@@ -31,18 +29,23 @@ export class DataLoader {
         // ensure there is a sheet called 'Collection metadata'
         sheet = workbook.getWorksheet("Collection metadata");
         if (!sheet) {
-            throw new Error(
-                `A sheet named 'Collection metadata' was not found.`
-            );
+            throw new Error(`A sheet named 'Collection metadata' was not found.`);
         }
 
-        const collections = sheetToJson({ sheet, headerRowNumber: 2 });
+        const collections = sheetToJson({ sheet, headerRowNumber: 2 }).map((collection) => {
+            if (collection["Additional collection information (PDF)"].length) {
+                collection["Additional collection information (PDF)"] = collection[
+                    "Additional collection information (PDF)"
+                ].map((e) => `${collection.Shelfmark[0]}/${e}`);
+            }
+            return collection;
+        });
         let collectionIdentifiers = collections.map((collection) => {
             return collection.Shelfmark[0];
         });
         for (let code of collectionIdentifiers) {
             const collectionPath = path.join(this.dataPath, code);
-            if (!(await pathExists(collectionPath))) {
+            if (this.mode === "production" && !(await pathExists(collectionPath))) {
                 throw new Error(`Unable to find the folder ${collectionPath}`);
             }
         }
@@ -50,13 +53,9 @@ export class DataLoader {
         let items = {};
         let errors = [];
         for (let collection of collectionIdentifiers) {
-            let sheet = workbook.getWorksheet(
-                `${collection} Recording metadata`
-            );
+            let sheet = workbook.getWorksheet(`${collection} Recording metadata`);
             if (!sheet) {
-                throw new Error(
-                    `A sheet named '${collection} Recording metadata' was not found.`
-                );
+                throw new Error(`A sheet named '${collection} Recording metadata' was not found.`);
             }
             let itemMetadata = sheetToJson({ sheet, headerRowNumber: 2 });
             for (let item of itemMetadata) {
@@ -69,19 +68,14 @@ export class DataLoader {
 
                 // check that each exists
                 for (let file of item["Original filename"]) {
-                    let fileExists = await pathExists(
-                        path.join(this.dataPath, file)
-                    );
-                    if (!fileExists) {
+                    let fileExists = await pathExists(path.join(this.dataPath, file));
+                    if (this.mode === "production" && !fileExists) {
                         throw new Error(`File '${file}' not found.`);
                     }
                 }
             }
             // console.log(collection, itemMetadata);
-            items[collection] = groupBy(
-                itemMetadata,
-                (item) => item.Shelfmark[0]
-            );
+            items[collection] = groupBy(itemMetadata, (item) => item.Shelfmark[0]);
         }
         return { collections, items };
     }
@@ -96,7 +90,7 @@ export class DataLoader {
 
         target = path.join(target, "repository");
         await ensureDir(target);
-        store.commit("resetMessages");
+        if (this.commit) this.commit("resetMessages");
 
         let index = `${target}/index.json`;
         await writeJSON(index, data);
@@ -106,10 +100,12 @@ export class DataLoader {
             const source = path.join(this.dataPath, collection.Shelfmark[0]);
             const output = path.join(target, collection.Shelfmark[0]);
             try {
-                store.commit(
-                    "setInfoMessage",
-                    `Writing data for collection ${collection.Shelfmark[0]}`
-                );
+                if (this.commit) {
+                    this.commit(
+                        "setInfoMessage",
+                        `Writing data for collection ${collection.Shelfmark[0]}`
+                    );
+                }
                 await copy(source, output);
             } catch (error) {
                 console.log(error.message);
@@ -155,8 +151,7 @@ export function sheetToJson({ sheet, headerRowNumber = 1 }) {
             if (isPlainObject(cell.value) && cell.value.richText) {
                 let value = cell.value.richText.map((fragment) => {
                     if (!fragment.font) return fragment.text;
-                    if (fragment.font && fragment.font.italic)
-                        return `<em>${fragment.text}</em>`;
+                    if (fragment.font && fragment.font.italic) return `<em>${fragment.text}</em>`;
                     if (fragment.font && fragment.font.bold)
                         return `<strong>${fragment.text}</strong>`;
                     return fragment.text;
