@@ -1,8 +1,6 @@
 <template>
     <div class="flex flex-col">
-        <div
-            class="heading-text page-title-size bg-goldensand py-6 px-2 flex flex-row"
-        >
+        <div class="heading-text page-title-size bg-goldensand py-6 px-2 flex flex-row">
             <div class="">
                 British Museum
             </div>
@@ -11,21 +9,18 @@
             <div class="font-bold">{{ content[language][0] }}</div>
             <div class="">{{ content[language][1] }}</div>
             <div>{{ content[language][2] }}</div>
-            <!-- <picture>
+            <picture>
                 <source :srcset="image.png" />
                 <source :srcset="image.webp" />
-                <img
-                    :src="image.png"
-                    class="h-32 object-fit mx-auto"
-                />
-            </picture> -->
+                <img :src="image.png" class="h-32 object-fit mx-auto" />
+            </picture>
         </div>
     </div>
 </template>
 
 <script>
-import webp from "src/assets/images/PARADISEC_Logo.webp";
-import png from "src/assets/images/PARADISEC_Logo.png";
+import webp from "src/assets/images/BM_Stacked_blk.webp";
+import png from "src/assets/images/BM_Stacked_blk.jpg";
 export default {
     data() {
         return {
