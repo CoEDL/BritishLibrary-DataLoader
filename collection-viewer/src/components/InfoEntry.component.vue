@@ -2,7 +2,7 @@
     <div class="flex flex-col" v-if="item">
         <div class="font-bold">{{ name }}:</div>
         <div class="flex-grow">
-            <div v-if="item[name].length">
+            <div v-if="item[name] && item[name].length">
                 {{ item[name].join(", ") }}
             </div>
             <div v-else>N/A</div>
