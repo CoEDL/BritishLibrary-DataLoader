@@ -1,7 +1,7 @@
 {
     "name": "BritishLibrary-DataLoader",
     "productName": "British Library Data Loader",
-    "version": "0.1.2",
+    "version": "0.2.0",
     "description": "A raspberrypi data loader for the British Library",
     "main": "src/index.js",
     "scripts": {
@@ -95,7 +95,6 @@
         "electron-webpack": "^2.8.2",
         "electron-webpack-vue": "^2.4.0",
         "eslint": "^7.12.1",
-        "fsevents": "^2.2.0",
         "html-webpack-plugin": "^4.5.0",
         "jest": "^26.6.2",
         "node-sass": "^5.0.0",
