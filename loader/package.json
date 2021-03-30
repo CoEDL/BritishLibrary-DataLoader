@@ -1,7 +1,7 @@
 {
     "name": "BritishLibrary-DataLoader",
     "productName": "British Library Data Loader",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "description": "A raspberrypi data loader for the British Library",
     "main": "src/index.js",
     "scripts": {
