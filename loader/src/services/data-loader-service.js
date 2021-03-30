@@ -33,7 +33,10 @@ export class DataLoader {
         }
 
         const collections = sheetToJson({ sheet, headerRowNumber: 2 }).map((collection) => {
-            if (collection["Additional collection information (PDF)"].length) {
+            if (
+                collection["Additional collection information (PDF)"] &&
+                collection["Additional collection information (PDF)"].length
+            ) {
                 collection["Additional collection information (PDF)"] = collection[
                     "Additional collection information (PDF)"
                 ].map((e) => `${collection.Shelfmark[0]}/${e}`);
@@ -43,6 +46,7 @@ export class DataLoader {
         let collectionIdentifiers = collections.map((collection) => {
             return collection.Shelfmark[0];
         });
+
         for (let code of collectionIdentifiers) {
             const collectionPath = path.join(this.dataPath, code);
             if (this.mode === "production" && !(await pathExists(collectionPath))) {

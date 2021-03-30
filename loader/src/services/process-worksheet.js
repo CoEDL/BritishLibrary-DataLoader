@@ -3,7 +3,6 @@ import { DataLoader } from "./data-loader-service.js";
 import { pathExists, ensureDir, ensureFile, copy } from "fs-extra";
 const dataPath = "/Users/mlarosa/Desktop/true-echoes-latest";
 const sourceAudioFile = path.join(dataPath, "C80", "025A-C0080X0446XX-0100M0.mp3");
-const sourceImageFile = path.join(dataPath, "C80", "025A-C0080X0446XX-0100M0.mp3");
 
 (async () => {
     const dataLoader = new DataLoader({
@@ -24,7 +23,7 @@ const sourceImageFile = path.join(dataPath, "C80", "025A-C0080X0446XX-0100M0.mp3
                 let file = media["Original filename"][0];
                 if (media["Format code"][0] === "a") {
                     if (!(await pathExists(path.join(dataPath, file)))) {
-                        await copy(sourceFile, path.join(dataPath, file));
+                        await copy(sourceAudioFile, path.join(dataPath, file));
                     }
                 } else {
                     await ensureFile(path.join(dataPath, file));
