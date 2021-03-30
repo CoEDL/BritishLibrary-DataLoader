@@ -12,10 +12,7 @@
             <info-entry-component name="Reference" :item="collection" />
             <info-entry-component name="Location of Original" :item="collection" />
             <info-entry-component name="Collection Description" :item="collection" />
-            <info-entry-component
-                name="Additional collection information (PDF)"
-                :item="collection"
-            />
+
             <info-entry-component name="Collection Inventory" :item="collection" />
             <info-entry-component name="Documentation" :item="collection" />
             <info-entry-component name="Country" :item="collection" />
@@ -26,13 +23,11 @@
                 :item="collection"
             />
         </div>
-        <div
-            v-if="collection['Additional collection information (PDF)'].length"
-            class="my-4 text-cloudburst hover:text-celadonblue text-xl"
-        >
-            <a :href="pdfSrc">Find out more about this collection</a>
-            -->
-        </div>
+        <info-entry-component
+            class="my-4"
+            name="Additional collection information (PDF)"
+            :item="collection"
+        />
     </div>
 </template>
 
