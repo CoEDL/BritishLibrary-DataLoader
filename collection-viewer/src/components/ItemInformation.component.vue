@@ -18,13 +18,14 @@
             <info-entry-component name="Rights" :item="item" />
             <info-entry-component name="Performer Permission" :item="item" />
             <info-entry-component name="Acquisition Source" :item="item" />
-            <info-entry-component name="Language Name" :item="item" />
+            <info-entry-component name="Language name" :item="item" />
             <info-entry-component name="Language code" :item="item" />
             <info-entry-component name="Accent/dialect heading" :item="item" />
             <info-entry-component name="Documentation" :item="item" />
+            <info-entry-component name="web address of original archive/location" :item="item" />
             <info-entry-component name="Recording Note" :item="item" />
             <info-entry-component name="Recording Equipment" :item="item" />
-            <info-entry-component name="Playback Mode" :item="item" />
+            <info-entry-component name="Playback mode" :item="item" />
             <info-entry-component name="Genre" :item="item" />
             <info-entry-component name="Subject" :item="item" />
             <info-entry-component name="Keyword" :item="item" />
@@ -34,8 +35,6 @@
 
 <script>
 import InfoEntryComponent from "./InfoEntry.component.vue";
-
-import { compact } from "lodash";
 
 export default {
     components: {

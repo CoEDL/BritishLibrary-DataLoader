@@ -9,49 +9,40 @@
                     {{ collection["Collection Title"].join(" ") }}
                 </div>
             </div>
-
-            <div class="flex flex-col md:flex-row">
-                <div class="md:w-48 font-bold">Description:</div>
-                <div class="flex-grow">
-                    {{ collection["Collection Description"].join(" ") }}
-                </div>
-            </div>
-            <div class="flex flex-col md:flex-row">
-                <div class="md:w-48 font-bold">Inventory:</div>
-                <div class="flex-grow">
-                    {{ collection["Collection Inventory"].join(" ") }}
-                </div>
-            </div>
-            <div class="flex flex-col md:flex-row">
-                <div class="md:w-48 font-bold">Country:</div>
-                <div class="flex-grow">
-                    {{ collection["Country"].join(" ") }}
-                </div>
-            </div>
-            <div class="flex flex-col md:flex-row">
-                <div class="md:w-48 font-bold">Location of Original:</div>
-                <div class="flex-grow">
-                    {{ collection["Location of Original"].join(" ") }}
-                </div>
-            </div>
-            <div class="flex flex-col md:flex-row">
-                <div class="md:w-48 font-bold">Performer/Contributor:</div>
-                <div class="flex-grow">
-                    {{ collection["Performer/Contributor"].join(" ") }}
-                </div>
-            </div>
+            <info-entry-component name="Reference" :item="collection" />
+            <info-entry-component name="Location of Original" :item="collection" />
+            <info-entry-component name="Collection Description" :item="collection" />
+            <info-entry-component
+                name="Additional collection information (PDF)"
+                :item="collection"
+            />
+            <info-entry-component name="Collection Inventory" :item="collection" />
+            <info-entry-component name="Documentation" :item="collection" />
+            <info-entry-component name="Country" :item="collection" />
+            <info-entry-component name="Keyword" :item="collection" />
+            <info-entry-component name="Performer/Contributor" :item="collection" />
+            <info-entry-component
+                name="web address of original archive/location"
+                :item="collection"
+            />
         </div>
         <div
             v-if="collection['Additional collection information (PDF)'].length"
             class="my-4 text-cloudburst hover:text-celadonblue text-xl"
         >
             <a :href="pdfSrc">Find out more about this collection</a>
+            -->
         </div>
     </div>
 </template>
 
 <script>
+import InfoEntryComponent from "./InfoEntry.component.vue";
+
 export default {
+    components: {
+        InfoEntryComponent,
+    },
     props: {
         collection: {
             type: Object,
