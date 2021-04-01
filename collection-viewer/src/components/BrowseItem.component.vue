@@ -2,7 +2,7 @@
     <div class="bg-white p-8 flex flex-col">
         <div class="text-2xl flex flex-col">
             <div>
-                {{ item["Item Title"].join(" ") }}
+                {{ item["Item title"].join(" ") }}
             </div>
         </div>
 

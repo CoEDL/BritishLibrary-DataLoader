@@ -1,11 +1,8 @@
 <template>
-    <div class="flex flex-col" v-if="item">
+    <div class="flex flex-col" v-if="item && item[name] && item[name].length">
         <div class="font-bold">{{ name }}:</div>
         <div class="flex-grow">
-            <div v-if="item[name] && item[name].length">
-                {{ item[name].join(", ") }}
-            </div>
-            <div v-else>N/A</div>
+            {{ item[name].join(", ") }}
         </div>
     </div>
 </template>

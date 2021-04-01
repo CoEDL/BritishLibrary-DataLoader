@@ -6,28 +6,27 @@
                     {{ collection["Shelfmark"].join(" ") }}
                 </div>
                 <div class="text-2xl">
-                    {{ collection["Collection Title"].join(" ") }}
+                    {{ collection["Collection title"].join(" ") }}
                 </div>
             </div>
             <info-entry-component name="Reference" :item="collection" />
-            <info-entry-component name="Location of Original" :item="collection" />
-            <info-entry-component name="Collection Description" :item="collection" />
+            <info-entry-component name="Location of original" :item="collection" />
+            <info-entry-component name="Collection description" :item="collection" />
 
-            <info-entry-component name="Collection Inventory" :item="collection" />
+            <info-entry-component name="Collection inventory" :item="collection" />
             <info-entry-component name="Documentation" :item="collection" />
             <info-entry-component name="Country" :item="collection" />
             <info-entry-component name="Keyword" :item="collection" />
-            <info-entry-component name="Performer/Contributor" :item="collection" />
-            <info-entry-component
-                name="web address of original archive/location"
-                :item="collection"
-            />
+            <info-entry-component name="Performer/contributor" :item="collection" />
         </div>
-        <info-entry-component
-            class="my-4"
-            name="Additional collection information (PDF)"
-            :item="collection"
-        />
+        <div class="flex flex-col mt-4">
+            <div class="font-bold">Additional collection information (PDF):</div>
+            <div class="flex-grow">
+                <a :href="pdfSrc">
+                    {{ collection["Additional collection information (PDF)"][0] }}
+                </a>
+            </div>
+        </div>
     </div>
 </template>
 
