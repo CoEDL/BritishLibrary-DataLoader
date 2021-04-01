@@ -1,4 +1,4 @@
-import { pathExists, copy } from "fs-extra";
+import { pathExists, copy, remove } from "fs-extra";
 import path from "path";
 import { has, groupBy, compact, isEmpty, isPlainObject } from "lodash";
 import Exceljs from "exceljs";
@@ -93,6 +93,9 @@ export class DataLoader {
         }
 
         target = path.join(target, "repository");
+        if (await pathExists(target)) {
+            await remove(target);
+        }
         await ensureDir(target);
         if (this.commit) this.commit("resetMessages");
 
