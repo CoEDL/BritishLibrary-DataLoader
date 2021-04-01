@@ -12,7 +12,7 @@
             <picture>
                 <source :srcset="image.png" />
                 <source :srcset="image.webp" />
-                <img :src="image.png" class="h-32 object-fit mx-auto" />
+                <img :src="image.png" class="h-24 object-fit mx-auto" />
             </picture>
         </div>
     </div>
