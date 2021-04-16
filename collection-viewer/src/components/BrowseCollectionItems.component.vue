@@ -9,18 +9,14 @@
             }"
         >
             <div
-                class="px-2 text-xl md:text-2xl"
+                class="px-2 text-2xl"
                 :id="itemId(item[0].Shelfmark[0])"
                 :ref="itemId(item[0].Shelfmark[0])"
             >
                 {{ name }}
             </div>
             <div class="flex flex-col md:flex-row md:flex-wrap">
-                <div
-                    v-for="(entry, idx2) in item"
-                    :key="idx2"
-                    class="w-full md:w-1/2 lg:w-1/3 p-2"
-                >
+                <div v-for="(entry, idx2) in item" :key="idx2" class="w-full md:w-1/2 lg:w-1/3 p-2">
                     <browse-item-component :item="entry" class="bg-gray-200" />
                 </div>
             </div>
