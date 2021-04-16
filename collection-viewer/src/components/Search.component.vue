@@ -1,11 +1,7 @@
 <template>
     <div class="flex flex-col p-2">
         <div>{{ content[language][0] }}</div>
-        <el-input
-            placeholder="Please input"
-            v-model="query"
-            @input="search"
-        ></el-input>
+        <el-input placeholder="Please input" v-model="query" @input="search"></el-input>
         <ul class="list-disc pl-6 text-xl">
             <li v-for="(result, idx) of results" :key="idx">
                 <router-link
@@ -13,7 +9,7 @@
                     class="text-cloudburst hover:text-celadonblue"
                 >
                     {{ result.Shelfmark[0] }} -
-                    {{ result["Item Title"].join(", ") }}
+                    {{ result["Item title"].join(", ") }}
                 </router-link>
             </li>
         </ul>
@@ -40,12 +36,12 @@ export default {
                 ignoreLocation: true,
                 threshold: 0.0,
                 keys: [
-                    "Item Title",
-                    "Description (Item Note)",
-                    "Collection Title",
-                    "Language",
-                    "Location of Original",
-                    "Performer/Contributor",
+                    "Item title",
+                    "Item note",
+                    "Collection title",
+                    "Language name",
+                    "Location of original",
+                    "Performer/contributor",
                     "Genre",
                     "Reference",
                     "Rights",
@@ -99,7 +95,7 @@ export default {
             });
             items = flattenDeep(items);
             items = items.map((item) => {
-                item.collectionTitle = item["Collection Title"][0];
+                item.collectionTitle = item["Collection title"][0];
                 return item;
             });
             this.fuse = new Fuse(items, this.options);
