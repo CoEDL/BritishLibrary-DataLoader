@@ -122,6 +122,7 @@ export class DataLoader {
 }
 
 export function sheetToJson({ sheet, headerRowNumber = 1 }) {
+    let errors = [];
     let headerRow = sheet.getRow(headerRowNumber);
     headerRow = headerRow._cells.map((cell) => {
         let header = cell.value
@@ -154,7 +155,13 @@ export function sheetToJson({ sheet, headerRowNumber = 1 }) {
         if (isEmpty(compact(row.map((cell) => cell.value)))) return null;
 
         row.forEach((cell) => {
-            let key = headers[cell.column].replace("\n", "");
+            let key;
+            try {
+                key = headers[cell.column].replace("\n", "");
+            } catch (error) {
+                console.error(`Cell ${cell.cell} does not match any column title`);
+                return;
+            }
             if (isPlainObject(cell.value) && cell.value.richText) {
                 let value = cell.value.richText.map((fragment) => {
                     if (!fragment.font) return fragment.text;
