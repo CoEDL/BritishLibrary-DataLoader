@@ -19,7 +19,7 @@
             <info-entry-component name="Keyword" :item="collection" />
             <info-entry-component name="Performer/contributor" :item="collection" />
         </div>
-        <div class="flex flex-col mt-4">
+        <div class="flex flex-col mt-4" v-if="pdfName">
             <div class="font-bold">Additional collection information (PDF):</div>
             <div class="flex-grow">
                 <a :href="pdfSrc">
@@ -49,6 +49,9 @@ export default {
     computed: {
         pdfSrc: function() {
             return `/repository/${this.collection["Additional collection information (PDF)"]}`;
+        },
+        pdfName: function() {
+            return this.collection["Additional collection information (PDF)"]?.[0];
         },
     },
     methods: {
