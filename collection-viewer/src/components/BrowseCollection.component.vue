@@ -9,15 +9,12 @@
                     {{ collection["Collection title"].join(" ") }}
                 </div>
             </div>
-            <info-entry-component name="Reference" :item="collection" />
-            <info-entry-component name="Location of original" :item="collection" />
-            <info-entry-component name="Collection description" :item="collection" />
-
-            <info-entry-component name="Collection inventory" :item="collection" />
-            <info-entry-component name="Documentation" :item="collection" />
-            <info-entry-component name="Country" :item="collection" />
-            <info-entry-component name="Keyword" :item="collection" />
-            <info-entry-component name="Performer/contributor" :item="collection" />
+            <info-entry-component
+                v-for="field of fields"
+                :key="field"
+                :field="field"
+                :data="collection[field]"
+            />
         </div>
         <div class="flex flex-col mt-4" v-if="pdfName">
             <div class="font-bold">Additional collection information (PDF):</div>
@@ -44,7 +41,10 @@ export default {
         },
     },
     data() {
-        return {};
+        return {
+            filterFields: ["Additional collection information (PDF)"],
+            fields: [],
+        };
     },
     computed: {
         pdfSrc: function() {
@@ -53,6 +53,9 @@ export default {
         pdfName: function() {
             return this.collection["Additional collection information (PDF)"]?.[0];
         },
+    },
+    mounted() {
+        this.fields = Object.keys(this.collection).filter((f) => !this.filterFields.includes(f));
     },
     methods: {
         displayItem() {

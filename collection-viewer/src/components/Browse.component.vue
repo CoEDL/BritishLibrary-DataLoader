@@ -2,9 +2,9 @@
     <div class="flex flex-col">
         <browse-collection-component
             class="m-4 mb-4 py-4"
-            v-for="(collection, idx) of collections"
+            v-for="(collection, name, idx) of collections"
             :key="idx"
-            :collection="collection"
+            :collection="collection[0]"
         >
         </browse-collection-component>
     </div>

@@ -6,14 +6,19 @@
             </div>
         </div>
 
-        <render-audio-component
-            v-if="item['Format code'][0] === 'a'"
-            :src="item['Original filename'][0]"
-        >
-        </render-audio-component>
+        <div class="flex-grow w-96">
+            <render-audio-component
+                v-if="isAudio(item['Original filename'][0])"
+                :collectionId="item.collectionId"
+                :src="item['Original filename'][0]"
+            >
+            </render-audio-component>
+        </div>
 
         <render-image-component
-            v-if="item['Format code'][0] === 'i'"
+            class="w-full"
+            v-if="isImage(item['Original filename'][0])"
+            :collectionId="item.collectionId"
             :src="item['Original filename'][0]"
         >
         </render-image-component>
@@ -22,7 +27,6 @@
                 type="text"
                 @click="showInformation = !showInformation"
                 class="text-cloudburst hover:text-celadonblue"
-                w
             >
                 {{ learnMore[language] }}
             </el-button>
@@ -59,6 +63,14 @@ export default {
     computed: {
         language: function() {
             return this.$store.state.language.selected;
+        },
+    },
+    methods: {
+        isAudio(filename) {
+            return filename.match(/\.mp3/) ? true : false;
+        },
+        isImage(filename) {
+            return filename.match(/\.jpg/) ? true : false;
         },
     },
 };

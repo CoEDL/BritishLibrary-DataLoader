@@ -2,7 +2,7 @@
 
 import Vue from "vue";
 import Vuex from "vuex";
-import { flattenDeep, orderBy, cloneDeep } from "lodash";
+import { flattenDeep, orderBy, cloneDeep, groupBy } from "lodash";
 Vue.use(Vuex);
 import { loadData } from "./data-loader.service";
 
@@ -36,7 +36,7 @@ const configuration = {
             };
         },
         saveData(state, payload) {
-            state.collections = orderBy(payload.collections, "collectionId");
+            state.collections = groupBy(payload.collections, (c) => c.Shelfmark[0]);
             state.backup.collections = orderBy(payload.collections, "collectionId");
 
             // state.items = orderBy(payload.items, ["collectionId", "itemId"]);

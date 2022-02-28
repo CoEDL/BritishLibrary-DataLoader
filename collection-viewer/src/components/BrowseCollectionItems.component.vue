@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-col">
-        <div
+        <!-- <div
             v-for="(item, name, idx) in items"
             :key="idx"
             class="flex flex-col lg:justify-evenly my-2 bg-gray-200 mx-2 rounded-lg"
@@ -19,6 +19,18 @@
                 <div v-for="(entry, idx2) in item" :key="idx2" class="w-full md:w-1/2 lg:w-1/3 p-2">
                     <browse-item-component :item="entry" class="bg-gray-200" />
                 </div>
+            </div>
+        </div> -->
+        <div
+            v-for="(item, name, idx) in items"
+            :key="idx"
+            class="flex flex-col lg:justify-evenly my-2 bg-gray-200 mx-2 rounded-lg"
+        >
+            <div class="px-2 text-2xl" :id="item['Call number'][0]" :ref="item['Call number'][0]">
+                {{ collection["Collection title"][0] }}
+            </div>
+            <div class="flex flex-col md:flex-row md:flex-wrap">
+                <browse-item-component :item="item" class="bg-gray-200" />
             </div>
         </div>
     </div>
@@ -47,6 +59,9 @@ export default {
         };
     },
     computed: {
+        collection: function() {
+            return this.$store.state.collections[this.collectionId][0];
+        },
         items: function() {
             return this.$store.getters.collectionItems({
                 collectionId: this.collectionId,
