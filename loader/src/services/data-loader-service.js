@@ -65,21 +65,16 @@ export class DataLoader {
             for (let item of itemMetadata) {
                 item.collectionId = collection;
 
-                // rewrite the files with the path
-                item["Original filename"] = item["Original filename"].map(
-                    (file) => `${collection}/${file}`
-                );
-
                 // check that each exists
                 for (let file of item["Original filename"]) {
-                    let fileExists = await pathExists(path.join(this.dataPath, file));
+                    let filePath = path.join(this.dataPath, collection, file);
+                    let fileExists = await pathExists(filePath);
                     if (this.mode === "production" && !fileExists) {
                         throw new Error(`File '${file}' not found.`);
                     }
                 }
             }
-            // console.log(collection, itemMetadata);
-            items[collection] = groupBy(itemMetadata, (item) => item.Shelfmark[0]);
+            items[collection] = itemMetadata;
         }
         return { collections, items };
     }
@@ -159,7 +154,7 @@ export function sheetToJson({ sheet, headerRowNumber = 1 }) {
             try {
                 key = headers[cell.column].replace("\n", "");
             } catch (error) {
-                console.error(`Cell ${cell.cell} does not match any column title`);
+                // console.error(`Cell ${cell.cell} does not match any column title`);
                 return;
             }
             if (isPlainObject(cell.value) && cell.value.richText) {
