@@ -8,7 +8,6 @@
                     :to="routerLink(result)"
                     class="text-cloudburst hover:text-celadonblue"
                 >
-                    {{ result.Shelfmark[0] }} -
                     {{ result["Item title"].join(", ") }}
                 </router-link>
             </li>
@@ -20,7 +19,7 @@
 import BrowseCollectionComponent from "./BrowseCollection.component.vue";
 import BrowseItemComponent from "./BrowseItem.component.vue";
 import Fuse from "fuse.js";
-import { flattenDeep, uniqBy } from "lodash";
+import { flattenDeep, uniq } from "lodash";
 
 export default {
     components: {
@@ -35,34 +34,24 @@ export default {
                 includeScore: false,
                 ignoreLocation: true,
                 threshold: 0.0,
-                keys: [
-                    "Item title",
-                    "Item note",
-                    "Collection title",
-                    "Language name",
-                    "Location of original",
-                    "Performer/contributor",
-                    "Genre",
-                    "Reference",
-                    "Rights",
-                ],
+                keys: [],
             },
             fuse: undefined,
             results: [],
             content: {
                 English: [
-                    `To search the catalogue, type into the 
-                search box and the relevant results will appear 
-                below. Click on a title to be taken to the 
+                    `To search the catalogue, type into the
+                search box and the relevant results will appear
+                below. Click on a title to be taken to the
                 recording or image in the catalogue.`,
                 ],
                 TokPisin: [
                     `
-                Sapos yu laik painim samting insait 
-                long kalsa laibri, bai yu taipim insait 
-                long “painim bokis” wanem samting yu laik painim. 
-                Taitel bilong ol rikoding o piksa yu painim 
-                bai kamap ananit. Na sapos yu klik long dispela 
+                Sapos yu laik painim samting insait
+                long kalsa laibri, bai yu taipim insait
+                long “painim bokis” wanem samting yu laik painim.
+                Taitel bilong ol rikoding o piksa yu painim
+                bai kamap ananit. Na sapos yu klik long dispela
                 taitel, bai yu kamap long em stret long kalsa laibri.
                 `,
                 ],
@@ -90,7 +79,7 @@ export default {
             let items = this.$store.state.items;
             items = Object.keys(items).map((collectionId) => {
                 return Object.keys(items[collectionId]).map((itemId) => {
-                    return items[collectionId][itemId];
+                    return { ...items[collectionId][itemId], collectionId };
                 });
             });
             items = flattenDeep(items);
@@ -98,6 +87,8 @@ export default {
                 item.collectionTitle = item["Collection title"][0];
                 return item;
             });
+            this.options.keys = uniq(flattenDeep(items.map((item) => Object.keys(item))));
+
             this.fuse = new Fuse(items, this.options);
         },
         search() {
@@ -107,8 +98,9 @@ export default {
                 .slice(0, 10);
         },
         routerLink(item) {
-            const [collectionId, itemId] = item.Shelfmark[0].split("/");
-            return `/collection/${collectionId}#id_${itemId}`;
+            const collectionId = item.collectionId;
+            const itemId = item["Call number"][0];
+            return `/collection/${collectionId}#${itemId}`;
         },
     },
 };
