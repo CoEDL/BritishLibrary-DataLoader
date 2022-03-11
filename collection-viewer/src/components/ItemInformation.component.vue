@@ -26,7 +26,7 @@ export default {
     },
     data() {
         return {
-            filterFields: ["collectionId"],
+            filterFields: ["collectionId", "Original filename"],
             fields: [],
         };
     },

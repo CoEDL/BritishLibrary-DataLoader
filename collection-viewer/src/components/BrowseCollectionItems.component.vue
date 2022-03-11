@@ -6,7 +6,7 @@
             class="flex flex-col lg:justify-evenly my-2 bg-gray-200 mx-2 rounded-lg"
         >
             <div class="px-2 text-2xl" :id="item['Call number'][0]" :ref="item['Call number'][0]">
-                {{ collection["Collection title"][0] }}
+                {{ item["Call number"][0] }}
             </div>
             <div class="flex flex-col md:flex-row md:flex-wrap">
                 <browse-item-component :item="item" class="bg-gray-200" />

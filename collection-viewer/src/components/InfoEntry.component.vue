@@ -1,8 +1,8 @@
 <template>
-    <div class="flex flex-col">
+    <div class="flex flex-col" v-if="data.length">
         <div class="font-bold">{{ field }}:</div>
         <div class="flex-grow">
-            {{ data.join(", ") }}
+            {{ fieldData }}
         </div>
     </div>
 </template>
@@ -17,6 +17,16 @@ export default {
         data: {
             type: Array,
             required: true,
+        },
+    },
+    computed: {
+        fieldData() {
+            const length = this.data.length;
+            return this.data
+                .map((f, i) =>
+                    f.trim().slice(-1) === "." ? f : i !== length - 1 ? `${f},` : `${f}.`
+                )
+                .join(" ");
         },
     },
     data() {
