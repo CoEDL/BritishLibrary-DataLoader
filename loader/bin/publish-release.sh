@@ -53,7 +53,7 @@ npm run build:win
 
 cat <<EOF
 
-    You can now go to https://github.com/UTS-Research/describo/releases
+    You can now go to https://github.com/CoEDL/BritishLibrary-DataLoader/releases
     to verify the draft and release it.
 
 EOF
