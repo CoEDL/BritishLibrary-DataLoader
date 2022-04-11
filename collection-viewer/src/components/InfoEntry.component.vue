@@ -24,7 +24,7 @@ export default {
             const length = this.data.length;
             return this.data
                 .map((f, i) =>
-                    f.trim().slice(-1) === "." ? f : i !== length - 1 ? `${f},` : `${f}.`
+                    f.trim().slice(-1) === "." ? f : i !== length - 1 ? `${f},` : `${f}`
                 )
                 .join(" ");
         },
