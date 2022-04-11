@@ -4,22 +4,15 @@
             <picture>
                 <source :srcset="image.png" />
                 <source :srcset="image.webp" />
-                <img
-                    :src="image.png"
-                    class="object-cover opacity-50 style-image mx-auto"
-                />
+                <img :src="image.png" class="object-cover opacity-50 style-image mx-auto" />
             </picture>
-            <div
-                class="absolute text-center w-full inset-y-0 py-6 md:py-16 lg:py-32 object-fill"
-            >
+            <div class="absolute text-center w-full inset-y-0 py-6 md:py-16 lg:py-32 object-fill">
                 <div class="text-4xl md:text-6xl pt-6">
                     {{ content.title[language] }}
                 </div>
             </div>
         </div>
-        <div
-            class="flex flex-col lg:flex-row mt-4 mx-4 space-y-2 lg:space-y-0 lg:space-x-2 pb-10"
-        >
+        <div class="flex flex-col lg:flex-row mt-4 mx-4 space-y-2 lg:space-y-0 lg:space-x-2 pb-10">
             <router-link :to="{ name: 'browse' }" class="md:flex-grow">
                 <div
                     class="rounded-lg text-center text-xl md:text-3xl text-white bg-cloudburst py-4"
@@ -65,18 +58,26 @@ export default {
                 title: {
                     English: "Welcome to the True Echoes Catalogue",
                     TokPisin: "Welkam long True Echoes kalsa laibri",
+                    Bislama: "Welkam long Katalok blong True Echoes",
+                    Pijin: "Welkam long True Echoes Katalog",
                 },
                 browse: {
                     English: "Browse the catalogue",
                     TokPisin: "Lukluk insait long kalsa laibri",
+                    Bislama: "Braos long Katalok",
+                    Pijin: "Braos long katalog ",
                 },
                 what: {
                     English: "What is True Echoes?",
                     TokPisin: "True Echoes em wanem samting?",
+                    Bislama: "Wanem nao True Echoes?",
+                    Pijin: "Wat na True Echoes?",
                 },
                 how: {
                     English: "How to use this catalogue",
                     TokPisin: "Bai yu yusim kalsa laibri olsem wanem?",
+                    Bislama: "Hao blong usem Katalok ia",
+                    Pijin: "Hao fo yumi usim disfala katalog",
                 },
             },
         };

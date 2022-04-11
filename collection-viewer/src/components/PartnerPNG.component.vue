@@ -1,8 +1,6 @@
 <template>
     <div class="flex flex-col">
-        <div
-            class="heading-text page-title-size bg-goldensand py-6 px-2 flex flex-row"
-        >
+        <div class="heading-text page-title-size bg-goldensand py-6 px-2 flex flex-row">
             <div class="">
                 Institute of Papua New Guinea Studies
             </div>
@@ -72,6 +70,16 @@ export default {
                     insait long Papua New Guinea. I gat samting olsem 12,000
                     aua bilong rikoding long ol, kaset, muvi na poto wantaim
                     kain kain arapela pepa.`,
+                ],
+                Bislama: [
+                    "Long 1974 wan yia bifo independen oli bin setem ap Institue blong Papua Niu Guinea Studies [IPNGS] mo emi olsem nasonal Kaljoral institution we emi mekem rijes, document, arkaef mo semtaem promotem Kalja blong Papua Niu Guinea wetem lukluk long saed blong musik/danis, ethnology mo literature.",
+                    "Nao ia we bigfala lukluk istap long traditional expression blong Kalja igat narfala lukluk tu long saed blong ol performance we istap hapen long Jioj, taon, militari display, etc.",
+                    "Aim blong IPNGS tu emi blong wok wetem Musik Arkaef long saed blong ol musik/danis we oli bin mekem risej long olgeta long Papua Niu Guinea we igat samwe raon 12, 000 haoa blong ol rikoting we istap long reel, kaset wetem disc wetem filim, foto wetem ol samting we oli gat raeting finis istap long olgeta mo emia we ino gat yet.",
+                ],
+                Pijin: [
+                    "Stat wanfala yia bifo indipendens long 1974, Institute blong Papua New Guinea Studies [IPNGS] hem nasinal kalsaral institusin wea olketa researches, documents, archives an promotim Papua New Guinea kalsa, wetem fokas long musik/singsing, ethnology o lukluk insaet long kalsa, an literature o raetim pepa abaotim kalsa.",
+                    "Sem taem wea primary fokas blong hem long tradisinal expression blong kalsa, attention tu hem givim moa long disfala taem long developed expressions, wea olsem olketa performim insaet long sios, taon, militari an staka moa.",
+                    "Disfala IPNGS Musik Akaiv aim fo reflectim evry music/singsing research wea hem duim insaet long Papua New Guinea an hem inkludim kosup 12,000 hours wea olketa rekodim long reels, cassettes an discs, olsem films, fotos an published an unpublished printed waka.",
                 ],
             },
         };

@@ -55,6 +55,12 @@ export default {
                 taitel, bai yu kamap long em stret long kalsa laibri.
                 `,
                 ],
+                Bislama: [
+                    "Blong mekem search long katalok taep long boxis blong search mo ol risol we yu wantem bai oli kam aot taon. Klik long taetol blong tekem igo long rikoting or foto lontg katalok.",
+                ],
+                Pijin: [
+                    "Luk kautim - Fo iu luk insaet long katalog, raetim daon insaet long search box an olketa infomasin iu laekim save apia lo daon. Klikim long title fo hem tekem iu go long rekoding o piksa insaet long katalog.",
+                ],
             },
         };
     },

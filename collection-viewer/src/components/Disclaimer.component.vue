@@ -45,6 +45,16 @@ export default {
                     na ol manmeri i bin raitiim em ol i kamap long taim bipo na sampela 
                     samting nau bai no stret long lukluk o ken bagarapim tingting long pasin bilong tude.`,
                 ],
+                Bislama: [
+                    "Ol pipol blong Torrest Strait oli sud awea se ol foto, vois mo nem blong ol pipol we istap long website ia oli ded finis.",
+                    "Website ia igat sam kastom fasen blong folem taem yu wantem gat access long ol samting ia from oli sekret o tabu.",
+                    "Ol pipol we oli usem website ia oli mas save se ol toktok wetem narfala samting isaed ia oli aotdated mo oli gat kaljoral valiu mo semtaem oli sensitif. Ol toktok we author or man we emi raetem ol samting insaed ia oli blong long long taem finis mo maet ino stret long sam long yumi tede.",
+                ],
+                Pijin: [
+                    "Torres Stret Aelanda pipol shud save lo disfala websaet bikos hem garem olketa piksa, vois an nem blong olketa pipol wea i dae long taem finis.",
+                    "Disfala websaet hem inkludim samfala samting an tok tok wea hem garem olketa kastom pasin blong bifo wea haedim tambu o lelebet sensitif long tradisinal wei fo falom mekem yumi save tekem an lukluk long olketa tambu samting yia.",
+                    "Evri man an mere wea usim websaet an olketa linked resources yah inkludim tok tok an diskripsen wea maet long taem finis an kalsaral sensitif. Olketa tok tok wea shoem pasin blo raeta o taem wae hem raetim samtaem no luk stret o he’re stret lo sosaeti blo yumi tude.",
+                ],
             },
         };
     },

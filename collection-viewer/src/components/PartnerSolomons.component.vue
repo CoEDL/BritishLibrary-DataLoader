@@ -1,8 +1,6 @@
 <template>
     <div class="flex flex-col">
-        <div
-            class="heading-text page-title-size bg-goldensand py-6 px-2 flex flex-row"
-        >
+        <div class="heading-text page-title-size bg-goldensand py-6 px-2 flex flex-row">
             <div class="">
                 Solomon Islands Archives and Museum
             </div>
@@ -65,6 +63,16 @@ export default {
                     wokim em helpim divelopmen long SINM na Solomon Islands long mekim 
                     gutpela luksave na toksave i kamap long ol manmeri, na long 
                     sait bilong kalsa na envairomen bilong Solomon Islands.`,
+                ],
+                Bislama: [
+                    "Nasonal Misium blong Solomon Aelan sin emi statem wok blong hem long 1969 emi blong presevem, protektem mo promotem ol lokal kastom mo Kalja blong Solomon Aelan.",
+                    "Misium ia oltaem emi stap wok wetem Komiuniti blong liftimap wok blong mekem risej mo lukaotem wok blong Kalja mo natural heritage mo semtaem liftemap ekonomik devlopmen mo promotem pis tru long kalja. Solomon Aelan Misium ia tu emi stap wok strong nao ia blong liftimap ol wok blong hem long saed blong mekem gud ol storage mo conservem mo exibitim ol kastom mo kalja wetem ol artefact we igat ol hsitri blong olgeta.",
+                    "Misium emi kolektem tu ol artefact mo conductem documentari risej long ol important kaljoral site raon long Solomons mo long Nasonal Saet Sevei program blong SINM mo Solomon Aelan mo semtaem emi encouragem ol pipol blong andastanem moa kastom mo kalja ensaed long environmen blong Solomon Aelan.",
+                ],
+                Pijin: [
+                    "Solomon Islands Nasinal Miusiam hem stat long 1969 wea olketa kipim an luk save impotans blong kalsa blong Solomon Islands an stat waka long olketa lokol kastom an tradisin.",
+                    "Nasinal muisiam waka wetem olketa lokol komiuniti fo inkrisim moa kapasiti blong research blong hem wea save helpem managemen kalsa an natural heritage, enkarejim ekonomic developmen wetem kaltural kalsaral entaprais, an fo promotim peace wetem respect long kalsa. Disfala miusiam tu hem mekem gohet kalsaral infrastructure fo inkrisim kapasiti fo storim, conservim an fo exhibitim Solomon Islands kalsa an historical artifacts blong hem.",
+                    "Solomon Islands Miusiam hem kolektim artifacts an kondaktim olketa duim samfala pepa wok insaet long olketa kalsaral impotan saet evriwea insaet long kandere andanit long Nasinal Saet Sevei program na waka tugeda wetem olketa ovasis archaeologists. Olketa program yah fo mekem gohet development blong olketa SINM an kandere blong yumi wea olketa enkarajim ting ting save blong pipol, kalsa an envairomen blong kandere blong yumi long Solomon Islands.",
                 ],
             },
         };

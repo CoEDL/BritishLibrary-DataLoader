@@ -1,8 +1,6 @@
 <template>
     <div class="flex flex-col">
-        <div
-            class="heading-text page-title-size bg-goldensand py-6 px-2 flex flex-row"
-        >
+        <div class="heading-text page-title-size bg-goldensand py-6 px-2 flex flex-row">
             <div class="">
                 Vanuatu Kaljoral Senta
             </div>
@@ -53,6 +51,16 @@ export default {
                     bin kamap namel long ol yia long 1960 long mekim ol wok long 
                     painim na kisim ol koleksen bilong kalsa na lukautim na strongim 
                     dispela ol piksa long muvi na poto na rikoding.`,
+                ],
+                Bislama: [
+                    "Vanuatu Kaljoral Senta [VKS] emi stap lukaotem preseveson, proteksen mo promoson blong Vanuatu tangible mo intangible Kaljoral heritage.",
+                    "Sins stat blong hem Vanuatu Kaljoral Senta emi mekem bigfala wok long saed blong documentem of traditional knowledge or kastom save, ol artifak mo mekem ol wok blong survey long saed blong ol Kaljoral mo historical saet mo faenem aot ol archaeological sites, olsem ol ples we ol fes man we oli kasem Vanuatu ova 4.000 yia ipas oli stap long hem.",
+                    "Nasinol Filim, Saon mo Foto arkaef emi statem wok blong hem long 1960s ikam blong kolektem, presevem mo promotem ol Kaljoral filim, foto mo ol audio rikoting blong Vanuatu.",
+                ],
+                Pijin: [
+                    "Vanuatu Kaljoral Senta hemi lukaotim waka fo presevim, protektim an promotim tangible an intangible kalsaral heritage blong Vanuatu.",
+                    "Taem from stat long Vanuatu Kaljoral Senta hem mekem barava bikfala waka insaet long document documentim tradisinal knowledge o save blong kastom an artefacts, mekem survey waka fo olketa kalsaral an historical saet, an lukaot fo waka long olketa impotant archaeologicalsaet.",
+                    "Nasinal Filim, Saon an Foto Akaiv long VKS hem establis long 1960s an hem responsible fo kolektim, presevim an promotim olketa kalsaral kolekson blong filim, foto an audio rekoding.",
                 ],
             },
         };

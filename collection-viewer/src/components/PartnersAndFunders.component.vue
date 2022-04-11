@@ -111,6 +111,18 @@ export default {
                     `Ol poro oganisesen em:`,
                     `Ol oganaisesen i givim mani:`,
                 ],
+                Bislama: [
+                    "Ol Partners mo funders",
+                    "True Echoes projek emi wok wetem ol kaljoral mo risej institution long Oceanic region mo long UK.",
+                    "Olgeta Kaontri we oli patna igat:",
+                    "Funders:",
+                ],
+                Pijin: [
+                    "Olketa Partners an Funders",
+                    "Olketa Patna an Bodi hu givim selen - Disfala True Echoes projek hem waka wetem olketa kalsaral an research institusin insaet long Oceanic Rijen an UK.",
+                    "Pipol waka inkludim:",
+                    "Funders",
+                ],
             },
             leverhulmeTrust: {
                 webp: leverhulmeTrustWebp,

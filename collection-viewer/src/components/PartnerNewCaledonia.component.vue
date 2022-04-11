@@ -1,8 +1,6 @@
 <template>
     <div class="flex flex-col">
-        <div
-            class="heading-text page-title-size bg-goldensand py-6 px-2 flex flex-row"
-        >
+        <div class="heading-text page-title-size bg-goldensand py-6 px-2 flex flex-row">
             <div class="">
                 Tjibaou Cultural Centre, New Caledonia
             </div>
@@ -54,6 +52,14 @@ export default {
                     i bin kirapim niupela laibri i yusim komputa bilong sapotim ol 
                     kalsa wok bilong toksave na soim piksa na ol samting bilong 
                     tumbuna insait long laibri.`,
+                ],
+                Bislama: [
+                    "Wok blong Jibaou Kaljoral Senta emi blong mekem risej, kolektem mo promotem kaljoral heitage blong ol stret pipol blong Niu Kaledonia [ol Kanak].",
+                    "Ol wok ia emi long saed blong lanwis, akioloji risej wetem kontemporari fom blong Kaljoral expreson olsem broadkasting mo art. Senta ia emi wok mo developem tu indigines artistik creation mo emi facilitatem riginol mo ol intanasonal exjenis. Sins Senta ia emi statem wok blong hem long 1998 ikam insaed long Senta igat Art Senta, Spes blong Exibison mo speselaes multimedia laeberi.",
+                ],
+                Pijin: [
+                    "Misin fo waka blong Tjibaou Kalsaral Senta hem fo research, kolektim, mekem gohet luk save an promotim indiginas kalsaral heritage blong New Kaledonia.",
+                    "Disfala hem inkludim languis an archaelogical heritage, an olketa kontemporari wei long expresim kalsa blong disfala taem wea hem soem art an broadcasting. Disfala Senta hem tu mekem waka an developim indiginas artistic creation an facilitatim rijenal an international exchanges, wea hem stat long 1998. Disfala Senta hem inkludim art senta, olketa spes fo exibisan an speselais multimedia laibri.",
                 ],
             },
         };
