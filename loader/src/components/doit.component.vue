@@ -15,10 +15,16 @@
             <div class="text-2xl bg-green-400 text-white text-center p-2 rounded">
                 Data Loaded
             </div>
+
+            <ul class="list-disc ml-6 mt-10">
+                <li>On your phone, tablet, or computer, go to wi-fi settings.</li>
+                <li>Connect to PARADISEC</li>
+                <li>Then open a browser and type in http://catalog.net</li>
+            </ul>
         </div>
         <div class="my-4" v-if="showError">
             <div class="text-2xl bg-red-400 text-white text-center p-2 rounded">
-                There was an problem loading the data.
+                There was a problem loading the data.
             </div>
         </div>
     </div>
@@ -58,9 +64,9 @@ export default {
                         // dataOnly: this.dataOnly,
                     });
                     this.showSuccess = true;
-                    setTimeout(() => {
-                        this.showSuccess = false;
-                    }, 2000);
+                    // setTimeout(() => {
+                    //     this.showSuccess = false;
+                    // }, 2000);
                 } catch (error) {
                     this.showError = true;
                     setTimeout(() => {
