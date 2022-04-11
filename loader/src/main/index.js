@@ -23,9 +23,7 @@ function createMainWindow() {
 
     if (isDevelopment) {
         window.webContents.openDevTools();
-        window.loadURL(
-            `http://localhost:${process.env.ELECTRON_WEBPACK_WDS_PORT}`
-        );
+        window.loadURL(`http://localhost:${process.env.ELECTRON_WEBPACK_WDS_PORT}`);
     } else {
         window.loadURL(
             formatUrl({
@@ -82,6 +80,6 @@ function onUpdateDownloaded() {
         buttons: ["Got it!"],
         defaultId: 0,
         title: "Update Available",
-        message: `A new version of the application is available. It will be installed the next time you restart Describo!.`,
+        message: `A new version is available. It will be installed the next time you start the app.`,
     });
 }
