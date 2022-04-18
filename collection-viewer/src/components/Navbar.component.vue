@@ -1,12 +1,13 @@
 <template>
     <div class="bg-cloudburst flex flex-row justify-between p-4">
-        <div
+        <el-button
+            type="text"
             v-show="!homePage"
-            class="text-white text-2xl cursor-pointer mr-2"
+            class="text-white text-xl -mt-2 cursor-pointer mr-2"
             @click="navigate"
         >
             <i class="fas fa-arrow-left"></i>
-        </div>
+        </el-button>
         <router-link :to="{ name: 'home' }" class="flex-grow">
             <div class="heading-text heading-text-size text-white">
                 True Echoes
