@@ -57,6 +57,8 @@ export default {
             learnMore: {
                 English: "Learn more about this item",
                 TokPisin: "lanim moa long dispela samting",
+                Bislama: "Learn moa baotem itim",
+                Pijin: "Lane moa abaotim disfala item",
             },
         };
     },

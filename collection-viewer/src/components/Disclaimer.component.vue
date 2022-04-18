@@ -36,6 +36,7 @@ export default {
                     which the item was written may be considered inappropriate or offensive today.`,
                 ],
                 TokPisin: [
+                    "Ol manmeri bilong Torres Straits Islands i mas luksave olsem dispela websait o kompyuta rekod i holim ol piksa, vois na nem bilong ol lain i dai pinis.",
                     `Dispela websait i holim ol kainkain samting insait long koleksen em i 
                     gat pasin tumbuna i tambu na stap hait long kamapim long ples klia bilong 
                     lukluk na soim long ol manmeri. Ol bikman na lapun tasol long pasin 

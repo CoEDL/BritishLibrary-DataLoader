@@ -73,6 +73,7 @@ export default {
                     long helpim ol komuniti i gat interes long histori na pasin tumbuna.`,
                 ],
                 Bislama: [
+                    "Abaot True Echoes",
                     "True Echoes emi risej projek we emi aim blong rikonektem ol rij arkaev blong earli saon rikoting blong Oceanic Kaolja wetem ol komuiniti long ples we oli stap long hem.",
                     "True Echoes emi usem digitised wax cylinder rikoting blong mekem ol foto. Ol rikoting ia oli mekem long 19th mo earli 20th centuries. Ol saon rikoting ia oli karem aot long ol risej we ol anthropologist oli bin mekem bifo. Ol rikoting ia British Library Sound Archive nao oli holem istap nao ia.",
                     "Wax cylinder kolekson we emi includem rikoting we oli mekem long Papua Niu Guinea, Solomon Aelan, Vanuatu, Niu Kaledonia mo Australia bitwin 1898 mo 1918. Ol earli rikoting oli mekem long 1898 we ol memba blong Cambridge Anthropological Exeditons nao oli mekem igo long Torres Straits.",
@@ -80,6 +81,7 @@ export default {
                     "True Echoes istap wok wetem ol institution long saed blong Kalja mo Risej long region wetem UK blong faenem wan gudfala wei mo fasen blong gat akses long ol kolekson we istap. Semtaem blong mekem sua se hao nao yumi gat gudfala fasen blong katalokem ol heritage ia mo semtaem hao nao Komiuniti isave gat akses long em from emi blong olgeta.",
                 ],
                 Pijin: [
+                    "Abaotim True Echoes",
                     "True Echoes hem wanfala research projek wea hem aim fo konektim baek moa olketa gutfala stori blong saon rekodings lo taem bifo yet wea olketa rekodim Oceanic kalsa blong olketa komuniti wea hem kam from.",
                     "True Echoes hem usim digitised wax cylinder rekodings yah olketa usim phonograph. Olketa rekodings stat kam long 19th century an eali 20th centuries an representim samfala wei fo usim taem bifo saon insaet lo anthropological research. Olketa tradisinal stori yah hem i stap wantaem Britis Laebri Sound Archive.",
                     "Olketa wax cylinder koleksin hem inkludim rekodings wea olketa Papua New Guinea, Solomon Islands, Vanuatu, New Caledonia an Australia betwin 1898 an 1918. Olketa bifo taem rekodings pipol lo Cambridge Anthropological Expedison long Torres Stret nah duim long 1898.",
