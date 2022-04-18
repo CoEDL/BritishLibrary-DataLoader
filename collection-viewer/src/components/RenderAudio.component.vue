@@ -1,5 +1,5 @@
 <template>
-    <audio controls ref="audioElement" class="w-full">
+    <audio controls ref="audioElement" class="md:w-full">
         <source :src="audioSrc" />
         Your browser does not support the <code>audio</code> element.
     </audio>
