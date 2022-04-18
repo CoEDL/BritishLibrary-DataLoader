@@ -18,7 +18,7 @@
 
             <ul class="list-disc ml-6 mt-10">
                 <li>On your phone, tablet, or computer, go to wi-fi settings.</li>
-                <li>Connect to PARADISEC</li>
+                <li>Connect to TRUE ECHOES</li>
                 <li>Then open a browser and type in http://catalog.net</li>
             </ul>
         </div>
